@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "defaultProject": "test101",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  },
+  "projects": {
+    "test101": {
+      "root": "apps/test101",
+      "sourceRoot": "apps/test101",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/test101",
+            "outputPath": "dist/apps/test101"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "test101:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "test101:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "test101:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/test101"],
+          "options": {
+            "jestConfig": "apps/test101/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/test101/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "test101-e2e": {
+      "root": "apps/test101-e2e",
+      "sourceRoot": "apps/test101-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/test101-e2e/cypress.json",
+            "tsConfig": "apps/test101-e2e/tsconfig.e2e.json",
+            "devServerTarget": "test101:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "test101:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/test101-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
