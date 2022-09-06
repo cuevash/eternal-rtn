@@ -1,0 +1,44 @@
+---
+title: "Book Exercises and try outs"
+output: html_document
+date: '2022-08-27'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Init Libs
+
+```{r}
+library(lobstr)
+```
+
+## Chapter 2
+
+```{r}
+# Lets see whats inside
+
+print(lobstr::obj_addr(mean))
+print(lobstr::obj_addr(base::mean))
+print(lobstr::obj_addr(get("mean")))
+print(lobstr::obj_addr(evalq(mean)))
+print(lobstr::obj_addr(match.fun("mean")))
+
+
+fn <- function() {
+  withCallingHandlers(
+  message = function(cnd) cat("Level 2\n"),
+  withCallingHandlers(
+    message = function(cnd) {
+      cat("Level 1\n")
+      cnd_muffle(cnd)
+    }, {
+      message("Hello")
+      cat("bye")
+    }
+  )
+)
+}
+
+```
