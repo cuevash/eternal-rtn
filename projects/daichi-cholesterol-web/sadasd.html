@@ -1,0 +1,142 @@
+<script type="text/javascript">
+  // Chart 01-01
+
+  // Initialize the echarts instance based on the prepared dom
+  var myChart_02_01 = echarts.init(document.getElementById('echarts-02-01'));
+
+  // Specify the configuration items and data for the chart
+  var option_02_01 = {
+    title: {
+      text: 'ECharts Getting Started Example',
+    },
+    tooltip: {},
+    legend: {
+      data: ['sales'],
+    },
+    xAxis: {
+      data: ['Shirtstis', 'Cardigans', 'Chiffons', 'Pants', 'Heels', 'Socks'],
+    },
+    yAxis: {},
+    series: [
+      {
+        name: 'sales',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20],
+      },
+    ],
+  };
+
+  // Display the chart using the configuration items and data just specified.
+  myChart_02_01.setOption(option_02_01);
+
+  window.onresize = function () {
+    myChart_02_01.resize();
+  };
+
+  // Chart 01-02
+  var myChart_02_02 = echarts.init(document.getElementById('echarts-02-02'));
+
+  var app = {};
+  var ROOT_PATH = 'https://echarts.apache.org/examples';
+  var option_02_02;
+
+  $.get(
+    ROOT_PATH + '/data/asset/data/life-expectancy-table.json',
+    function (_rawData) {
+      run(_rawData);
+    }
+  );
+
+  function run(_rawData) {
+    // var countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
+    const countries = [
+      'Finland',
+      'France',
+      'Germany',
+      'Iceland',
+      'Norway',
+      'Poland',
+      'Russia',
+      'United Kingdom',
+    ];
+    const datasetWithFilters = [];
+    const seriesList = [];
+    echarts.util.each(countries, function (country) {
+      var datasetId = 'dataset_' + country;
+      datasetWithFilters.push({
+        id: datasetId,
+        fromDatasetId: 'dataset_raw',
+        transform: {
+          type: 'filter',
+          config: {
+            and: [
+              { dimension: 'Year', gte: 1950 },
+              { dimension: 'Country', '=': country },
+            ],
+          },
+        },
+      });
+      seriesList.push({
+        type: 'line',
+        datasetId: datasetId,
+        showSymbol: false,
+        name: country,
+        endLabel: {
+          show: true,
+          formatter: function (params) {
+            return params.value[3] + ': ' + params.value[0];
+          },
+        },
+        labelLayout: {
+          moveOverlap: 'shiftY',
+        },
+        emphasis: {
+          focus: 'series',
+        },
+        encode: {
+          x: 'Year',
+          y: 'Income',
+          label: ['Country', 'Income'],
+          itemName: 'Year',
+          tooltip: ['Income'],
+        },
+      });
+    });
+
+    option_02_02 = {
+      animationDuration: 10000,
+      dataset: [
+        {
+          id: 'dataset_raw',
+          source: _rawData,
+        },
+        ...datasetWithFilters,
+      ],
+      title: {
+        text: 'Income of Germany and France since 1950',
+      },
+      tooltip: {
+        order: 'valueDesc',
+        trigger: 'axis',
+      },
+      xAxis: {
+        type: 'category',
+        nameLocation: 'middle',
+      },
+      yAxis: {
+        name: 'Income',
+      },
+      grid: {
+        right: 140,
+      },
+      series: seriesList,
+    };
+    myChart_02_02.setOption(option_02_02);
+  }
+
+  if (option_02_02 && typeof option_02_02 === 'object') {
+    myChart_02_02.setOption(option_02_02);
+  }
+
+  window.addEventListener('resize', myChart_02_02.resize);
+</script>

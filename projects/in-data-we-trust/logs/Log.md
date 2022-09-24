@@ -191,3 +191,30 @@ it will be cool to have a set of use cases where all the major problems with the
 ## 2022/08/05
 
 * Add some course of microservices and node.js and then invent some microservices to go with it. And some architecture, test etc.. Everybody is asking for those!
+
+## 2022/09/07
+
+* The microservices thing could be done with an stock app . The main architecture would go something like this:
+
+Client (next.js) -> microservices (next.js) -> ORM (prisma.io) -> Database Postgresql
+
+If you want to use a full rest api server such as nest.js check how to do it serverless -> maybe in google cloud functions // Netlify functions // Vercel function
+
+This can be deployed in a vercel enviroment.
+
+Now:
+
+* Can we use prisma.io in vercel? Yes!
+* Does it make sense to use graphql? Maybe not yet
+  
+* So after researching a bit I settle on the next architecture to build a DB base APP.
+  * Client (Next.js)
+  * Rest backend (Next.js)
+  * Prisma client for the DB
+  * DB (PlanetScale) connection through the Prisma interface.
+  * This at least for simple apps. If it gets more complex, it will be reevaluated.
+  * Three environments, dev, staging, prod with GitHub actions for deployment.
+    * This is actually the most difficult part of the project. The plumbing!! 
+
+* So now we create the different elements.
+  * Planetscale login

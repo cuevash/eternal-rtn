@@ -228,3 +228,24 @@ Communication is key on here!
 
 ## Create something similar to 
 https://crt-climate-explorer.nemac.org/
+
+# CitizenshipData
+
+Platform that protects their citizens rights. What's there is yours!. 
+The only way to break this contract is through some legal enforcement to the contrary.
+But none other action can be taken without a legal request.
+What is in your account is like your Home!
+In any case there will be some preventions features.
+Quarantine some files and ask to discern whether they are legal or not:
+
+* Maybe because some Copyright infringement
+* Minor explicit photos
+* etc.
+
+
+
+# Retired vs Employee
+
+How many people has retired in the last 10 years? How many people enter the world of pain (work) ?
+
+
