@@ -577,7 +577,7 @@ graphs_path_files <- c(graphs_path_files, plotly_file_path)
 
 
 html_graph_links <- graphs_path_files |> map(function(file_path) {
-  str_interp('<a href="${path(graph_out_dir, path_file(file_path))}"> A graph</a>')
+  str_interp('<a href="${path(graph_main_dir, path_file(file_path))}"> A graph</a>')
   }) |> unlist() |> paste(collapse='\n')
 
 
