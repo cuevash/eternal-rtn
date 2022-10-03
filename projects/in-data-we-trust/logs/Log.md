@@ -218,3 +218,14 @@ Now:
 
 * So now we create the different elements.
   * Planetscale login
+
+## 2022/09/30
+
+* Bilayer Meeting:
+  * Decide to publish a climate graph
+  * Think about two others for next week
+* WeCode
+  * Make 1 example
+    * Dashboard with echarts
+      * Climatology by city? Spain // Europe ?
+      * Climatology by Coordinate ?

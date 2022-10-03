@@ -1,0 +1,45 @@
+---
+title: "Average Temperature and Precipitation on main cities"
+output: html_document
+date: '2023-09-24'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup 
+
+None
+
+## Libraries
+
+```{r echo=FALSE}
+# install the packages if necessary
+if(!require("tidyverse")) install.packages("tidyverse")
+if(!require("sf")) install.packages("sf")
+if(!require("lubridate")) install.packages("lubridate")
+if(!require("terra")) install.packages("terra")
+if(!require("mapSpain")) install.packages("mapSpain")
+
+# load packages
+library(tidyverse)
+library(sf)
+library(terra)
+library(lubridate)
+library(mapSpain)
+
+```
+
+
+```{r echo=FALSE}
+spei <- rast("./datasets/spei12_2017.nc")
+
+
+
+```{r echo=FALSE}
+
+```
+
+
+
