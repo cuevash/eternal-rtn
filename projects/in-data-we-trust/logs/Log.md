@@ -229,3 +229,26 @@ Now:
     * Dashboard with echarts
       * Climatology by city? Spain // Europe ?
       * Climatology by Coordinate ?
+
+
+## 2022/10/07
+
+* Bilayer Meeting:
+  * Two graphs more for monday
+  * Publish?
+  * RChart gallery
+  * Blog of how to explore data from the CDS with R (Small one!)
+* WeCode
+  * Make 1 example
+    * Dashboard wi
+
+## 2022/10/19
+
+* Bilayer Meeting:
+  * Publish Graph (Mondays)
+  * WeCode
+    * Example (small)
+  * Bilayer
+  * Data analysis jobs? (freebies)
+    * Josu
+    * Abu

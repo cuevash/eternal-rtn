@@ -389,8 +389,35 @@ hh <- climatologies_europe_eobs_1950_2022_dat |>
 # Combine all ERA5 dats
 climatology_cities_dat <- bind_rows(climatology_cities_pre_2022_dat, climatology_cities_2022_dat)
 
+##### OUTPUT PIPELINE 1
+dir_create(path("./pipeline"))
+write.csv(
+  climatologies_europe_eobs_1950_2022_dat, 
+  file = "./pipeline/climatologies_europe_eobs_1950_2022_dat.csv",
+  row.names = FALSE
+)
+
+```
+
+## Pipeine 2 
+
+Reading data from pipeline 1
+
+```{r echo=FALSE}
+
+climatologies_europe_eobs_1950_2022_dat_tbbl <- read_csv("./pipeline/climatologies_europe_eobs_1950_2022_dat.csv")
+   
+```
+
+
+
+
+Calculate some summaries over the whole dataset generated in pipeline1
+
+```{r echo=FALSE}
+
 # Calculate BaseLine Mean Annual Temperature for each city (1990-2020) 
-tt <- climatologies_europe_eobs_1950_2022_dat |> 
+tt <- climatologies_europe_eobs_1950_2022_dat_tbbl |> 
   filter(year >= 1981 & year <= 2010) |>
   group_by(city) |>
   summarise(temperature_annual_mean = mean(t2m_c))
@@ -412,8 +439,189 @@ climatology_cities_decade_t2m_c <- climatology_cities_dat |>
   group_by(city, month, month_name, decade) %>%
   summarise(t2m_c_mean = mean(t2m_c))
   
-  
+   
 ```
+
+
+
+## Calculate differences of average temperature decades (1960 - 1969) vs (2012-2021)
+
+
+```{r echo=FALSE}
+
+days_in_year <-  365.
+years_in_decade <- 10.
+
+
+cities_1960 <- climatologies_europe_eobs_1950_2022_dat |> 
+  filter(year >= 1960 & year <= 1960) 
+
+
+# Average temperature by decade
+tt <- climatologies_europe_eobs_1950_2022_dat |> 
+  group_by(city, decade) |>
+  summarise(temperature_annual_mean = mean(t2m_c))
+   
+```
+
+## Plotting - Calculate differences of average temperature decades (1960 - 1969) vs (2012-2021)
+
+```{r}
+
+# Create out directories
+graph_out_dir <- "./out" 
+
+graph_main_dir <- "/story_of_two_cities_july"
+
+graph_main_dir_path <- path(graph_out_dir, graph_main_dir)
+
+graphs_svg_sub_dir_path = path(graph_main_dir_path, "/svg")
+
+graphs_plotly_sub_dir_path = path(graph_main_dir_path, "/plotly")
+
+dir_create(path(graphs_svg_sub_dir_path))
+dir_create(path(graphs_plotly_sub_dir_path))
+
+graphs_path_files = c()
+          
+
+story_of_two_cities_july_base_plot <- climatology_cities_ext_dat |>
+  filter(city %in% cities_in_study, month == 7) |>
+  ggplot(aes(x = Year, y = `Temp Avgr.`, group = City)) + 
+  theme(plot.title = element_text(size = 14)) +
+   labs(
+    x = "Year", 
+    y = "Average temperature Cº", 
+    title = "Average Temperature in July - Tale of two Cities? or the same story..",
+    caption = "Data from: CDS - ERA5 monthly averaged data on single levels from 1959 to present[1959-2022]"
+  )
+
+story_of_two_cities_july_plot = story_of_two_cities_july_base_plot +
+  geom_point() +
+  geom_line(stat = "identity") +
+  geom_smooth(method = "lm", se = FALSE)   +
+  geom_label(data = labels_dat, alpha = 0.75, inherit.aes = FALSE, aes(x, y, label = city))
+
+story_of_two_cities_july_plot
+
+
+
+
+#
+cities_in_study = c("Sevilla", "Burgos")
+year_in_middle = median(climatology_cities_dat$year)
+
+# Prepare Name of columns (for tooltips)
+climatology_cities_ext_dat <- climatology_cities_dat |>
+  mutate(City = city, Year = year, "Temp Avgr." = t2m_c )
+
+labels_dat <- cities_in_study |> map(function(city_name) {
+    climatology_cities_ext_dat |> 
+    filter(city == city_name, year == year_in_middle, month == month_in_study) |>
+    pull(t2m_c)
+  }) |> 
+  unlist() |>
+  (\(y_values) {
+    print(y_values)
+   tibble( city = cities_in_study, x = year_in_middle, y = y_values)
+})()
+
+
+story_of_two_cities_july_base_plot <- climatology_cities_ext_dat |>
+  filter(city %in% cities_in_study, month == 7) |>
+  ggplot(aes(x = Year, y = `Temp Avgr.`, group = City)) + 
+  theme(plot.title = element_text(size = 14)) +
+   labs(
+    x = "Year", 
+    y = "Average temperature Cº", 
+    title = "Average Temperature in July - Tale of two Cities? or the same story..",
+    caption = "Data from: CDS - ERA5 monthly averaged data on single levels from 1959 to present[1959-2022]"
+  )
+
+story_of_two_cities_july_plot = story_of_two_cities_july_base_plot +
+  geom_point() +
+  geom_line(stat = "identity") +
+  geom_smooth(method = "lm", se = FALSE)   +
+  geom_label(data = labels_dat, alpha = 0.75, inherit.aes = FALSE, aes(x, y, label = city))
+
+story_of_two_cities_july_plot
+
+# Save to svg
+svg_file_path <- path(graphs_svg_sub_dir_path, "/story_of_two_cities_july_plot", ext = "svg")
+svglite(svg_file_path)
+story_of_two_cities_july_plot
+invisible(
+      dev.off()
+)
+
+graphs_path_files <- c(graphs_path_files, svg_file_path)
+
+# Same graph interactive Plotly
+story_of_two_cities_july_plotly <- ggplotly(story_of_two_cities_july_plot) |> 
+  add_annotations(
+    x = labels_dat$x,
+    y = labels_dat$y,
+    text = labels_dat$city,
+    xref = "x",
+    yref = "y",
+    showarrow = TRUE,
+    arrowhead = 1,
+    arrowsize = 0.5,
+    arrowside = "none",
+    ax = 20,
+    ay = -40,
+    bgcolor="white",
+    opacity=0.8
+  )
+
+plotly_file_path <- path(graphs_svg_sub_dir_path, "/story_of_two_cities_july_plot", ext = "html")
+htmlwidgets::saveWidget(
+  story_of_two_cities_july_plotly, 
+  plotly_file_path
+)
+
+story_of_two_cities_july_plotly
+
+graphs_path_files <- c(graphs_path_files, plotly_file_path)
+
+basename(plotly_file_path)
+
+#########################################
+#
+# Generate small html with links
+#
+#########################################
+
+
+html_graph_links <- graphs_path_files |> map(function(file_path) {
+  str_interp('<p><a href="${path_join(tail(path_split(file_path)[[1]], -2))}"> A graph</a></p>\n\n')
+  }) |> unlist() |> paste(collapse='\n')
+
+
+html_page = paste(
+  '
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Graphs</title>
+  </head>
+  <body>',
+  html_graph_links,
+'  </body>
+' , 
+  sep = "\n"
+)
+
+write_file(html_page, path(graph_out_dir, "/index", ext = "html"))
+
+
+```
+
+
+
 
 
 ## Plotting Data
@@ -568,16 +776,17 @@ story_of_two_cities_july_plotly
 
 graphs_path_files <- c(graphs_path_files, plotly_file_path)
 
+basename(plotly_file_path)
 
 #########################################
 #
-# Genneate small html with links
+# Generate small html with links
 #
 #########################################
 
 
 html_graph_links <- graphs_path_files |> map(function(file_path) {
-  str_interp('<a href="${path(graph_main_dir, path_file(file_path))}"> A graph</a>')
+  str_interp('<p><a href="${path_join(tail(path_split(file_path)[[1]], -2))}"> A graph</a></p>\n\n')
   }) |> unlist() |> paste(collapse='\n')
 
 
