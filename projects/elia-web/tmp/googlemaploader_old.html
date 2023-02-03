@@ -1,0 +1,176 @@
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+></script>
+
+<style>
+  #sf-marker {
+    background-image: url('https://uploads-ssl.webflow.com/6383a44a3096111ea3010988/63a500e56c31f241da19451c_house-icon-primary-color.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup-content {
+    position: relative;
+    background-color: transparent;
+    border-radius: 0px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    padding: 0px;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  let sf_filtered_elements = [];
+
+  let sf_g_allMarkers = [];
+
+  let debugElement;
+
+  function initMap() {
+  // Nothing is done later on
+
+
+  const uluru = { lat: -25.363, lng: 131.044 };
+  const map = new google.maps.Map(document.getElementById("sf-map"), {
+    zoom: 4,
+    center: uluru,
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    window.fsAttributes = window.fsAttributes || [];
+
+    window.fsAttributes.push([
+      'cmsfilter',
+      (filterInstances) => {
+        console.log('cmsfilter Successfully loaded!');
+
+        // The callback passes a `filterInstances` array with all the `CMSFilters` instances on the page.
+        const [filterInstance] = filterInstances;
+
+        console.log('filterInstances', filterInstances);
+
+        let updateFilterElements = sf_debounce(function (filteredEle) {
+          console.log('It works!', filteredEle);
+
+          sf_filtered_elements = filteredEle;
+
+          // Remove all markers
+          sf_g_allMarkers.forEach((ele) => {
+            ele.remove();
+          });
+          sf_g_allMarkers = [];
+
+          // Add markers for each filtered premise
+          sf_filtered_elements.forEach((ele) => {
+            let premiseDataEle = $(ele.element).find('[sf-slug]');
+
+            let premisePopupEle = $(ele.element).find(
+              '[sf-p-element-type="sf-p-popup_premise"]'
+            )[0];
+
+            console.log('slug', premiseDataEle.attr('sf-slug'));
+
+            debugElement = premisePopupEle;
+            console.log('premisePopupEle', premisePopupEle);
+
+            let [latitude, longitude] = [
+              parseFloat(premiseDataEle.attr('sf-latitude')),
+              parseFloat(premiseDataEle.attr('sf-longitude')),
+            ];
+
+            console.log('latitude', latitude);
+            console.log('longitude', longitude);
+
+            if (!isNaN(latitude) && !isNaN(latitude)) {
+              // Mrker
+              const markerHtml = document.createElement('div');
+              markerHtml.id = 'sf-marker';
+
+              const popup = new mapboxgl.Popup({
+                offset: 25,
+                closeButton: false,
+                maxWidth: 'auto',
+              }).setHTML(premisePopupEle.outerHTML);
+
+              // Marker with popup
+              const marker = new mapboxgl.Marker(markerHtml)
+                .setLngLat([parseFloat(longitude), parseFloat(latitude)])
+                .setPopup(popup)
+                .addTo(map);
+
+              // Add marker to global list
+              sf_g_allMarkers.push(marker);
+            }
+          });
+        });
+
+        // The `renderitems` event runs whenever the list renders items after filtering.
+        filterInstance.listInstance.on('renderitems', (renderedItems) => {
+          console.log(renderedItems);
+
+          let listInstances = filterInstances[0].listInstance.validItems;
+
+          updateFilterElements(listInstances);
+        });
+      },
+    ]);
+
+    // Adding map
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiY3VldmFzaHNwIiwiYSI6ImNsYThleHJzcjAyZzIzd2x2eXY2NXUxdWUifQ.AtOQ5Mz95it4SqNIyLh_8Q';
+    const monument = [-3.699525, 40.409587];
+
+    const map = new mapboxgl.Map({
+      container: 'sf-map',
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/light-v11',
+      center: monument,
+      zoom: 15,
+    });
+
+    /*
+  const map = new mapboxgl.Map({
+    container: 'sf-map',
+    style: {
+      version: 8,
+      sources: {
+        osm: {
+          type: 'raster',
+          tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+          tileSize: 256,
+          attribution:
+            'Map tiles by <a target="_top" rel="noopener" href="https://tile.openstreetmap.org/">OpenStreetMap tile servers</a>, under the <a target="_top" rel="noopener" href="https://operations.osmfoundation.org/policies/tiles/">tile usage policy</a>. Data by <a target="_top" rel="noopener" href="http://openstreetmap.org">OpenStreetMap</a>',
+        },
+      },
+      layers: [
+        {
+          id: 'osm',
+          type: 'raster',
+          source: 'osm',
+        },
+      ],
+      center: monument,
+      zoom: 15,
+    },
+  });
+
+  */
+
+    console.log('MAP ADDED!! BEWARE!!');
+
+    // Resise when click on tab parent
+    $('#sf-tab-map').click(function () {
+      sf_debounce(() => map.resize(), 250)();
+      console.log('Map resizing');
+    });
+
+    // Adding resizer for the map
+    // const resizer = new ResizeObserver(debounce(() => map.resize()));
+    // resizer.observe(mapWrapper.current);
+  });
+</script>

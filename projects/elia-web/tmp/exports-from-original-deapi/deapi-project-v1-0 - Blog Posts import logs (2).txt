@@ -1,0 +1,16 @@
+Item Name,Error
+El mercado Puerta de Toledo será un campus de la Carlos III,Remote image failed to import: Invalid file url
+50 Aniversario del Mercado de la Cebada,Remote image failed to import: Invalid file url
+Certificación Energética de Edificios Existentes,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+INMOCIÓNATE 2014!,Remote image failed to import: Unsupported file type: text/html
+La noche más esperada... Halloween,Remote image failed to import: ETIMEDOUT
+INSPECCIÓN DE EFICIENCIA ENERGÉTICA EN MADRID,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+EL EXTRANJERO COMPRA CASI 1/6 DE LAS VIVIENDAS EN ESPAÑA,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+MULTAS POR LOS CERTIFICADOS DE EFICIENCIA ENERGETICA,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+PREPARANDO LAS MÁSCARAS...,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+GOOGLE NOTICIAS EN ESPAÑA,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+¡¡ FELICES FIESTAS !!,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+Feliz Navidad 2016. Próspero año nuevo 2017,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+Todos tenemos una Historia y la nuestra... está en La Latina,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+Lucha contra el IBI y la plusvalía municipal,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8
+¡Nos vamos de vacaciones!,Remote image failed to import: Unsupported file type: text/html; charset=UTF-8

@@ -67,3 +67,26 @@ Summary:
 * Private ones:
   * <https://openweathermap.org/>
   * Find API's -> <https://nordicapis.com/>
+
+## 2022-12-01
+
+* Thinking about making a map with some climate info. This could be a cool background for the map.
+
+````{r}
+tmap_mode("view")
+tm_basemap("Stamen.Watercolor") +
+tm_shape(metro) + tm_bubbles(size = "pop2020", col = "red") +
+tm_tiles("Stamen.TonerLabels")
+````
+
+* Finding a good base of Spain's sf provinces units for maps.
+* 
+
+
+## 2022-12-05
+
+* En el gráfico de mapa poner un solo color con las capitales que hayan sido mas calientes en octubre
+
+* Gráfico de Santander octubre,
+  * reducir rango de temperaturas
+  * Ponerlo como media movil.

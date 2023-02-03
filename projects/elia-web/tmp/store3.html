@@ -1,0 +1,121 @@
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+  rel="stylesheet"
+/>
+
+<style>
+  #sf-marker {
+    background-image: url('https://uploads-ssl.webflow.com/6383a44a3096111ea3010988/63a500e56c31f241da19451c_house-icon-primary-color.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup-content {
+    position: relative;
+    opacity: 1;
+    border-radius: 0px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+    padding: 0px;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  // Utility Functions
+
+  function sf_debounce(func, timeout = 400) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, timeout);
+    };
+  }
+</script>
+
+<script>
+  let sf_g_allMarkers = [];
+
+  let debugElement;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    let updateElements = sf_debounce(function (elements) {
+      console.log('It works!', elements);
+
+      sf_filtered_elements = elements;
+
+      // Remove all markers
+      sf_g_allMarkers.forEach((ele) => {
+        ele.remove();
+      });
+      sf_g_allMarkers = [];
+
+      // Add markers for each filtered premise
+      sf_filtered_elements.forEach((ele) => {
+        let premiseDataEle = $(ele.element).find('[sf-slug]');
+
+        console.log('slug', premiseDataEle.attr('sf-slug'));
+
+        let [latitude, longitude] = [
+          parseFloat(premiseDataEle.attr('sf-latitude')),
+          parseFloat(premiseDataEle.attr('sf-longitude')),
+        ];
+
+        console.log('latitude', latitude);
+        console.log('longitude', longitude);
+
+        if (!isNaN(latitude) && !isNaN(latitude)) {
+          // Mrker
+          const markerHtml = document.createElement('div');
+          markerHtml.id = 'sf-marker';
+
+          // Marker
+          const marker = new mapboxgl.Marker(markerHtml)
+            .setLngLat([parseFloat(longitude), parseFloat(latitude)])
+            .addTo(map);
+
+          // Add marker to global list
+          sf_g_allMarkers.push(marker);
+        }
+      });
+    });
+
+    ///////////////////////////
+    //
+    // Adding map
+    //
+    ///////////////////////////
+    mapboxgl.accessToken =
+      'pk.eyJ1IjoiY3VldmFzaHNwIiwiYSI6ImNsYWEyeWJqazA0ZnAzdXFnZzEycmN6Y2gifQ.QIhOxWvVF62u65QYXUMqMw';
+    const monument = [-3.699525, 40.409587];
+
+    const map = new mapboxgl.Map({
+      container: 'sf-map',
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/light-v11',
+      center: monument,
+      zoom: 15,
+    });
+
+    console.log('MAP ADDED!! BEWARE!! - Premise Item');
+
+    // Resize when click on tab parent
+    $('#sf-tab-map').click(function () {
+      sf_debounce(() => map.resize(), 250)();
+      console.log('Map resizing');
+    });
+
+    ///////////////////////////
+    //
+    // Adding Elements
+    //
+    ///////////////////////////
+    let mainEle = [$('#sf-p_premise_id')];
+    updateElements(mainEle);
+  });
+</script>
