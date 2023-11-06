@@ -1,0 +1,94 @@
+<div style="padding: 56.25% 0 0 0; position: relative">
+  <iframe
+    src="https://player.vimeo.com/video/241528317?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+    title="Edificios denoche - shutterstock_v656680_30f_all_devs_latest"
+  ></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<iframe
+  src=" https://player.vimeo.com/ video/81400335?autoplay=1&muted=1 "
+  width="640"
+  height="360"
+  frameborder="“0”"
+  allow="fullscreen"
+  allow="autoplay"
+></iframe>
+
+<iframe
+  src="https://player.vimeo.com/video/76979871?controls=0"
+  width="640"
+  height="360"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+></iframe>
+
+<iframe
+  src="https://player.vimeo.com/video/241528317?background=1"
+  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+  title="Edificios denoche - shutterstock_v656680_30f_all_devs_latest"
+  frameborder="0"
+  allow="autoplay; fullscreen"
+  allowfullscreen
+></iframe>
+
+<script>
+  // Check if the document['accordion-one_ex-01_comp'] variable exists. If not, initialize it to false.
+  if (typeof document['accordion-one_ex-01_comp'] === 'undefined') {
+    document['accordion-one_ex-01_comp'] = false;
+  }
+
+  if (!document['accordion-one_ex-01_comp']) {
+    // Set the document variable to true at the end of the function
+    document['accordion-one_ex-01_comp'] = true;
+    console.log('Loading Lib: accordion-one_ex-01_comp...');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Only run the following code if document['accordion-one_ex-01_comp'] is false
+
+      $('.accordion-one_comp[force-single-item-opened="yes"] .role-trigger').on(
+        'click',
+        function () {
+          // Identify the closest parent with class'
+          const parent = $(this).closest('.accordion-one_item');
+          const rootComp = $(this).closest('.accordion-one_comp');
+
+          console.log('A child was clicked!', $(parent).text());
+
+          if ($(parent).hasClass('sgfct--open')) {
+            // If is open do nothing
+            console.log('Its open -> will be closed', $(parent).text());
+
+            // Wait for 1 second (1000 milliseconds) and then add a class to the parent
+            setTimeout(function () {
+              $(parent).removeClass('sgfct--open');
+            }, 50);
+          } else {
+            // It is closed, as it will be opened then close the ones that are opened.
+            console.log(
+              'Its closed -> it will be open -> close childs',
+              rootComp.find('.sgfct--open .role-trigger').text()
+            );
+
+            // For that parent, simulate clicks on all its children with class '.w--open'
+            rootComp.find('.sgfct--open .role-trigger').each(function () {
+              $(this).click();
+            });
+
+            // Wait for 1 second (1000 milliseconds) and then add a class to the parent
+            setTimeout(function () {
+              $(parent).addClass('sgfct--open'); // 'new-class' is the class you want to add
+            }, 50);
+          }
+        }
+      );
+
+      // Set the document variable to true at the end of the function
+      document['accordion-one_ex-01_comp'] = true;
+    });
+  }
+</script>

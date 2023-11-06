@@ -1,0 +1,1889 @@
+Received: from DBAPR01MB6741.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:189::8) by AS1PR01MB9156.eurprd01.prod.exchangelabs.com with
+ HTTPS; Mon, 2 Oct 2023 07:20:42 +0000
+Received: from PR1PR01MB5002.eurprd01.prod.exchangelabs.com
+ (2603:10a6:102:7::16) by DBAPR01MB6741.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:189::8) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6838.28; Mon, 2 Oct
+ 2023 07:20:40 +0000
+Received: from PR1PR01MB5002.eurprd01.prod.exchangelabs.com
+ ([fe80::5333:a60c:f4d9:b9e5]) by PR1PR01MB5002.eurprd01.prod.exchangelabs.com
+ ([fe80::5333:a60c:f4d9:b9e5%7]) with mapi id 15.20.6838.016; Mon, 2 Oct 2023
+ 07:20:38 +0000
+From: David Rodriguez Abad <david@singularfact.com>
+To: =?Windows-1252?Q?Nerea_L=F3pez?= <nerea@singularfact.com>, Rebeca de Jorge
+	<rebeca@singularfact.com>, Hector Cuevas <hector@singularfact.com>
+CC: =?Windows-1252?Q?Josu=E9_Bernab=E9?= <josue@singularfact.com>
+Subject: Re: Pricelist Web
+Thread-Topic: Pricelist Web
+Thread-Index: AQHZ8sPIXzqziZtKHE++ibJ3k7TwRLAxt7JhgARipD8=
+Date: Mon, 2 Oct 2023 07:20:38 +0000
+Message-ID:
+	<PR1PR01MB5002715ED758954FB12ABBB6C2C5A@PR1PR01MB5002.eurprd01.prod.exchangelabs.com>
+References:
+	<PR1PR01MB500217F365F29B604397B156C2C0A@PR1PR01MB5002.eurprd01.prod.exchangelabs.com>
+ <AS1PR01MB10079541CE417EFA5F48E3BA4C1C0A@AS1PR01MB10079.eurprd01.prod.exchangelabs.com>
+In-Reply-To:
+	<AS1PR01MB10079541CE417EFA5F48E3BA4C1C0A@AS1PR01MB10079.eurprd01.prod.exchangelabs.com>
+Accept-Language: en-GB, es-ES, en-US
+Content-Language: es-ES
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource:
+	PR1PR01MB5002.eurprd01.prod.exchangelabs.com
+X-MS-Has-Attach: yes
+X-MS-Exchange-Organization-Network-Message-Id:
+	1c53bb3c-a0fd-47e4-430f-08dbc31813f2
+X-MS-Exchange-Organization-SCL: 1
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(425001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	/aWlgFxzjLA+vdMspxD/rNC758QLS7navrt8Dd1onHu6ETyvcvAQU41CvwxfQIVgcZflAT/T09gXFriVSEjHhO9+Arg+MYRXRjNHfFWN2CIj76seXVtyFWdD1PlDodTk6NJev6kVa4DdEtVCHUV2j7wZ5ik7ZuYinPV/oStvUArBQdjzlbGbIOK3TlG/Toa7yuJuQt5lxs1RVnmSM/mthG2L5FugR6ReSamp+oHJeOELxHEL/sbTsbkoIIX182cRlHAyym2OUjja+3Eq04u1/5AszQw43iC9D38bDWZ600+nKOw3nFpHNZuJBIjdG9TQaI49RJ8WXBxwCGKN1AqWsmUD+4m5nEme7jWlU28uPXoWYHVv7MICAyOCEqaZQf9hyKyUZWAbeKlNDygWyKuN0v99ZHWhk1OPqkd9gieFpU3lTovlwaaEGNNaX3HZs6lRdU6su8/pEHio8k1ujg4tsC1mq74xBDQso0I+732ENeWD6YGYGiv50rJRSTBd02K2tfJiT7vZq1mV5qazSiuKy0zy1uPClh/yGABCxtd3iSLxDG1NBQmpgZuONc/DabqnwUDV9rl5ezobc0rOpz1qXkdpzQiYAt4SrlVUZ7SK2TZ3BKKP0/pjytdXO9S1QeKSforcrGTNavJm2TiQfVurrF0jeZq6Nf0FWwRLl4RCFzyxW3PQV0EgQw3ASXHPuFqJG6ws3QaR/zle6i2kD01liNUYXlZnPS9tZTVkq1o08w0eF9v6xjo0JqYFe/SWqTR+
+Content-Type: multipart/related;
+	boundary="_004_PR1PR01MB5002715ED758954FB12ABBB6C2C5APR1PR01MB5002eurp_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+
+--_004_PR1PR01MB5002715ED758954FB12ABBB6C2C5APR1PR01MB5002eurp_
+Content-Type: multipart/alternative;
+	boundary="_000_PR1PR01MB5002715ED758954FB12ABBB6C2C5APR1PR01MB5002eurp_"
+
+--_000_PR1PR01MB5002715ED758954FB12ABBB6C2C5APR1PR01MB5002eurp_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Hola,
+
+Esta es la nueva pricelist para web que acordamos H=E9ctor y yo, a ver qu=
+=E9 os parece. Hemos eliminado una categor=EDa y cambiado bastantes cosas p=
+ara que tenga m=E1s sentido. Lo comentamos luego.
+
+
+
+Producto
+
+Soluci=F3n
+
+Coste mensual
+
+Dise=F1o y desarrollo
+
+Web  b=E1sica
+
+=95 Dise=F1o y desarrollo sobre plantilla (+2.000 modelos)
+
+=95 Hasta Home + 4 p=E1ginas
+
+=95 Autogestionable
+
+=95 Core Wordpress actualizado
+
+=95 Backup semanal
+
+8=80
+
+Dominio: 15=80/a=F1o (gratis primer a=F1o)
+
+Hosting: 72=80/a=F1o
+
+2.000
+
+Web Pro
+
+=95 Dise=F1o libre a medida
+
+=95 C=F3digo exportable html puro
+
+=95 Contenido autogestionable WYSIWYG
+
+=95 CDN ultrar=E1pido
+
+=95 Backup diario
+
+  *   30 minutos al mes de cambios y soporte
+
+20=80
+
+Dominio: 15=80/a=F1o (gratis a=F1o 1)
+
+Hosting: Netlify
+
+2.500-4.000
+
+Web Pro CMS
+
+=95 Dise=F1o libre a medida
+
+=95 Contenido y estructura autogestionable por CMS
+
+=95 CDN ultrar=E1pido
+
+=95 Backup diario
+
+  *   30 minutos al mes de cambios y soporte
+
+
+
+40=80
+
+Dominio: 15=80/a=F1o (gratis a=F1o 1)
+
+Hosting: 276=80/a=F1o
+
+4.500 =96 8.000
+
+
+
+Incluido en todos los planes
+
+  *   Hosting
+  *   Dominio
+  *   SEO b=E1sico
+  *   A=F1adimos tu Google Analytics
+  *   Formaci=F3n b=E1sica
+  *   Licencia Divi incluida
+  *   Cumplimiento GDPR incluido
+
+ Precios sin IVA sujetos a cambios por proveedor hostimg
+
+
+
+Extras a valorar
+
+
+
+Extra
+
+Precio
+
+Analytics avanzado
+
+Valorar
+
+Multiidioma
+
+verlo y valorar. Translatepress y wiglot y divi autotranslate
+
+Mapas interactivos
+
+Valorar. Solo en Pro
+
+=85..
+
+
+
+
+De: Nerea L=F3pez <nerea@singularfact.com>
+Fecha: viernes, 29 de septiembre de 2023, 14:17
+Para: David Rodriguez Abad <david@singularfact.com>, Rebeca de Jorge <rebec=
+a@singularfact.com>, Hector Cuevas <hector@singularfact.com>
+CC: Josu=E9 Bernab=E9 <josue@singularfact.com>
+Asunto: Re: Pricelist Web
+Hola, a mi lo que no me cuadra es lo que t=FA dices, me parece mucha la dif=
+erencia entre Web Aut=F3nomo y Web PYME=85.
+
+Nerea L=F3pez Garc=EDa
+Design Manager
++34 608272905
+
+[cid3491457355*image011.gif@01D7D499.07DD2FE0]
+
+
+De: David Rodriguez Abad <david@singularfact.com>
+Fecha: viernes, 29 de septiembre de 2023, 13:32
+Para: Nerea L=F3pez <nerea@singularfact.com>, Rebeca de Jorge <rebeca@singu=
+larfact.com>, Hector Cuevas <hector@singularfact.com>
+CC: Josu=E9 Bernab=E9 <josue@singularfact.com>
+Asunto: Pricelist Web
+Hola, aqu=ED un primer intento de poner orden a la oferta web. @Nerea L=F3p=
+ez<mailto:nerea@singularfact.com> y @Rebeca de Jorge<mailto:rebeca@singular=
+fact.com> Mirad a ver si algo no os cuadra o falta porque lo veremos H=E9ct=
+or y yo para tenerlo claro el lunes.
+Me flaquea el salto de Web Aut=F3nomo a Web PYME (doble de precio de manten=
+imiento sin ofrecer grandes =93mejoras=94). Creo que el condicionante va a =
+ser el c=F3digo a medida o directamente que no queramos ofrecer la opci=F3n=
+ Aut=F3nomo m=E1s que a los aut=F3nomos=85. Hay que pensarlo.
+Nota: Precio de Hostinger tiene descuento los 2 primeros a=F1os, he puesto =
+el precio SIN descuento
+
+Producto
+Soluci=F3n
+Mantenimiento (sin IVA)
+PVP (sin IVA)
+Landing
+
+  *   Dise=F1o en Figma
+  *   Desarrollo en Webflow est=E1tico (NO Autogestionable)
+40=80/a=F1o
+Hosting en Netlify
+Dominio opcional: 10=80/a=F1o
+1.800
+Web Aut=F3nomo
+
+  *   Dise=F1o y desarrollo sobre plantilla Hostinger<https://www.hostinger=
+.es/plantillas-web>
+  *   Hosting Hostinger
+  *   Dominio Hostinger
+  *   Hasta Home + 4 p=E1ginas
+  *   Autogestionable
+  *   Core Wordpress actualizado
+82=80/a=F1o
+Dominio: 10=80/a=F1o (gratis primer a=F1o)
+Hosting: 72=80/a=F1o
+2.000
+Web PYME
+
+  *   Dise=F1o Figma
+  *   Desarrollo Webflow
+  *   Permite c=F3digo a medida
+  *   Contenido autogestionable WYSIWYG
+
+
+
+178=80/a=F1o
+Dominio: 10=80/a=F1o (gratis a=F1o 1)
+Hosting: 168=80/a=F1o
+2.000-3.500
+Web CMS
+
+  *   Dise=F1o Figma
+  *   Desarrollo Webflow
+  *   Permite c=F3digo a medida
+  *   Contenido autogestionable WYSIWYG
+  *   CMS autogestionable
+
+286=80/a=F1o
+Dominio: 10=80/a=F1o (gratis a=F1o 1)
+Hosting: 276=80/a=F1o
+4.000 =96 8.000
+
+Incluido en todos los planes
+
+  *   Hosting
+  *   Dominio
+  *   SEO b=E1sico
+  *   Analytics b=E1sico
+  *   Formaci=F3n b=E1sica
+  *   2 versiones de dise=F1o (1 propuesta principal con 2 versiones)
+  *   2 rondas de cambios
+  *   1 hora de soporte en el primer a=F1o
+  *   Cumplimiento GDPR b=E1sico??
+
+Extras a valorar
+
+Extra
+Precio
+Analytics b=E1sico
+Incluido en todos los planes
+GDPR =96 cookie bit
+Gratis implantaci=F3n (coste servicio XX)
+Multiidioma
+Valorar
+Mapas interactivos
+Valorar
+=85..
+
+
+
+Este mensaje y sus archivos adjuntos pueden contener informaci=F3n confiden=
+cial, no estando permitida su comunicaci=F3n, reproducci=F3n o distribuci=
+=F3n. Si usted no es el destinatario final, elim=EDnelo e inf=F3rmenos por =
+esta v=EDa. De conformidad con lo dispuesto en las normativas vigentes en p=
+rotecci=F3n de datos, GDPR y LOPDGDD, le informamos que los datos personale=
+s ser=E1n tratados bajo la responsabilidad de SINGULAR FACT SL por un inter=
+=E9s leg=EDtimo y para el env=EDo de comunicaciones sobre nuestros producto=
+s y servicios y se conservar=E1n mientras ninguna de las partes se oponga a=
+ ello y no ser=E1n cedidos a terceros, salvo obligaci=F3n legal. Puede ejer=
+cer los derechos de acceso, rectificaci=F3n, portabilidad, supresi=F3n, lim=
+itaci=F3n y oposici=F3n enviando un mensaje a hola@singularfact.com<mailto:=
+hola@singularfact.com> y si considera que el tratamiento no se ajusta a la =
+normativa vigente, podr=E1 presentar una reclamaci=F3n ante la autoridad de=
+ control en www.aepd.es<http://www.aepd.es>.
+
+--_000_PR1PR01MB5002715ED758954FB12ABBB6C2C5APR1PR01MB5002eurp_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http:=
+//www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Helvetica;
+	panose-1:0 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Futura Medium";
+	panose-1:2 11 6 2 2 2 4 2 3 3;}
+@font-face
+	{font-family:UICTFontTextStyleEmphasizedBody;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:UICTFontTextStyleBody;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#0563C1;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EstiloCorreo21
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+p.p2, li.p2, div.p2
+	{mso-style-name:p2;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.s2
+	{mso-style-name:s2;}
+p.p3, li.p3, div.p3
+	{mso-style-name:p3;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.s4
+	{mso-style-name:s4;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.apple-tab-span
+	{mso-style-name:apple-tab-span;}
+p.p4, li.p4, div.p4
+	{mso-style-name:p4;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+p.li2, li.li2, div.li2
+	{mso-style-name:li2;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:70.85pt 3.0cm 70.85pt 3.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:770781646;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-395801054 67764225 67764227 67764229 67764225 67764=
+227 67764229 67764225 67764227 67764229;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1094012093;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1440258858 67764225 67764227 67764229 67764225 67764=
+227 67764229 67764225 67764227 67764229;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:90.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:126.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:162.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:198.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:234.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:270.0pt;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:306.0pt;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1114791277;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-525699856 67764225 67764227 67764229 67764225 67764=
+227 67764229 67764225 67764227 67764229;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:1142115487;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1954087682 67764225 67764227 67764229 67764225 6776=
+4227 67764229 67764225 67764227 67764229;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:2069570899;
+	mso-list-type:hybrid;
+	mso-list-template-ids:809153026 67764225 67764227 67764229 67764225 677642=
+27 67764229 67764225 67764227 67764229;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l5
+	{mso-list-id:2099324949;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1367050814 1044563628 67764227 67764229 67764225 67=
+764227 67764229 67764225 67764227 67764229;}
+@list l5:level1
+	{mso-level-start-at:8;
+	mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;}
+@list l5:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l5:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l5:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l5:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l5:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l5:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l6
+	{mso-list-id:2104178763;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-861886256 67764225 67764227 67764229 67764225 67764=
+227 67764229 67764225 67764227 67764229;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:"Courier New";}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext=3D"edit">
+<o:idmap v:ext=3D"edit" data=3D"1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang=3D"ES" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:bre=
+ak-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">Hola,
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">Esta es la nueva pricelist para web que acordamos H=E9ctor y yo, a =
+ver qu=E9 os parece. Hemos eliminado una categor=EDa y cambiado bastantes c=
+osas para que tenga m=E1s sentido. Lo comentamos
+ luego.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt"><o:p>&nbsp;</o:p></=
+span></p>
+<p class=3D"MsoNormal" style=3D"background:white"><span style=3D"font-size:=
+11.0pt;color:#212121"><o:p>&nbsp;</o:p></span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid #AAAAA=
+A 1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Producto</span></b></=
+span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border:solid #AAAAA=
+A 1.0pt;border-left:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Soluci=F3n</span></b>=
+</span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border:solid #AAAAA=
+A 1.0pt;border-left:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Coste mensual</span><=
+/b></span><span class=3D"s2"><b><span style=3D"font-family:&quot;UICTFontTe=
+xtStyleEmphasizedBody&quot;,serif"><o:p></o:p></span></b></span></p>
+</td>
+<td width=3D"106" valign=3D"top" style=3D"width:79.35pt;border:solid #AAAAA=
+A 1.0pt;border-left:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s2"><b><span style=3D"f=
+ont-size:13.0pt;font-family:&quot;UICTFontTextStyleEmphasizedBody&quot;,ser=
+if;color:black">Dise=F1o y desarrollo</span></b></span><span class=3D"s2"><=
+b><span style=3D"font-family:&quot;UICTFontTextStyleEmphasizedBody&quot;,se=
+rif"><o:p></o:p></span></b></span></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid #AAAAA=
+A 1.0pt;border-top:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto;min-height:13.8px">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Web</span></span><span class=3D"ap=
+ple-converted-space"><span style=3D"font-size:13.0pt;font-family:&quot;UICT=
+FontTextStyleBody&quot;,serif;color:black">&nbsp;&nbsp;</span></span><span =
+class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFontText=
+StyleBody&quot;,serif;color:black">b=E1sica</span></span><span style=3D"fon=
+t-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">=95</span>
+</span><span class=3D"s4"><b><span style=3D"font-size:13.0pt;font-family:&q=
+uot;UICTFontTextStyleBody&quot;,serif;color:black">Dise=F1o y desarrollo so=
+bre plantilla
+</span></b></span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-f=
+amily:&quot;UICTFontTextStyleBody&quot;,serif;color:black">(+2.000 modelos)=
+</span></span><span class=3D"s4"><span style=3D"font-family:&quot;UICTFontT=
+extStyleBody&quot;,serif;color:black"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Hasta Home + 4 p=E1ginas</s=
+pan></span><span class=3D"s4"><span style=3D"font-family:&quot;UICTFontText=
+StyleBody&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Autogestionable</span></spa=
+n><span class=3D"s4"><span style=3D"font-family:&quot;UICTFontTextStyleBody=
+&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Core Wordpress actualizado<=
+/span></span><span class=3D"s4"><span style=3D"font-family:&quot;UICTFontTe=
+xtStyleBody&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Backup semanal<o:p></o:p></=
+span></span></p>
+</td>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s2"><b><span style=3D"f=
+ont-size:14.0pt;font-family:&quot;UICTFontTextStyleEmphasizedBody&quot;,ser=
+if">8<span style=3D"color:black">=80</span></span></b></span><span style=3D=
+"font-size:14.0pt;color:black"><o:p></o:p></span></p>
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:#BFBFBF;mso-style-textfill-fill-color:#BF=
+BFBF;mso-style-textfill-fill-alpha:100.0%">Dominio: 15=80/a=F1o (gratis pri=
+mer a=F1o)</span></span><span style=3D"font-size:13.0pt;color:#BFBFBF;mso-s=
+tyle-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:100.0%"><o:p=
+></o:p></span></p>
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:#BFBFBF;mso-style-textfill-fill-color:#BF=
+BFBF;mso-style-textfill-fill-alpha:100.0%">Hosting: 72=80/a=F1o</span></spa=
+n><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"106" valign=3D"top" style=3D"width:79.35pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">2.000</span></b></spa=
+n><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid #AAAAA=
+A 1.0pt;border-top:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Web Pro</span></span><span style=
+=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">=95</span>
+</span><span class=3D"s4"><b><span style=3D"font-size:13.0pt;font-family:&q=
+uot;UICTFontTextStyleBody&quot;,serif;color:black">Dise=F1o libre a medida<=
+/span></b></span><span class=3D"s4"><span style=3D"font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">C=F3digo exportable html pu=
+ro</span></span><span class=3D"s4"><span style=3D"font-family:&quot;UICTFon=
+tTextStyleBody&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Contenido autogestionable W=
+YSIWYG</span></span><span class=3D"s4"><span style=3D"font-family:&quot;UIC=
+TFontTextStyleBody&quot;,serif"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">CDN ultrar=E1pido</span></s=
+pan><span class=3D"s4"><span style=3D"font-family:&quot;UICTFontTextStyleBo=
+dy&quot;,serif;color:black"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span>
+</span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot=
+;UICTFontTextStyleBody&quot;,serif;color:black">Backup diario<o:p></o:p></s=
+pan></span></p>
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"li2" style=3D"margin-top:0cm;margin-bottom:0cm;margin-left:-18=
+.0pt;mso-list:l1 level1 lfo6;background:white">
+<span class=3D"s4"><span style=3D"font-family:&quot;UICTFontTextStyleBody&q=
+uot;,serif;color:black">3</span></span><span class=3D"s4"><span style=3D"fo=
+nt-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:bl=
+ack">0 minutos al mes de cambios y soporte</span></span><span class=3D"s4">=
+<span style=3D"font-family:&quot;UICTFontTextStyleBody&quot;,serif"><o:p></=
+o:p></span></span></li></ul>
+</td>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s2"><b><span style=3D"f=
+ont-size:14.0pt;font-family:&quot;UICTFontTextStyleEmphasizedBody&quot;,ser=
+if">20=80<o:p></o:p></span></b></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#BFB=
+FBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:100=
+.0%">Dominio: 15=80/a=F1o (gratis a=F1o 1)</span></span><span class=3D"s4">=
+<span style=3D"font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#B=
+FBFBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:1=
+00.0%"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#BFB=
+FBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:100=
+.0%">Hosting: Netlify</span></span><span style=3D"font-size:13.0pt;color:bl=
+ack"><o:p></o:p></span></p>
+</td>
+<td width=3D"106" valign=3D"top" style=3D"width:79.35pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">2.500-4.000</span></b=
+></span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid #AAAAA=
+A 1.0pt;border-top:none;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Web Pro CMS</span></span><span sty=
+le=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">=95</span></span><span class=3D"ap=
+ple-tab-span"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFontTex=
+tStyleBody&quot;,serif;color:black">
+</span></span><span class=3D"s4"><b><span style=3D"font-size:13.0pt;font-fa=
+mily:&quot;UICTFontTextStyleBody&quot;,serif;color:black">Dise=F1o libre</s=
+pan></b></span><span class=3D"s4"><b><span style=3D"font-size:13.0pt;font-f=
+amily:&quot;UICTFontTextStyleBody&quot;,serif">
+</span></b></span><span class=3D"s4"><b><span style=3D"font-family:&quot;UI=
+CTFontTextStyleBody&quot;,serif">a medida</span></b></span><span class=3D"s=
+4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&=
+quot;,serif;color:black">
+<o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span></span><span class=3D"apple-tab-span"><span style=3D"font-size=
+:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:black">
+</span></span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-famil=
+y:&quot;UICTFontTextStyleBody&quot;,serif;color:black">Contenido
+</span></span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-famil=
+y:&quot;UICTFontTextStyleBody&quot;,serif">y estructura
+<span style=3D"color:black">autogestionable </span>por <span style=3D"color=
+:black">CMS
+</span></span></span><span style=3D"font-size:13.0pt;color:black"><o:p></o:=
+p></span></p>
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">=95</span></span><span class=3D"ap=
+ple-tab-span"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFontTex=
+tStyleBody&quot;,serif;color:black">
+</span></span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-famil=
+y:&quot;UICTFontTextStyleBody&quot;,serif;color:black">CDN</span></span><sp=
+an class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFontT=
+extStyleBody&quot;,serif"> ultrar=E1pido</span></span><span style=3D"font-s=
+ize:13.0pt"><o:p></o:p></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:blac=
+k">=95</span></span><span class=3D"apple-tab-span"><span style=3D"font-size=
+:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:black">
+</span></span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-famil=
+y:&quot;UICTFontTextStyleBody&quot;,serif;color:black">Backup diario<o:p></=
+o:p></span></span></p>
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"li2" style=3D"margin-top:0cm;margin-bottom:0cm;margin-left:-18=
+.0pt;mso-list:l1 level1 lfo6;background:white">
+<span class=3D"s4"><span style=3D"font-family:&quot;UICTFontTextStyleBody&q=
+uot;,serif;color:black">3</span></span><span class=3D"s4"><span style=3D"fo=
+nt-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:bl=
+ack">0 minutos al mes de cambios y soporte</span></span><span class=3D"s4">=
+<span style=3D"font-family:&quot;UICTFontTextStyleBody&quot;,serif"><o:p></=
+o:p></span></span></li></ul>
+<p class=3D"p2" style=3D"mso-margin-top-alt:0cm;margin-right:0cm;margin-bot=
+tom:0cm;margin-left:36.0pt">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black"><o:p>&nbsp;</o:p></span></span></p=
+>
+</td>
+<td width=3D"208" valign=3D"top" style=3D"width:155.9pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:14.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif">40=80<o:p></o:p></span></b></span=
+></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#BFB=
+FBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:100=
+.0%">Dominio: 15=80/a=F1o (gratis a=F1o 1)</span></span><span class=3D"s4">=
+<span style=3D"font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#B=
+FBFBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:1=
+00.0%"><o:p></o:p></span></span></p>
+<p class=3D"p2" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif;color:#BFB=
+FBF;mso-style-textfill-fill-color:#BFBFBF;mso-style-textfill-fill-alpha:100=
+.0%">Hosting: 276=80/a=F1o</span></span><span style=3D"font-size:13.0pt;col=
+or:black"><o:p></o:p></span></p>
+</td>
+<td width=3D"106" valign=3D"top" style=3D"width:79.35pt;border-top:none;bor=
+der-left:none;border-bottom:solid #AAAAAA 1.0pt;border-right:solid #AAAAAA =
+1.0pt;padding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">4.500 =96 8.000</span=
+></b></span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span>=
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"p4" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto;min-height: 22px">
+<span class=3D"apple-converted-space"><span style=3D"font-size:13.0pt;font-=
+family:&quot;UICTFontTextStyleBody&quot;,serif;color:black">&nbsp;</span></=
+span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+<p class=3D"p2" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Incluido en todos los=
+ planes</span></b></span><span style=3D"font-size:13.0pt;color:black"><o:p>=
+</o:p></span></p>
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"li2" style=3D"color:black;margin-top:0cm;margin-bottom:0cm;mar=
+gin-left:-18.0pt;mso-list:l1 level1 lfo6;background:white;font-size-adjust:=
+none;font-kerning:auto;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">Hosting</span></span><span style=3D"font-size:=
+13.0pt"><o:p></o:p></span></li><li class=3D"li2" style=3D"color:black;margi=
+n-top:0cm;margin-bottom:0cm;margin-left:-18.0pt;mso-list:l1 level1 lfo6;bac=
+kground:white;font-size-adjust:none;font-kerning:auto;font-optical-sizing:a=
+uto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">Dominio</span></span><span style=3D"font-size:=
+13.0pt"><o:p></o:p></span></li><li class=3D"li2" style=3D"color:black;margi=
+n-top:0cm;margin-bottom:0cm;margin-left:-18.0pt;mso-list:l1 level1 lfo6;bac=
+kground:white;font-size-adjust:none;font-kerning:auto;font-optical-sizing:a=
+uto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">SEO b=E1sico</span></span><span style=3D"font-=
+size:13.0pt"><o:p></o:p></span></li><li class=3D"li2" style=3D"color:black;=
+margin-top:0cm;margin-bottom:0cm;margin-left:-18.0pt;mso-list:l1 level1 lfo=
+6;background:white;font-size-adjust:none;font-kerning:auto;font-optical-siz=
+ing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">A=F1adimos tu Google Analytics</span></span><s=
+pan style=3D"font-size:13.0pt"><o:p></o:p></span></li><li class=3D"li2" sty=
+le=3D"color:black;margin-top:0cm;margin-bottom:0cm;margin-left:-18.0pt;mso-=
+list:l1 level1 lfo6;background:white;font-size-adjust:none;font-kerning:aut=
+o;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">Formaci=F3n b=E1sica
+</span></span><span style=3D"font-size:13.0pt"><o:p></o:p></span></li><li c=
+lass=3D"li2" style=3D"color:black;margin-top:0cm;margin-bottom:0cm;margin-l=
+eft:-18.0pt;mso-list:l1 level1 lfo6;background:white;font-size-adjust:none;=
+font-kerning:auto;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">Licencia Divi incluida</span></span><span styl=
+e=3D"font-size:13.0pt"><o:p></o:p></span></li><li class=3D"li2" style=3D"co=
+lor:black;margin-top:0cm;margin-bottom:0cm;margin-left:-18.0pt;mso-list:l1 =
+level1 lfo6;background:white;font-size-adjust:none;font-kerning:auto;font-o=
+ptical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif">Cumplimiento GDPR incluido</span></span><span =
+style=3D"font-size:13.0pt"><o:p></o:p></span></li></ul>
+<p class=3D"p2" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto">
+<span class=3D"apple-converted-space"><span style=3D"font-size:13.0pt;font-=
+family:&quot;UICTFontTextStyleBody&quot;,serif;color:black">&nbsp;</span></=
+span><span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;U=
+ICTFontTextStyleBody&quot;,serif;color:black">Precios sin IVA sujetos
+ a cambios por proveedor hostimg</span></span><span style=3D"font-size:13.0=
+pt;color:black"><o:p></o:p></span></p>
+<p class=3D"p4" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto;min-height: 22px">
+<span style=3D"font-size:13.0pt;color:black"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"p2" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Extras a valorar</spa=
+n></b></span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span=
+></p>
+<p class=3D"p4" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto;min-height: 22px">
+<span class=3D"apple-converted-space"><span style=3D"font-size:13.0pt;font-=
+family:&quot;UICTFontTextStyleBody&quot;,serif;color:black">&nbsp;</span></=
+span><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;padding:.75pt 3.75pt=
+ .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Extra</span></b></spa=
+n><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;border-left:none;pad=
+ding:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s2"><b><span style=3D"font-size:13.0pt;font-family:&quot;UIC=
+TFontTextStyleEmphasizedBody&quot;,serif;color:black">Precio</span></b></sp=
+an><span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;border-top:none;padd=
+ing:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Analytics avanzado</span></span><s=
+pan class=3D"s4"><span style=3D"font-family:&quot;UICTFontTextStyleBody&quo=
+t;,serif"><o:p></o:p></span></span></p>
+</td>
+<td valign=3D"top" style=3D"border-top:none;border-left:none;border-bottom:=
+solid #AAAAAA 1.0pt;border-right:solid #AAAAAA 1.0pt;padding:.75pt 3.75pt .=
+75pt 3.75pt">
+<p class=3D"p3" style=3D"margin:0cm"><span class=3D"s4"><span style=3D"font=
+-size:13.0pt;font-family:&quot;UICTFontTextStyleBody&quot;,serif">Valorar<o=
+:p></o:p></span></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;border-top:none;padd=
+ing:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto;min-height:13.8px">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Multiidioma</span></span><span sty=
+le=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td valign=3D"top" style=3D"border-top:none;border-left:none;border-bottom:=
+solid #AAAAAA 1.0pt;border-right:solid #AAAAAA 1.0pt;padding:.75pt 3.75pt .=
+75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">verlo y valorar. Translatepress y =
+wiglot y divi autotranslate</span></span><span style=3D"font-size:13.0pt;co=
+lor:black"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;border-top:none;padd=
+ing:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Mapas interactivos</span></span><s=
+pan style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td valign=3D"top" style=3D"border-top:none;border-left:none;border-bottom:=
+solid #AAAAAA 1.0pt;border-right:solid #AAAAAA 1.0pt;padding:.75pt 3.75pt .=
+75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">Valorar. Solo en Pro</span></span>=
+<span style=3D"font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"border:solid #AAAAAA 1.0pt;border-top:none;padd=
+ing:.75pt 3.75pt .75pt 3.75pt">
+<p class=3D"p2" style=3D"margin:0cm;font-size-adjust:none;font-kerning:auto=
+;font-optical-sizing:auto">
+<span class=3D"s4"><span style=3D"font-size:13.0pt;font-family:&quot;UICTFo=
+ntTextStyleBody&quot;,serif;color:black">=85..</span></span><span style=3D"=
+font-size:13.0pt;color:black"><o:p></o:p></span></p>
+</td>
+<td valign=3D"top" style=3D"border-top:none;border-left:none;border-bottom:=
+solid #AAAAAA 1.0pt;border-right:solid #AAAAAA 1.0pt;padding:.75pt 3.75pt .=
+75pt 3.75pt">
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"p4" style=3D"margin:0cm;background:white;font-size-adjust: none=
+;font-kerning: auto;font-optical-sizing: auto;min-height: 22px">
+<span style=3D"font-size:13.0pt;color:black"><o:p>&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal" style=3D"font-size-adjust: none;font-kerning: auto;f=
+ont-optical-sizing: auto">
+<span style=3D"font-size:11.0pt;mso-fareast-language:EN-US"><o:p>&nbsp;</o:=
+p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US"><o:p>&nbsp;</o:p></span></p>
+<div id=3D"mail-editor-reference-message-container">
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm =
+0cm 0cm">
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b><span style=3D"fon=
+t-size:12.0pt;color:black">De:
+</span></b><span style=3D"font-size:12.0pt;color:black">Nerea L=F3pez &lt;n=
+erea@singularfact.com&gt;<br>
+<b>Fecha: </b>viernes, 29 de septiembre de 2023, 14:17<br>
+<b>Para: </b>David Rodriguez Abad &lt;david@singularfact.com&gt;, Rebeca de=
+ Jorge &lt;rebeca@singularfact.com&gt;, Hector Cuevas &lt;hector@singularfa=
+ct.com&gt;<br>
+<b>CC: </b>Josu=E9 Bernab=E9 &lt;josue@singularfact.com&gt;<br>
+<b>Asunto: </b>Re: Pricelist Web<o:p></o:p></span></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">Hola, a mi lo que no me cuadra es lo que t=FA dices, me parece much=
+a la diferencia entre
+<span style=3D"mso-ligatures:standardcontextual">Web Aut=F3nomo y Web PYME=
+=85.</span></span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">&nbsp;</span><o:p></o:p></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;font-family:&quot=
+;Futura Medium&quot;,sans-serif;color:#02B6EA">Nerea L=F3pez Garc=EDa</span=
+></b><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-family:&quot;Futura Medium&quot;=
+,sans-serif;color:#55555A">Design Manager</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;font-family:&quot;Fut=
+ura Medium&quot;,sans-serif;color:#55555A">+34 608272905</span><o:p></o:p><=
+/p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;font-family:&quot;Fut=
+ura Medium&quot;,sans-serif;color:#55555A">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:10.5pt;color:black"><img=
+ width=3D"192" height=3D"79" style=3D"width:2.0in;height:.8229in" id=3D"Ima=
+gen_x0020_1" src=3D"cid:image001.gif@01D9F2DF.71C9F530" alt=3D"cid349145735=
+5*image011.gif@01D7D499.07DD2FE0"></span></b><o:p></o:p></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-fareast-language=
+:EN-US">&nbsp;</span><o:p></o:p></p>
+<div id=3D"mail-editor-reference-message-container">
+<div>
+<div style=3D"border:none;border-top:solid #B5C4DF 1.0pt;padding:3.0pt 0cm =
+0cm 0cm">
+<p class=3D"MsoNormal" style=3D"margin-bottom:12.0pt"><b><span style=3D"fon=
+t-size:12.0pt;color:black">De:
+</span></b><span style=3D"font-size:12.0pt;color:black">David Rodriguez Aba=
+d &lt;david@singularfact.com&gt;<br>
+<b>Fecha: </b>viernes, 29 de septiembre de 2023, 13:32<br>
+<b>Para: </b>Nerea L=F3pez &lt;nerea@singularfact.com&gt;, Rebeca de Jorge =
+&lt;rebeca@singularfact.com&gt;, Hector Cuevas &lt;hector@singularfact.com&=
+gt;<br>
+<b>CC: </b>Josu=E9 Bernab=E9 &lt;josue@singularfact.com&gt;<br>
+<b>Asunto: </b>Pricelist Web</span><o:p></o:p></p>
+</div>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Hola, aqu=ED un primer intento de =
+poner orden a la oferta web.
+<a id=3D"OWAAM66462AD44A91A84DB1E4319F5FE18473" href=3D"mailto:nerea@singul=
+arfact.com">
+<span style=3D"font-family:&quot;Calibri&quot;,sans-serif;text-decoration:n=
+one">@Nerea L=F3pez</span></a> y
+<a id=3D"OWAAMFF16456DCFC17549897EC3FACC366A49" href=3D"mailto:rebeca@singu=
+larfact.com">
+<span style=3D"font-family:&quot;Calibri&quot;,sans-serif;text-decoration:n=
+one">@Rebeca de Jorge</span></a> Mirad a ver si algo no os cuadra o falta p=
+orque lo veremos H=E9ctor y yo para tenerlo claro el lunes.</span><o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Me flaquea el salto de Web Aut=F3n=
+omo a Web PYME (doble de precio de mantenimiento sin ofrecer grandes =93mej=
+oras=94). Creo que el condicionante va a ser
+ el c=F3digo a medida o directamente que no queramos ofrecer la opci=F3n Au=
+t=F3nomo m=E1s que a los aut=F3nomos=85. Hay que pensarlo.</span><o:p></o:p=
+></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Nota: Precio de Hostinger tiene de=
+scuento los 2 primeros a=F1os, he puesto el precio SIN descuento</span><o:p=
+></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"869" style=3D"width:651.65pt;border-collapse:collapse">
+<tbody>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid window=
+text 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Producto</span></b><o:p></o:p><=
+/p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border:solid window=
+text 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Soluci=F3n</span></b><o:p></o:p=
+></p>
+</td>
+<td width=3D"246" valign=3D"top" style=3D"width:184.25pt;border:solid windo=
+wtext 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Mantenimiento (sin IVA)</span><=
+/b><o:p></o:p></p>
+</td>
+<td width=3D"104" valign=3D"top" style=3D"width:77.95pt;border:solid window=
+text 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">PVP (sin IVA)</span></b><o:p></=
+o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Landing
+</span><o:p></o:p></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l4 level1 =
+lfo1"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-US">Dise=F1o en Figma</span><o:p></o:p></li><li class=
+=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l4 level1 lfo1"><sp=
+an style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-l=
+anguage:EN-US">Desarrollo en Webflow est=E1tico (NO Autogestionable)</span>=
+<o:p></o:p></li></ul>
+</td>
+<td width=3D"246" valign=3D"top" style=3D"width:184.25pt;border-top:none;bo=
+rder-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid wind=
+owtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">40=80/a=F1o</span></b><o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Hosting en Netlify</span><o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Dominio opcional: 10=80/a=F1o</spa=
+n><o:p></o:p></p>
+</td>
+<td width=3D"104" valign=3D"top" style=3D"width:77.95pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">1.800</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Web Aut=F3nomo</span><o:p></o:p></=
+p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 =
+lfo2"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-US">Dise=F1o y desarrollo sobre
+<a href=3D"https://www.hostinger.es/plantillas-web">plantilla Hostinger</a>=
+</span><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"margin-left:=
+0cm;mso-list:l2 level1 lfo2"><span style=3D"font-size:11.0pt;mso-ligatures:=
+standardcontextual;mso-fareast-language:EN-US">Hosting Hostinger</span><o:p=
+></o:p></li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-lis=
+t:l2 level1 lfo2"><span style=3D"font-size:11.0pt;mso-ligatures:standardcon=
+textual;mso-fareast-language:EN-US">Dominio Hostinger</span><o:p></o:p></li=
+><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1=
+ lfo2"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso=
+-fareast-language:EN-US">Hasta Home + 4 p=E1ginas</span><o:p></o:p></li><li=
+ class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo=
+2"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-far=
+east-language:EN-US">Autogestionable</span><o:p></o:p></li><li class=3D"Mso=
+ListParagraph" style=3D"margin-left:0cm;mso-list:l2 level1 lfo2"><span styl=
+e=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language=
+:EN-US">Core Wordpress actualizado</span><o:p></o:p></li></ul>
+</td>
+<td width=3D"246" valign=3D"top" style=3D"width:184.25pt;border-top:none;bo=
+rder-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid wind=
+owtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">82=80/a=F1o</span></b><o:p></o:=
+p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Dominio: 10=80/a=F1o (gratis prime=
+r a=F1o)</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Hosting: 72=80/a=F1o</span><o:p></=
+o:p></p>
+</td>
+<td width=3D"104" valign=3D"top" style=3D"width:77.95pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">2.000</span></b><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Web PYME</span><o:p></o:p></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l6 level1 =
+lfo3"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-US">Dise=F1o Figma</span><o:p></o:p></li><li class=3D"M=
+soListParagraph" style=3D"margin-left:0cm;mso-list:l6 level1 lfo3"><span st=
+yle=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-langua=
+ge:EN-US">Desarrollo Webflow</span><o:p></o:p></li><li class=3D"MsoListPara=
+graph" style=3D"margin-left:0cm;mso-list:l6 level1 lfo3"><span style=3D"fon=
+t-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-US">=
+Permite c=F3digo a medida</span><o:p></o:p></li><li class=3D"MsoListParagra=
+ph" style=3D"margin-left:0cm;mso-list:l6 level1 lfo3"><span style=3D"font-s=
+ize:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-US">Con=
+tenido autogestionable WYSIWYG</span><o:p></o:p></li></ul>
+<p class=3D"MsoListParagraph"><span style=3D"font-size:11.0pt;mso-ligatures=
+:standardcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p=
+>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width=3D"246" valign=3D"top" style=3D"width:184.25pt;border-top:none;bo=
+rder-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid wind=
+owtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">178=80/a=F1o</span></b><o:p></o=
+:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Dominio: 10=80/a=F1o (gratis a=F1o=
+ 1)</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Hosting: 168=80/a=F1o</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"104" valign=3D"top" style=3D"width:77.95pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">2.000-3.500</span></b><o:p></o:=
+p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"132" valign=3D"top" style=3D"width:98.85pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Web CMS</span><o:p></o:p></p>
+</td>
+<td width=3D"387" valign=3D"top" style=3D"width:290.6pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l3 level1 =
+lfo4"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-US">Dise=F1o Figma</span><o:p></o:p></li><li class=3D"M=
+soListParagraph" style=3D"margin-left:0cm;mso-list:l3 level1 lfo4"><span st=
+yle=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-langua=
+ge:EN-US">Desarrollo Webflow</span><o:p></o:p></li><li class=3D"MsoListPara=
+graph" style=3D"margin-left:0cm;mso-list:l3 level1 lfo4"><span style=3D"fon=
+t-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-US">=
+Permite c=F3digo a medida</span><o:p></o:p></li><li class=3D"MsoListParagra=
+ph" style=3D"margin-left:0cm;mso-list:l3 level1 lfo4"><span style=3D"font-s=
+ize:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-US">Con=
+tenido autogestionable WYSIWYG</span><o:p></o:p></li><li class=3D"MsoListPa=
+ragraph" style=3D"margin-left:0cm;mso-list:l3 level1 lfo4"><span style=3D"f=
+ont-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-US=
+">CMS autogestionable</span><o:p></o:p></li></ul>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+</td>
+<td width=3D"246" valign=3D"top" style=3D"width:184.25pt;border-top:none;bo=
+rder-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid wind=
+owtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">286=80/a=F1o</span></b><o:p></o=
+:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Dominio: 10=80/a=F1o (gratis a=F1o=
+ 1)</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Hosting: 276=80/a=F1o</span><o:p><=
+/o:p></p>
+</td>
+<td width=3D"104" valign=3D"top" style=3D"width:77.95pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">4.000 =96 8.000</span></b><o:p>=
+</o:p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Incluido en todos los planes</s=
+pan></b><o:p></o:p></p>
+<ul style=3D"margin-top:0cm" type=3D"disc">
+<li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l0 level1 =
+lfo5"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-=
+fareast-language:EN-US">Hosting</span><o:p></o:p></li><li class=3D"MsoListP=
+aragraph" style=3D"margin-left:0cm;mso-list:l0 level1 lfo5"><span style=3D"=
+font-size:11.0pt;mso-ligatures:standardcontextual;mso-fareast-language:EN-U=
+S">Dominio</span><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"ma=
+rgin-left:0cm;mso-list:l0 level1 lfo5"><span style=3D"font-size:11.0pt;mso-=
+ligatures:standardcontextual;mso-fareast-language:EN-US">SEO b=E1sico</span=
+><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;ms=
+o-list:l0 level1 lfo5"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Analytics b=E1sico</span><o:p></o:=
+p></li><li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l0 =
+level1 lfo5"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextu=
+al;mso-fareast-language:EN-US">Formaci=F3n b=E1sica</span><o:p></o:p></li><=
+li class=3D"MsoListParagraph" style=3D"margin-left:0cm;mso-list:l0 level1 l=
+fo5"><span style=3D"font-size:11.0pt;mso-ligatures:standardcontextual;mso-f=
+areast-language:EN-US">2 versiones de dise=F1o (1 propuesta principal con 2=
+ versiones)</span><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"m=
+argin-left:0cm;mso-list:l0 level1 lfo5"><span style=3D"font-size:11.0pt;mso=
+-ligatures:standardcontextual;mso-fareast-language:EN-US">2 rondas de cambi=
+os</span><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"margin-lef=
+t:0cm;mso-list:l0 level1 lfo5"><span style=3D"font-size:11.0pt;mso-ligature=
+s:standardcontextual;mso-fareast-language:EN-US">1 hora de soporte en el pr=
+imer a=F1o</span><o:p></o:p></li><li class=3D"MsoListParagraph" style=3D"ma=
+rgin-left:0cm;mso-list:l0 level1 lfo5"><span style=3D"font-size:11.0pt;mso-=
+ligatures:standardcontextual;mso-fareast-language:EN-US">Cumplimiento GDPR =
+b=E1sico??</span><o:p></o:p></li></ul>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Extras a valorar</span></b><o:p=
+></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" style=3D"border-collapse:collapse">
+<tbody>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Extra</span></b><o:p></o:p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><b><span style=3D"font-size:11.0pt;mso-ligatures:sta=
+ndardcontextual;mso-fareast-language:EN-US">Precio</span></b><o:p></o:p></p=
+>
+</td>
+</tr>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Analytics b=E1sico</span><o:p></o:=
+p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Incluido en todos los planes</span=
+><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">GDPR =96 cookie bit</span><o:p></o=
+:p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Gratis implantaci=F3n (coste servi=
+cio XX)</span><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Multiidioma</span><o:p></o:p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Valorar</span><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Mapas interactivos</span><o:p></o:=
+p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">Valorar</span><o:p></o:p></p>
+</td>
+</tr>
+<tr>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border:solid window=
+text 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">=85..</span><o:p></o:p></p>
+</td>
+<td width=3D"294" valign=3D"top" style=3D"width:220.7pt;border-top:none;bor=
+der-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windo=
+wtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt">
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:11.0pt;mso-ligatures:standa=
+rdcontextual;mso-fareast-language:EN-US">&nbsp;</span><o:p></o:p></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:9.0pt;font-family:Helvetica=
+;color:#5E5E5E">Este mensaje y sus archivos adjuntos pueden contener inform=
+aci=F3n confidencial, no estando permitida su comunicaci=F3n, reproducci=F3=
+n o distribuci=F3n. Si usted no es el destinatario
+ final, elim=EDnelo e inf=F3rmenos por esta v=EDa. De conformidad con lo di=
+spuesto en las normativas vigentes en protecci=F3n de datos, GDPR y LOPDGDD=
+, le informamos que los datos personales ser=E1n tratados bajo la responsab=
+ilidad de SINGULAR FACT SL por un inter=E9s
+ leg=EDtimo y para el env=EDo de comunicaciones sobre nuestros productos y =
+servicios y se conservar=E1n mientras ninguna de las partes se oponga a ell=
+o y no ser=E1n cedidos a terceros, salvo obligaci=F3n legal. Puede ejercer =
+los derechos de acceso, rectificaci=F3n, portabilidad,
+ supresi=F3n, limitaci=F3n y oposici=F3n enviando un mensaje a&nbsp;<a href=
+=3D"mailto:hola@singularfact.com" title=3D"mailto:hola@singularfact.com"><s=
+pan style=3D"color:#0F93FF">hola@singularfact.com</span></a>&nbsp;y si cons=
+idera que el tratamiento no se ajusta a la normativa vigente,
+ podr=E1 presentar una reclamaci=F3n ante la autoridad de control en <a hre=
+f=3D"http://www.aepd.es">
+www.aepd.es</a>.</span><o:p></o:p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+

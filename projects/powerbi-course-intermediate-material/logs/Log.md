@@ -109,6 +109,50 @@
 
 * Powerquery: List of things
 
-## 2023-02-01
+## 2023-02-04
 
-* Phone call with Carlos about security.
+* Lets finish the first two days - 6Hours!
+
+## 2023-02-08
+
+* Intro to PowerQuery and bit of modelization done.
+
+* Advanced PowerQuery
+  * Language Powerquery
+  * Read several files/elements with common structure
+    * How to read them
+    * Apply same function to all
+    * Merge all the tables
+  * Access Databases
+  * Access webpages
+  * Access API's
+  * Grouping // Aggregating data
+  * Using functions
+  *
+
+* Intro to Powerbi Service
+  * Sharing & Collaborate
+    * Security
+  * RLS security
+    * Desktop & service
+
+* Intro to DAX
+  * Basic Operations
+    * 1
+    * 2
+    * 3
+    * 4
+    * 5
+  * What is behind the dax operations? Semantic model beneath it all
+
+## 2023-02-11
+  
+* Intro to DAX / Advanced DAX - pdf
+  * Good
+  * Complement it with Some slides from the book mastering DAX.
+
+## 2023-02-14
+  
+* Intro to DAX / Advanced DAX - pdf
+  * Good
+  * Complement it with Some slides from the book mastering DAX.

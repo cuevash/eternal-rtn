@@ -375,3 +375,54 @@ We need some code on the server side to generate this captcha.
 https://deapi-final-project-v-1-0.webflow.io, https://deapi-final-project-v-1-0.webflow.io/quienes-somos, https://deapi-final-project-v-1-0.webflow.io/inmuebles?compra-o-alquiler=compra, https://deapi-final-project-v-1-0.webflow.io/blog, https://deapi-final-project-v-1-0.webflow.io/exposiciones, https://deapi-final-project-v-1-0.webflow.io/contacto, https://deapi-final-project-v-1-0.webflow.io/inmuebles/deapi-vende-vivienda-de-tres-dormitorios-en-palacio-b, https://deapi-final-project-v-1-0.webflow.io/certificacion-energetica-de-edificios-existentes,
 https://deapi-final-project-v-1-0.webflow.io/inmuebles/deapi-vende-vivienda-de-tres-dormitorios-en-palacio-b
 ````
+
+## 2023/02/21
+
+- Preparing for production
+
+  - Tabs in project settings:
+    - [x] General
+    - [x] Members (Maybe remove ourselves after it is live)
+    - [ ] Publishing
+      - [ ] Add custom domain!!
+    - [x] Plans & Billing
+    - [ ] SEO
+      - [x] Disable Webflow Subdomain Indexing -> ON
+      - [x] Auto-generate Sitemap -> ON
+      - [ ] Set title and metadata info on all pages.
+        - [ ] Most of the information should be added by Deapi
+        - [x] Some 301 can be added to improve discoverability
+      - [x] Global Canonical Tag URL
+        - Set to "https://deapi.es"
+      - [] Sitemap will be automatically generated. Check it!
+      - [x] Robots.txt needs to be added and update it to add to disallow directive for the template pages we don't want to be indexed
+        - [ ] Check it is there with plugin
+      - [x] For pages like "Licenses" and "Cookies info" consider the below information. At the moment. We do nothing.
+        - [ ] For pages like "Licences" and "Cookies info" set Add -> <meta name="robots" content="noindex"> because they are not important from the seo/search indexing perspective. Also:
+        - [ ] Also add "Do not add "Site search settings" for that page
+        - [x] Also add In the robots.txt add ,·"disallow" for that page.
+    - [ ] Form (see video)
+      - [ ] Update email thingys and test them
+      - [ ] Update "Forms notifications" if needed in forms tab -> <https://university.webflow.com/lesson/form-submissions-wf#how-to-set-form-notification-settings>
+        - [ ] From name – the label of the sender of the email (e.g., Webflow Forms)
+        - [ ] Warning! After the 1000 form then they charge 1$ per 100 forms. Watch out for that.. To see if something wrong. You will get the number of forms submitted on each form.
+    - [ ] Backup
+      - [ ] Maybe create a named backup before putting into production
+    - [ ] Integrations
+      - [x] We do all integrations by code Ids
+      - [ ] Maybe we need to add some domain to the services of maps and cookie consent.
+            Check that!
+    - [ ] Google Analytics needs to be updated as well
+- Other things
+  - [x]] Do not publish pages that are only helper for design.
+    - [x] Make them in draft state, and they won't be published
+    - [x] The template files cannot be set in draft state then, simply set them to no be indexed.
+      - [x] Also add "Do not add "Site search settings"
+      - [x] Add -> <meta name="robots" content="noindex"> to all those template pages that are not supposed to be seen.
+      - [x] In the robots.txt add ,·"disallow" -> see <https://www.drlinkcheck.com/blog/noindex-nofollow-disallow#:~:text=Noindex%3A%20Search%20robots%20will%20look>,at%20the%20page%20at%20all.
+
+## 2023/02/28
+
+- Tomorrow ask Alex:
+  - Try to send a form and see if you get the right answer.
+  - Beware there is a limit of 1000, and then you have to pay 1 dollar for each 100th. But that should not be a problem. You can check there is no trouble by the counter form.

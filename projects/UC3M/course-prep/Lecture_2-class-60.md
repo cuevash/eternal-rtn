@@ -1,19 +1,42 @@
 
-# Lecture Guide - Day II
+# Lecture Notes - Day II
 
 ## Introduction
+
+* Start to record the lecture
 
 * Have you all excel installed?
 * I have published how to configure Excel in English with some sort or international handling of numbers.
   * "." for decimal and "," for thousandths separator
   * "," for variable separator in formulas
 
-* Where is excel?
-* How the teams work?
+* Also, to have the usual day/month/year date format it is a good idea to use English UK in the regional settings.
 
-* Tutoring on Tuesdays from half seven till 21:00. Though the best way will be if you email me asking for some tutoring
+**SHARE AULA GLOBAL AND SHOW LINK**
 
-* The exam will be on site
+* There is link in aula global to some videos of the course of intermediate spreadsheets. It could be good to have a look at them for those with very little knowledge of Excel.
+
+* It will definitely give you the initial boost that you may need
+
+* There is also an online course that has the videos and some exercises
+
+* All the slides of the block 1 are already published. I will publish everything on the next days. So you can have a look in advance.
+
+The class today is going to be structured as:
+
+* Intro to project
+
+* Some theory
+  * Get to know basic excel and quite a few of the possibilities for formatting
+  * We will do some simple exercises. One of them in pairs
+  * At the end of the class, like in 1:15 the 1 minute quiz will be opened
+
+* Final project
+  * Show in Aula global
+  * Final delivery date will be updated
+  * Groups of 3 persons
+  * Show where assignments are.
+  * I will publish an example of what a partial delivery is.
 
 ## BLOCK T1.1
 

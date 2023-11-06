@@ -135,3 +135,15 @@ Les he dicho que vamos a ver todo, solo que la parte básica vamos a ir bastante
 
 - Se puede pedir que hagan algo con un compañero? Ven quien mas esta en clase right?
 Puedo crear como la mitad de tablas para que hagan algo en pareja?
+
+## 2023-02-05
+
+- Algun sitio con ejercicios ?
+- Los ejercicios son para que los hagan en clase no?
+- La distibrución entiendo que esta pensada para esos dia. La teoria entiendo que estarían en los siguentes dias no?
+- Lo que escribo en notices se manda a todos los alumnos por email no?
+
+## 2023-02-25
+
+- To prepare lecture 5 class 60 about solvers i used the next video.
+  - <https://www.youtube.com/watch?v=UD9e-gQCQsE&ab_channel=KevinStratvert>

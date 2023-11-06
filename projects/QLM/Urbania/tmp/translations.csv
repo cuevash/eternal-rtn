@@ -1,0 +1,827 @@
+Object Type,Property,Name,English [en-US],Spanish [es-ES]
+Table,Caption,Cuentas,Cuentas,Cuentas
+Column,Caption,Cuentas[BKCuenta],BKCuenta,BKCuenta
+Column,Caption,Cuentas[Cuenta],Cuenta,Cuenta
+Column,Caption,Cuentas[Tipo Cuenta],Tipo Cuenta,Tipo Cuenta
+Column,Caption,Cuentas[Comportamiento Cuenta],Comportamiento Cuenta,Comportamiento Cuenta
+Column,Caption,Cuentas[Empresa],Empresa,Empresa
+Column,Caption,Cuentas[Alias Empresa],Alias Empresa,Alias Empresa
+Column,Caption,Cuentas[Tipo Empresa],Tipo Empresa,Tipo Empresa
+Column,Caption,Cuentas[Banco],Banco,Banco
+Column,Caption,Cuentas[Divisa],Divisa,Divisa
+Column,Caption,Cuentas[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,Cuentas[BKIdEmpresa],BKIdEmpresa,BKIdEmpresa
+Column,Caption,Cuentas[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,Cuentas[IT_ACTIVA],IT_ACTIVA,IT_ACTIVA
+Column,Caption,Cuentas[FC_INACTIVA],FC_INACTIVA,FC_INACTIVA
+Column,Caption,Cuentas[CD_GRUPO_CUENTA],CD_GRUPO_CUENTA,CD_GRUPO_CUENTA
+Column,Caption,Cuentas[Observaciones],Observaciones,Observaciones
+Column,Caption,Cuentas[Grupo_Cuentas],Grupo_Cuentas,Grupo_Cuentas
+Table,Caption,Condiciones,Condiciones,Condiciones
+Column,Caption,Condiciones[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,Condiciones[DS_CONDICION],DS_CONDICION,DS_CONDICION
+Column,Caption,Condiciones[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Condiciones[FC_INICIO],FC_INICIO,FC_INICIO
+Column,Caption,Condiciones[FC_FIN],FC_FIN,FC_FIN
+Column,Caption,Condiciones[NM_LIMITE],NM_LIMITE,NM_LIMITE
+Column,Caption,Condiciones[CD_PERIODO_LIQUIDACION],CD_PERIODO_LIQUIDACION,CD_PERIODO_LIQUIDACION
+Column,Caption,Condiciones[CD_PERIODO_REVISION],CD_PERIODO_REVISION,CD_PERIODO_REVISION
+Column,Caption,Condiciones[FC_REVISION],FC_REVISION,FC_REVISION
+Column,Caption,Condiciones[NM_SALDO_MINIMO],NM_SALDO_MINIMO,NM_SALDO_MINIMO
+Column,Caption,Condiciones[CD_TIPO_REFERENCIA],CD_TIPO_REFERENCIA,CD_TIPO_REFERENCIA
+Column,Caption,Condiciones[IT_DESLIZAMIENTO],IT_DESLIZAMIENTO,IT_DESLIZAMIENTO
+Column,Caption,Condiciones[NM_COMISION_NO_DISPONIBLE],NM_COMISION_NO_DISPONIBLE,NM_COMISION_NO_DISPONIBLE
+Column,Caption,Condiciones[NM_COMISION_ESTUDIO],NM_COMISION_ESTUDIO,NM_COMISION_ESTUDIO
+Column,Caption,Condiciones[NM_COMISION_APERTURA],NM_COMISION_APERTURA,NM_COMISION_APERTURA
+Column,Caption,Condiciones[KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO],KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO,KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO
+Column,Caption,Condiciones[KAT_TIPO_FIJO2],KAT_TIPO_FIJO2,KAT_TIPO_FIJO2
+Table,Caption,Evolución Saldos,Evolución Saldos,Evolución Saldos
+Column,Caption,Evolución Saldos[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Evolución Saldos[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Evolución Saldos[Empresa],Empresa,Empresa
+Column,Caption,Evolución Saldos[FC_FECHA],FC_FECHA,FC_FECHA
+Column,Caption,Evolución Saldos[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,Evolución Saldos[NM_SALDO_ERP],NM_SALDO_ERP,NM_SALDO_ERP
+Column,Caption,Evolución Saldos[CD_MVTO_ULTIMO],CD_MVTO_ULTIMO,CD_MVTO_ULTIMO
+Column,Caption,Evolución Saldos[CD_MVTO_ERP_ULTIMO],CD_MVTO_ERP_ULTIMO,CD_MVTO_ERP_ULTIMO
+Column,Caption,Evolución Saldos[Saldo_(Div. Ref.)],Saldo_(Div. Ref.),Saldo_(Div. Ref.)
+Column,Caption,Evolución Saldos[Saldo_(EUR)],Saldo_(EUR),Saldo_(EUR)
+Measure,Caption,Evolución Saldos[Disponible],Disponible,Disponible
+Table,DisplayFolder,Evolución Saldos[Divisa Sistema],,
+Measure,Description,Evolución Saldos[Disponible]Disponible,,
+Measure,Caption,Evolución Saldos[Disponible (Div. Seleccionada)],Disponible (Div. Seleccionada),Disponible (Div. Seleccionada)
+Table,DisplayFolder,Evolución Saldos[Divisa Seleccionada],,
+Measure,Description,Evolución Saldos[Disponible (Div. Seleccionada)]Disponible (Div. Seleccionada),,
+Measure,Caption,Evolución Saldos[Disponible (Moneda Cuenta)],Disponible (Moneda Cuenta),Disponible (Moneda Cuenta)
+Table,DisplayFolder,Evolución Saldos[Divisa Cuenta],,
+Measure,Description,Evolución Saldos[Disponible (Moneda Cuenta)]Disponible (Moneda Cuenta),,
+Measure,Caption,Evolución Saldos[Divisa de Referencia],Divisa de Referencia,Divisa de Referencia
+Measure,Description,Evolución Saldos[Divisa de Referencia]Divisa de Referencia,,
+Measure,Caption,Evolución Saldos[Divisa Seleccionada],Divisa Seleccionada,Divisa Seleccionada
+Measure,Caption,Evolución Saldos[Límite],Límite,Límite
+Measure,Description,Evolución Saldos[Límite]Límite,,
+Measure,Caption,Evolución Saldos[Límite (Div. Seleccionada)],Límite (Div. Seleccionada),Límite (Div. Seleccionada)
+Measure,Description,Evolución Saldos[Límite (Div. Seleccionada)]Límite (Div. Seleccionada),,
+Measure,Caption,Evolución Saldos[Límite (Moneda Cuenta)],Límite (Moneda Cuenta),Límite (Moneda Cuenta)
+Measure,Description,Evolución Saldos[Límite (Moneda Cuenta)]Límite (Moneda Cuenta),,
+Measure,Caption,Evolución Saldos[Saldo],Saldo,Saldo
+Measure,Description,Evolución Saldos[Saldo]Saldo,,
+Measure,Caption,Evolución Saldos[Saldo (Div. Seleccionada)],Saldo (Div. Seleccionada),Saldo (Div. Seleccionada)
+Measure,Description,Evolución Saldos[Saldo (Div. Seleccionada)]Saldo (Div. Seleccionada),,
+Measure,Caption,Evolución Saldos[Saldo (Moneda Cuenta)],Saldo (Moneda Cuenta),Saldo (Moneda Cuenta)
+Measure,Description,Evolución Saldos[Saldo (Moneda Cuenta)]Saldo (Moneda Cuenta),,
+Measure,Caption,Evolución Saldos[Saldo A-1],Saldo A-1,Saldo A-1
+Measure,Caption,Evolución Saldos[Saldo AA],Saldo AA,Saldo AA
+Measure,Caption,Evolución Saldos[Saldo Medio],Saldo Medio,Saldo Medio
+Measure,Caption,Evolución Saldos[Saldo o Disponible],Saldo o Disponible,Saldo o Disponible
+Measure,Description,Evolución Saldos[Saldo o Disponible]Saldo o Disponible,,
+Measure,Caption,Evolución Saldos[Saldo o Disponible (Div. Seleccionada)],Saldo o Disponible (Div. Seleccionada),Saldo o Disponible (Div. Seleccionada)
+Measure,Description,Evolución Saldos[Saldo o Disponible (Div. Seleccionada)]Saldo o Disponible (Div. Seleccionada),,
+Measure,Caption,Evolución Saldos[Saldo o Disponible (Moneda Cuenta)],Saldo o Disponible (Moneda Cuenta),Saldo o Disponible (Moneda Cuenta)
+Measure,Description,Evolución Saldos[Saldo o Disponible (Moneda Cuenta)]Saldo o Disponible (Moneda Cuenta),,
+Measure,Caption,Evolución Saldos[LIMITE FULL],LIMITE FULL,LIMITE FULL
+Measure,Caption,Evolución Saldos[DISPONIBLE FULL],DISPONIBLE FULL,DISPONIBLE FULL
+Table,Caption,Tipo Movimiento,Tipo Movimiento,Tipo Movimiento
+Column,Caption,Tipo Movimiento[CD_TIPO_MOVIMIENTO],CD_TIPO_MOVIMIENTO,CD_TIPO_MOVIMIENTO
+Column,Caption,Tipo Movimiento[DS_TIPO_MOVIMIENTO],DS_TIPO_MOVIMIENTO,DS_TIPO_MOVIMIENTO
+Table,Caption,Divisa Sistema,Divisa Sistema,Divisa Sistema
+Column,Caption,Divisa Sistema[DS_ISO_DIVISA],DS_ISO_DIVISA,DS_ISO_DIVISA
+Table,Caption,Conciliación,Conciliación,Conciliación
+Column,Caption,Conciliación[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Conciliación[Origen],Origen,Origen
+Column,Caption,Conciliación[FC_OPERACION],FC_OPERACION,FC_OPERACION
+Column,Caption,Conciliación[FC_CIERRE],FC_CIERRE,FC_CIERRE
+Column,Caption,Conciliación[CD_VIA_COBRO_PAGO],CD_VIA_COBRO_PAGO,CD_VIA_COBRO_PAGO
+Column,Caption,Conciliación[IT_PUNTEADO],IT_PUNTEADO,IT_PUNTEADO
+Column,Caption,Conciliación[NM_IMPORTE],NM_IMPORTE,NM_IMPORTE
+Column,Caption,Conciliación[NM_SALDO],NM_SALDO,NM_SALDO
+Measure,Caption,Conciliación[Movs Conc.],Movs Conc.,Movs Conc.
+Measure,Caption,Conciliación[Movs Pdte. Conc.],Movs Pdte. Conc.,Movs Pdte. Conc.
+Measure,Caption,Conciliación[Saldo Conc.],Saldo Conc.,Saldo Conc.
+Measure,Caption,Conciliación[Saldo Pdte. Conc.],Saldo Pdte. Conc.,Saldo Pdte. Conc.
+Table,Caption,DIVISAS,DIVISAS,DIVISAS
+Column,Caption,DIVISAS[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,DIVISAS[DIVISA],DIVISA,DIVISA
+Column,Caption,DIVISAS[SIMBOLO],SIMBOLO,SIMBOLO
+Measure,Caption,DIVISAS[Divisa Referencia],Divisa Referencia,Divisa Referencia
+Table,Caption,DivisasMov,DivisasMov,DivisasMov
+Column,Caption,DivisasMov[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,DivisasMov[DS_NOMBRE_DIVISA],DS_NOMBRE_DIVISA,DS_NOMBRE_DIVISA
+Column,Caption,DivisasMov[DS_ISO_DIVISA],DS_ISO_DIVISA,DS_ISO_DIVISA
+Column,Caption,DivisasMov[NM_ISO_DIVISA],NM_ISO_DIVISA,NM_ISO_DIVISA
+Column,Caption,DivisasMov[DS_SIMBOLO],DS_SIMBOLO,DS_SIMBOLO
+Column,Caption,DivisasMov[FC_MOVIMIENTO],FC_MOVIMIENTO,FC_MOVIMIENTO
+Column,Caption,DivisasMov[NM_TIPO_CAMBIO],NM_TIPO_CAMBIO,NM_TIPO_CAMBIO
+Table,Caption,Endeudamiento,Endeudamiento,Endeudamiento
+Column,Caption,Endeudamiento[FECHA],FECHA,FECHA
+Column,Caption,Endeudamiento[ORIGEN],ORIGEN,ORIGEN
+Column,Caption,Endeudamiento[DESCRIPCION],DESCRIPCION,DESCRIPCION
+Column,Caption,Endeudamiento[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Endeudamiento[DS_ALIAS_BANCO],DS_ALIAS_BANCO,DS_ALIAS_BANCO
+Column,Caption,Endeudamiento[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Endeudamiento[TIPO_CUENTA],TIPO_CUENTA,TIPO_CUENTA
+Column,Caption,Endeudamiento[DS_NOMBRE_CUENTA],DS_NOMBRE_CUENTA,DS_NOMBRE_CUENTA
+Column,Caption,Endeudamiento[LIMITE],LIMITE,LIMITE
+Column,Caption,Endeudamiento[DISPUESTO],DISPUESTO,DISPUESTO
+Column,Caption,Endeudamiento[DISPONIBLE],DISPONIBLE,DISPONIBLE
+Column,Caption,Endeudamiento[AMORTIZACIÓN],AMORTIZACIÓN,AMORTIZACIÓN
+Column,Caption,Endeudamiento[EMPRESA],EMPRESA,EMPRESA
+Measure,Caption,Endeudamiento[Amortizado (Endeudamiento)],Amortizado (Endeudamiento),Amortizado (Endeudamiento)
+Measure,Caption,Endeudamiento[Disponible (Endeudamiento)],Disponible (Endeudamiento),Disponible (Endeudamiento)
+Measure,Caption,Endeudamiento[Dispuesto (Endeudamiento)],Dispuesto (Endeudamiento),Dispuesto (Endeudamiento)
+Measure,Caption,Endeudamiento[Límite (Endeudamiento)],Límite (Endeudamiento),Límite (Endeudamiento)
+Table,Caption,FechasCierre,FechasCierre,FechasCierre
+Column,Caption,FechasCierre[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,FechasCierre[FC_CIERRE],FC_CIERRE,FC_CIERRE
+Measure,Caption,FechasCierre[Fecha Cierre Sel.],Fecha Cierre Sel.,Fecha Cierre Sel.
+Measure,Caption,FechasCierre[Cierre Seleccionado],Cierre Seleccionado,Cierre Seleccionado
+Table,Caption,Ingresos y Gastos,Ingresos y Gastos,Ingresos y Gastos
+Column,Caption,Ingresos y Gastos[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Ingresos y Gastos[NM_IMPORTE],NM_IMPORTE,NM_IMPORTE
+Column,Caption,Ingresos y Gastos[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,Ingresos y Gastos[FC_VALOR],FC_VALOR,FC_VALOR
+Column,Caption,Ingresos y Gastos[FC_OPERACION],FC_OPERACION,FC_OPERACION
+Column,Caption,Ingresos y Gastos[Tipo Movimiento],Tipo Movimiento,Tipo Movimiento
+Column,Caption,Ingresos y Gastos[Vía CyP],Vía CyP,Vía CyP
+Column,Caption,Ingresos y Gastos[Concepto Propio],Concepto Propio,Concepto Propio
+Column,Caption,Ingresos y Gastos[DS_COMPLEMENTARIO],DS_COMPLEMENTARIO,DS_COMPLEMENTARIO
+Column,Caption,Ingresos y Gastos[CD_DIVISA_ORIGEN],CD_DIVISA_ORIGEN,CD_DIVISA_ORIGEN
+Column,Caption,Ingresos y Gastos[Concepto Común],Concepto Común,Concepto Común
+Column,Caption,Ingresos y Gastos[IT_ANULADO],IT_ANULADO,IT_ANULADO
+Column,Caption,Ingresos y Gastos[FC_ANULACION],FC_ANULACION,FC_ANULACION
+Column,Caption,Ingresos y Gastos[NM_MOVIMIENTO],NM_MOVIMIENTO,NM_MOVIMIENTO
+Column,Caption,Ingresos y Gastos[IT_VALIDADO],IT_VALIDADO,IT_VALIDADO
+Column,Caption,Ingresos y Gastos[FC_VALIDACION],FC_VALIDACION,FC_VALIDACION
+Column,Caption,Ingresos y Gastos[NM_TIPO_CAMBIO],NM_TIPO_CAMBIO,NM_TIPO_CAMBIO
+Column,Caption,Ingresos y Gastos[FC_VENCIMIENTO],FC_VENCIMIENTO,FC_VENCIMIENTO
+Measure,Caption,Ingresos y Gastos[Gastos],Gastos,Gastos
+Measure,Caption,Ingresos y Gastos[Ingresos],Ingresos,Ingresos
+Measure,Caption,Ingresos y Gastos[Saldo Movimientos],Saldo Movimientos,Saldo Movimientos
+Measure,Caption,Ingresos y Gastos[SaldoMovBco],SaldoMovBco,SaldoMovBco
+Table,Caption,Previsiones,Previsiones,Previsiones
+Column,Caption,Previsiones[Cuenta],Cuenta,Cuenta
+Column,Caption,Previsiones[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Previsiones[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Previsiones[EsPago],EsPago,EsPago
+Column,Caption,Previsiones[Concepto CyP],Concepto CyP,Concepto CyP
+Column,Caption,Previsiones[Tipo Concepto CyP],Tipo Concepto CyP,Tipo Concepto CyP
+Column,Caption,Previsiones[Vía CyP],Vía CyP,Vía CyP
+Column,Caption,Previsiones[Fecha Vto],Fecha Vto,Fecha Vto
+Column,Caption,Previsiones[Fecha Prevista],Fecha Prevista,Fecha Prevista
+Column,Caption,Previsiones[Fecha Emisión Fra],Fecha Emisión Fra,Fecha Emisión Fra
+Column,Caption,Previsiones[Fecha Validación],Fecha Validación,Fecha Validación
+Column,Caption,Previsiones[Importe Inicial],Importe Inicial,Importe Inicial
+Column,Caption,Previsiones[Importe Previsto],Importe Previsto,Importe Previsto
+Column,Caption,Previsiones[Estado],Estado,Estado
+Column,Caption,Previsiones[Origen],Origen,Origen
+Column,Caption,Previsiones[Tipo Previsión],Tipo Previsión,Tipo Previsión
+Column,Caption,Previsiones[Tipo Documento],Tipo Documento,Tipo Documento
+Column,Caption,Previsiones[Certeza],Certeza,Certeza
+Column,Caption,Previsiones[Porcentaje Certeza],Porcentaje Certeza,Porcentaje Certeza
+Column,Caption,Previsiones[Detalle Previsión],Detalle Previsión,Detalle Previsión
+Column,Caption,Previsiones[TipoPrev],TipoPrev,TipoPrev
+Measure,Caption,Previsiones[Disponible Final],Disponible Final,Disponible Final
+Measure,Caption,Previsiones[Disponible Inicial],Disponible Inicial,Disponible Inicial
+Measure,Caption,Previsiones[Entradas],Entradas,Entradas
+Measure,Caption,Previsiones[Importe Previsión],Importe Previsión,Importe Previsión
+Measure,Caption,Previsiones[Saldo final],Saldo final,Saldo final
+Measure,Caption,Previsiones[Saldo inicial],Saldo inicial,Saldo inicial
+Measure,Caption,Previsiones[Salidas],Salidas,Salidas
+Measure,Caption,Previsiones[SoD Final],SoD Final,SoD Final
+Measure,Caption,Previsiones[SoD Inicial],SoD Inicial,SoD Inicial
+Measure,Caption,Previsiones[Vencida +60],Vencida +60,Vencida +60
+Measure,Caption,Previsiones[Vencida 30],Vencida 30,Vencida 30
+Measure,Caption,Previsiones[Vencida 60],Vencida 60,Vencida 60
+Measure,Caption,Previsiones[Cobros],Cobros,Cobros
+Measure,Caption,Previsiones[Pagos],Pagos,Pagos
+Table,Caption,Seguridad Usuarios,Seguridad Usuarios,Seguridad Usuarios
+Column,Caption,Seguridad Usuarios[Email],Email,Email
+Column,Caption,Seguridad Usuarios[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Table,Caption,Tiempo,Tiempo,Tiempo
+Column,Caption,Tiempo[Fecha],Fecha,Fecha
+Column,Caption,Tiempo[Trimestre],Trimestre,Trimestre
+Column,Caption,Tiempo[Año],Año,Año
+Column,Caption,Tiempo[Semana del año],Semana del año,Semana del año
+Column,Caption,Tiempo[Mes],Mes,Mes
+Column,Caption,Tiempo[Nombre del mes],Nombre del mes,Nombre del mes
+Column,Caption,Tiempo[Día de la semana],Día de la semana,Día de la semana
+Column,Caption,Tiempo[Nombre del día],Nombre del día,Nombre del día
+Column,Caption,Tiempo[Periodo],Periodo,Periodo
+Column,Caption,Tiempo[IdPeriodo],IdPeriodo,IdPeriodo
+Column,Caption,Tiempo[EnEndeudamiento],EnEndeudamiento,EnEndeudamiento
+Column,Caption,Tiempo[InicioSemana],InicioSemana,InicioSemana
+Column,Caption,Tiempo[último día],último día,último día
+Column,Caption,Tiempo[Semana],Semana,Semana
+Measure,Caption,Tiempo[Intervalo Seleccionado],Intervalo Seleccionado,Intervalo Seleccionado
+Table,Caption,Selector Saldo,Selector Saldo,Selector Saldo
+Column,Caption,Selector Saldo[Value],Value,Value
+Table,Caption,QueryTiempo,QueryTiempo,QueryTiempo
+Column,Caption,QueryTiempo[Fecha],Fecha,Fecha
+Column,Caption,QueryTiempo[Trimestre],Trimestre,Trimestre
+Column,Caption,QueryTiempo[Año],Año,Año
+Column,Caption,QueryTiempo[Semana del año],Semana del año,Semana del año
+Column,Caption,QueryTiempo[Mes],Mes,Mes
+Column,Caption,QueryTiempo[Nombre del mes],Nombre del mes,Nombre del mes
+Column,Caption,QueryTiempo[Día de la semana],Día de la semana,Día de la semana
+Column,Caption,QueryTiempo[Nombre del día],Nombre del día,Nombre del día
+Column,Caption,QueryTiempo[Periodo],Periodo,Periodo
+Column,Caption,QueryTiempo[IdPeriodo],IdPeriodo,IdPeriodo
+Table,Caption,Versions,Versions,Versions
+Column,Caption,Versions[Version],Version,Version
+Column,Caption,Versions[Revision Date/Time],Revision Date/Time,Revision Date/Time
+Column,Caption,Versions[Developer Name],Developer Name,Developer Name
+Column,Caption,Versions[Revision Notes (md)],Revision Notes (md),Revision Notes (md)
+Column,Caption,Versions[Refresh Date/Time],Refresh Date/Time,Refresh Date/Time
+Measure,Caption,Versions[UserPrincipal],UserPrincipal,UserPrincipal
+Measure,Caption,Versions[UserName],UserName,UserName
+Table,Caption,KAT_CUENTAS,KAT_CUENTAS,KAT_CUENTAS
+Column,Caption,KAT_CUENTAS[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,KAT_CUENTAS[DS_NOMBRE_CUENTA],DS_NOMBRE_CUENTA,DS_NOMBRE_CUENTA
+Column,Caption,KAT_CUENTAS[CD_CUENTA_TIPO],CD_CUENTA_TIPO,CD_CUENTA_TIPO
+Column,Caption,KAT_CUENTAS[DS_BANCO],DS_BANCO,DS_BANCO
+Column,Caption,KAT_CUENTAS[DS_OFICINA],DS_OFICINA,DS_OFICINA
+Column,Caption,KAT_CUENTAS[DS_DIGITO_CONTROL],DS_DIGITO_CONTROL,DS_DIGITO_CONTROL
+Column,Caption,KAT_CUENTAS[DS_CODIGO_CUENTA],DS_CODIGO_CUENTA,DS_CODIGO_CUENTA
+Column,Caption,KAT_CUENTAS[DS_CODIGO_INTERNACIONAL],DS_CODIGO_INTERNACIONAL,DS_CODIGO_INTERNACIONAL
+Column,Caption,KAT_CUENTAS[DS_IBAN],DS_IBAN,DS_IBAN
+Column,Caption,KAT_CUENTAS[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,KAT_CUENTAS[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,KAT_CUENTAS[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,KAT_CUENTAS[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,KAT_CUENTAS[IT_ACTIVA],IT_ACTIVA,IT_ACTIVA
+Column,Caption,KAT_CUENTAS[FC_INACTIVA],FC_INACTIVA,FC_INACTIVA
+Column,Caption,KAT_CUENTAS[DS_CUENTA_CONTABLE_ERP],DS_CUENTA_CONTABLE_ERP,DS_CUENTA_CONTABLE_ERP
+Column,Caption,KAT_CUENTAS[DS_OBSERVACIONES],DS_OBSERVACIONES,DS_OBSERVACIONES
+Column,Caption,KAT_CUENTAS[DS_APODERADOS],DS_APODERADOS,DS_APODERADOS
+Column,Caption,KAT_CUENTAS[NM_SALDO_ERP],NM_SALDO_ERP,NM_SALDO_ERP
+Column,Caption,KAT_CUENTAS[CD_MVTO_INICIAL],CD_MVTO_INICIAL,CD_MVTO_INICIAL
+Column,Caption,KAT_CUENTAS[CD_MVTO_ULTIMO],CD_MVTO_ULTIMO,CD_MVTO_ULTIMO
+Column,Caption,KAT_CUENTAS[CD_MVTO_ERP_INICIAL],CD_MVTO_ERP_INICIAL,CD_MVTO_ERP_INICIAL
+Column,Caption,KAT_CUENTAS[CD_MVTO_ERP_ULTIMO],CD_MVTO_ERP_ULTIMO,CD_MVTO_ERP_ULTIMO
+Column,Caption,KAT_CUENTAS[CD_GRUPO_CUENTA],CD_GRUPO_CUENTA,CD_GRUPO_CUENTA
+Table,Caption,KAT_CONDICIONES_TRAMOS,KAT_CONDICIONES_TRAMOS,KAT_CONDICIONES_TRAMOS
+Column,Caption,KAT_CONDICIONES_TRAMOS[CD_CONDICION_TRAMO],CD_CONDICION_TRAMO,CD_CONDICION_TRAMO
+Column,Caption,KAT_CONDICIONES_TRAMOS[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,KAT_CONDICIONES_TRAMOS[CD_TRAMO],CD_TRAMO,CD_TRAMO
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_DESDE],NM_DESDE,NM_DESDE
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_HASTA],NM_HASTA,NM_HASTA
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_BASE],NM_BASE,NM_BASE
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_TIPO_FIJO],NM_TIPO_FIJO,NM_TIPO_FIJO
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_RETENCION],NM_RETENCION,NM_RETENCION
+Column,Caption,KAT_CONDICIONES_TRAMOS[IT_VARIABLE],IT_VARIABLE,IT_VARIABLE
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_TIPO_INICIAL],NM_TIPO_INICIAL,NM_TIPO_INICIAL
+Column,Caption,KAT_CONDICIONES_TRAMOS[NM_DIFERENCIAL],NM_DIFERENCIAL,NM_DIFERENCIAL
+Column,Caption,KAT_CONDICIONES_TRAMOS[TASAS COMPLETAS],TASAS COMPLETAS,TASAS COMPLETAS
+Table,Caption,Condiciones full,Condiciones full,Condiciones full
+Column,Caption,Condiciones full[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Condiciones full[DS_NOMBRE_CUENTA],DS_NOMBRE_CUENTA,DS_NOMBRE_CUENTA
+Column,Caption,Condiciones full[CD_CUENTA_TIPO],CD_CUENTA_TIPO,CD_CUENTA_TIPO
+Column,Caption,Condiciones full[DS_BANCO],DS_BANCO,DS_BANCO
+Column,Caption,Condiciones full[DS_OFICINA],DS_OFICINA,DS_OFICINA
+Column,Caption,Condiciones full[DS_DIGITO_CONTROL],DS_DIGITO_CONTROL,DS_DIGITO_CONTROL
+Column,Caption,Condiciones full[DS_CODIGO_CUENTA],DS_CODIGO_CUENTA,DS_CODIGO_CUENTA
+Column,Caption,Condiciones full[DS_CODIGO_INTERNACIONAL],DS_CODIGO_INTERNACIONAL,DS_CODIGO_INTERNACIONAL
+Column,Caption,Condiciones full[DS_IBAN],DS_IBAN,DS_IBAN
+Column,Caption,Condiciones full[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Condiciones full[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,Condiciones full[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Condiciones full[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,Condiciones full[IT_ACTIVA],IT_ACTIVA,IT_ACTIVA
+Column,Caption,Condiciones full[FC_INACTIVA],FC_INACTIVA,FC_INACTIVA
+Column,Caption,Condiciones full[DS_CUENTA_CONTABLE_ERP],DS_CUENTA_CONTABLE_ERP,DS_CUENTA_CONTABLE_ERP
+Column,Caption,Condiciones full[DS_OBSERVACIONES],DS_OBSERVACIONES,DS_OBSERVACIONES
+Column,Caption,Condiciones full[DS_APODERADOS],DS_APODERADOS,DS_APODERADOS
+Column,Caption,Condiciones full[NM_SALDO_ERP],NM_SALDO_ERP,NM_SALDO_ERP
+Column,Caption,Condiciones full[CD_MVTO_INICIAL],CD_MVTO_INICIAL,CD_MVTO_INICIAL
+Column,Caption,Condiciones full[CD_MVTO_ULTIMO],CD_MVTO_ULTIMO,CD_MVTO_ULTIMO
+Column,Caption,Condiciones full[CD_MVTO_ERP_INICIAL],CD_MVTO_ERP_INICIAL,CD_MVTO_ERP_INICIAL
+Column,Caption,Condiciones full[CD_MVTO_ERP_ULTIMO],CD_MVTO_ERP_ULTIMO,CD_MVTO_ERP_ULTIMO
+Column,Caption,Condiciones full[CD_GRUPO_CUENTA],CD_GRUPO_CUENTA,CD_GRUPO_CUENTA
+Column,Caption,Condiciones full[CD_CUENTA2],CD_CUENTA2,CD_CUENTA2
+Column,Caption,Condiciones full[CD_CUENTA_ASOCIADA],CD_CUENTA_ASOCIADA,CD_CUENTA_ASOCIADA
+Column,Caption,Condiciones full[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,Condiciones full[DS_CONDICION],DS_CONDICION,DS_CONDICION
+Column,Caption,Condiciones full[CD_CUENTA3],CD_CUENTA3,CD_CUENTA3
+Column,Caption,Condiciones full[FC_INICIO],FC_INICIO,FC_INICIO
+Column,Caption,Condiciones full[FC_FIN],FC_FIN,FC_FIN
+Column,Caption,Condiciones full[NM_LIMITE],NM_LIMITE,NM_LIMITE
+Column,Caption,Condiciones full[CD_PERIODO_LIQUIDACION],CD_PERIODO_LIQUIDACION,CD_PERIODO_LIQUIDACION
+Column,Caption,Condiciones full[CD_PERIODO_REVISION],CD_PERIODO_REVISION,CD_PERIODO_REVISION
+Column,Caption,Condiciones full[FC_REVISION],FC_REVISION,FC_REVISION
+Column,Caption,Condiciones full[NM_SALDO_MINIMO],NM_SALDO_MINIMO,NM_SALDO_MINIMO
+Column,Caption,Condiciones full[CD_TIPO_REFERENCIA],CD_TIPO_REFERENCIA,CD_TIPO_REFERENCIA
+Column,Caption,Condiciones full[IT_DESLIZAMIENTO],IT_DESLIZAMIENTO,IT_DESLIZAMIENTO
+Column,Caption,Condiciones full[COM. NDISP],COM. NDISP,COM. NDISP
+Column,Caption,Condiciones full[NM_COMISION_ESTUDIO],NM_COMISION_ESTUDIO,NM_COMISION_ESTUDIO
+Column,Caption,Condiciones full[COM. APERT],COM. APERT,COM. APERT
+Column,Caption,Condiciones full[TIPO INT],TIPO INT,TIPO INT
+Table,Caption,IBAN,IBAN,IBAN
+Column,Caption,IBAN[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,IBAN[DS_CODIGO_INTERNACIONAL],DS_CODIGO_INTERNACIONAL,DS_CODIGO_INTERNACIONAL
+Table,Caption,KAT_EMPRESAS,KAT_EMPRESAS,KAT_EMPRESAS
+Column,Caption,KAT_EMPRESAS[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,KAT_EMPRESAS[DS_ALIAS_EMPRESA],DS_ALIAS_EMPRESA,DS_ALIAS_EMPRESA
+Column,Caption,KAT_EMPRESAS[DS_NOMBRE],DS_NOMBRE,DS_NOMBRE
+Column,Caption,KAT_EMPRESAS[CD_EMPRESA_TIPO],CD_EMPRESA_TIPO,CD_EMPRESA_TIPO
+Column,Caption,KAT_EMPRESAS[DS_CIF],DS_CIF,DS_CIF
+Column,Caption,KAT_EMPRESAS[DS_DIRECCION],DS_DIRECCION,DS_DIRECCION
+Column,Caption,KAT_EMPRESAS[DS_CODIGO_POSTAL],DS_CODIGO_POSTAL,DS_CODIGO_POSTAL
+Column,Caption,KAT_EMPRESAS[DS_LOCALIDAD],DS_LOCALIDAD,DS_LOCALIDAD
+Column,Caption,KAT_EMPRESAS[DS_PROVINCIA],DS_PROVINCIA,DS_PROVINCIA
+Column,Caption,KAT_EMPRESAS[DS_PAIS],DS_PAIS,DS_PAIS
+Column,Caption,KAT_EMPRESAS[DS_TELEFONO],DS_TELEFONO,DS_TELEFONO
+Column,Caption,KAT_EMPRESAS[DS_OBSERVACIONES],DS_OBSERVACIONES,DS_OBSERVACIONES
+Column,Caption,KAT_EMPRESAS[CD_PLAN_CTA_CONTRAPARTIDA],CD_PLAN_CTA_CONTRAPARTIDA,CD_PLAN_CTA_CONTRAPARTIDA
+Column,Caption,KAT_EMPRESAS[DS_EMPRESA_TIPO],DS_EMPRESA_TIPO,DS_EMPRESA_TIPO
+Table,Caption,Saldos sin CP,Saldos sin CP,Saldos sin CP
+Column,Caption,Saldos sin CP[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Saldos sin CP[FC_OPERACION],FC_OPERACION,FC_OPERACION
+Column,Caption,Saldos sin CP[Column1],Column1,Column1
+Table,Caption,Previsiones Full,Previsiones Full,Previsiones Full
+Column,Caption,Previsiones Full[DS_CONCEPTO],DS_CONCEPTO,DS_CONCEPTO
+Column,Caption,Previsiones Full[DS_ALIAS_VIA_COBRO_PAGO],DS_ALIAS_VIA_COBRO_PAGO,DS_ALIAS_VIA_COBRO_PAGO
+Column,Caption,Previsiones Full[DS_TIPO_PREVISION],DS_TIPO_PREVISION,DS_TIPO_PREVISION
+Column,Caption,Previsiones Full[CD_PREVISION],CD_PREVISION,CD_PREVISION
+Column,Caption,Previsiones Full[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Previsiones Full[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Previsiones Full[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Previsiones Full[IT_ES_PAGO],IT_ES_PAGO,IT_ES_PAGO
+Column,Caption,Previsiones Full[CD_CONCEPTO],CD_CONCEPTO,CD_CONCEPTO
+Column,Caption,Previsiones Full[CD_VIA_COBRO_PAGO],CD_VIA_COBRO_PAGO,CD_VIA_COBRO_PAGO
+Column,Caption,Previsiones Full[DS_NUM_PREVISION_ERP],DS_NUM_PREVISION_ERP,DS_NUM_PREVISION_ERP
+Column,Caption,Previsiones Full[DS_DOCUMENTO],DS_DOCUMENTO,DS_DOCUMENTO
+Column,Caption,Previsiones Full[DS_REMESA],DS_REMESA,DS_REMESA
+Column,Caption,Previsiones Full[DS_DESCRIPCION],DS_DESCRIPCION,DS_DESCRIPCION
+Column,Caption,Previsiones Full[FC_VENCIMIENTO],FC_VENCIMIENTO,FC_VENCIMIENTO
+Column,Caption,Previsiones Full[FC_PREVISTA],FC_PREVISTA,FC_PREVISTA
+Column,Caption,Previsiones Full[FC_EMISION_FACTURA],FC_EMISION_FACTURA,FC_EMISION_FACTURA
+Column,Caption,Previsiones Full[NM_IMPORTE_INICIAL],NM_IMPORTE_INICIAL,NM_IMPORTE_INICIAL
+Column,Caption,Previsiones Full[CD_DIVISA_INICIAL],CD_DIVISA_INICIAL,CD_DIVISA_INICIAL
+Column,Caption,Previsiones Full[NM_IMPORTE_PREVISTO],NM_IMPORTE_PREVISTO,NM_IMPORTE_PREVISTO
+Column,Caption,Previsiones Full[CD_DIVISA_PREVISTA],CD_DIVISA_PREVISTA,CD_DIVISA_PREVISTA
+Column,Caption,Previsiones Full[CD_REPETICION],CD_REPETICION,CD_REPETICION
+Column,Caption,Previsiones Full[NM_REPETICION],NM_REPETICION,NM_REPETICION
+Column,Caption,Previsiones Full[IT_REPETICION_CAMBIOS],IT_REPETICION_CAMBIOS,IT_REPETICION_CAMBIOS
+Column,Caption,Previsiones Full[CD_ESTADO],CD_ESTADO,CD_ESTADO
+Column,Caption,Previsiones Full[FC_VALIDACION],FC_VALIDACION,FC_VALIDACION
+Column,Caption,Previsiones Full[CD_ORIGEN],CD_ORIGEN,CD_ORIGEN
+Column,Caption,Previsiones Full[CD_TIPO_PREVISION],CD_TIPO_PREVISION,CD_TIPO_PREVISION
+Column,Caption,Previsiones Full[CD_TIPO_DOCUMENTO],CD_TIPO_DOCUMENTO,CD_TIPO_DOCUMENTO
+Column,Caption,Previsiones Full[CD_CERTEZA],CD_CERTEZA,CD_CERTEZA
+Column,Caption,Previsiones Full[IT_FINANCIABLE],IT_FINANCIABLE,IT_FINANCIABLE
+Column,Caption,Previsiones Full[DS_CAMPO_1],DS_CAMPO_1,DS_CAMPO_1
+Column,Caption,Previsiones Full[DS_CAMPO_3],DS_CAMPO_3,DS_CAMPO_3
+Column,Caption,Previsiones Full[IT_BORRABLE],IT_BORRABLE,IT_BORRABLE
+Column,Caption,Previsiones Full[IT_FINANCIADA],IT_FINANCIADA,IT_FINANCIADA
+Column,Caption,Previsiones Full[FC_FINANCIACION],FC_FINANCIACION,FC_FINANCIACION
+Column,Caption,Previsiones Full[CD_IMPORTACION],CD_IMPORTACION,CD_IMPORTACION
+Column,Caption,Previsiones Full[CD_TIPO_CRITERIO],CD_TIPO_CRITERIO,CD_TIPO_CRITERIO
+Column,Caption,Previsiones Full[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Previsiones Full[CdOperacionAmortizacion],CdOperacionAmortizacion,CdOperacionAmortizacion
+Column,Caption,Previsiones Full[CdSyncPrevisionTipo],CdSyncPrevisionTipo,CdSyncPrevisionTipo
+Column,Caption,Previsiones Full[DS_TIPO_DOCUMENTO],DS_TIPO_DOCUMENTO,DS_TIPO_DOCUMENTO
+Column,Caption,Previsiones Full[DS_FLUJO_CAJA],DS_FLUJO_CAJA,DS_FLUJO_CAJA
+Column,Caption,Previsiones Full[TipoPrevFull],TipoPrevFull,TipoPrevFull
+Column,Caption,Previsiones Full[Pagos],Pagos,Pagos
+Column,Caption,Previsiones Full[Cobros],Cobros,Cobros
+Column,Caption,Previsiones Full[Vencido],Vencido,Vencido
+Column,Caption,Previsiones Full[Pago/Cobro],Pago/Cobro,Pago/Cobro
+Column,Caption,Previsiones Full[DS_PROYECTO],DS_PROYECTO,DS_PROYECTO
+Column,Caption,Previsiones Full[DS_PL ALLOCATION],DS_PL ALLOCATION,DS_PL ALLOCATION
+Column,Caption,Previsiones Full[DS_CCM],DS_CCM,DS_CCM
+Measure,Caption,Previsiones Full[Diferencia],Diferencia,Diferencia
+Measure,Caption,Previsiones Full[Presu-Conta],Presu-Conta,Presu-Conta
+Measure,Caption,Previsiones Full[Vencida +60 Full],Vencida +60 Full,Vencida +60 Full
+Measure,Caption,Previsiones Full[Vencida 30 full],Vencida 30 full,Vencida 30 full
+Measure,Caption,Previsiones Full[Vencida 60 full],Vencida 60 full,Vencida 60 full
+Measure,Caption,Previsiones Full[Importe Previsión Full],Importe Previsión Full,Importe Previsión Full
+Measure,Caption,Previsiones Full[Total FC_EMISION_FACTURA],Total FC_EMISION_FACTURA,Total FC_EMISION_FACTURA
+Measure,Caption,Previsiones Full[Total FC_VENCIMIENTO],Total FC_VENCIMIENTO,Total FC_VENCIMIENTO
+Measure,Caption,Previsiones Full[Importe Previsto Máximo],Importe Previsto Máximo,Importe Previsto Máximo
+Table,Caption,Previsiones Doc:Conta,Previsiones Doc:Conta,Previsiones Doc:Conta
+Column,Caption,Previsiones Doc:Conta[CD_PREVISION],CD_PREVISION,CD_PREVISION
+Column,Caption,Previsiones Doc:Conta[NM_IMPORTE_INICIAL],NM_IMPORTE_INICIAL,NM_IMPORTE_INICIAL
+Table,Caption,Previsiones Doc:Presu,Previsiones Doc:Presu,Previsiones Doc:Presu
+Column,Caption,Previsiones Doc:Presu[CD_PREVISION],CD_PREVISION,CD_PREVISION
+Column,Caption,Previsiones Doc:Presu[NM_IMPORTE_INICIAL],NM_IMPORTE_INICIAL,NM_IMPORTE_INICIAL
+Table,Caption,IyGporConcepto,IyGporConcepto,IyGporConcepto
+Column,Caption,IyGporConcepto[Tipo],Tipo,Tipo
+Column,Caption,IyGporConcepto[Concepto],Concepto,Concepto
+Column,Caption,IyGporConcepto[CD_MOVIMIENTO],CD_MOVIMIENTO,CD_MOVIMIENTO
+Column,Caption,IyGporConcepto[CD_TIPO_MOVIMIENTO],CD_TIPO_MOVIMIENTO,CD_TIPO_MOVIMIENTO
+Column,Caption,IyGporConcepto[NM_IMPORTE],NM_IMPORTE,NM_IMPORTE
+Column,Caption,IyGporConcepto[NM_SALDO],NM_SALDO,NM_SALDO
+Column,Caption,IyGporConcepto[FC_VALOR],FC_VALOR,FC_VALOR
+Column,Caption,IyGporConcepto[FC_OPERACION],FC_OPERACION,FC_OPERACION
+Column,Caption,IyGporConcepto[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,IyGporConcepto[DS_OFICINA_ORIGEN],DS_OFICINA_ORIGEN,DS_OFICINA_ORIGEN
+Column,Caption,IyGporConcepto[CD_VIA_COBRO_PAGO],CD_VIA_COBRO_PAGO,CD_VIA_COBRO_PAGO
+Column,Caption,IyGporConcepto[DS_CONCEPTO_PROPIO],DS_CONCEPTO_PROPIO,DS_CONCEPTO_PROPIO
+Column,Caption,IyGporConcepto[DS_DOCUMENTO],DS_DOCUMENTO,DS_DOCUMENTO
+Column,Caption,IyGporConcepto[DS_REFERENCIA],DS_REFERENCIA,DS_REFERENCIA
+Column,Caption,IyGporConcepto[DS_COMPLEMENTARIO],DS_COMPLEMENTARIO,DS_COMPLEMENTARIO
+Column,Caption,IyGporConcepto[CD_DIVISA_ORIGEN],CD_DIVISA_ORIGEN,CD_DIVISA_ORIGEN
+Column,Caption,IyGporConcepto[CD_CONCEPTO_COMUN],CD_CONCEPTO_COMUN,CD_CONCEPTO_COMUN
+Column,Caption,IyGporConcepto[DS_CONTRAPARTIDA],DS_CONTRAPARTIDA,DS_CONTRAPARTIDA
+Column,Caption,IyGporConcepto[DS_ASIENTO],DS_ASIENTO,DS_ASIENTO
+Column,Caption,IyGporConcepto[DS_DIMENSIONES],DS_DIMENSIONES,DS_DIMENSIONES
+Column,Caption,IyGporConcepto[IT_CONCILIACION],IT_CONCILIACION,IT_CONCILIACION
+Column,Caption,IyGporConcepto[IT_PUNTEADO],IT_PUNTEADO,IT_PUNTEADO
+Column,Caption,IyGporConcepto[FC_PUNTEO],FC_PUNTEO,FC_PUNTEO
+Column,Caption,IyGporConcepto[FC_CIERRE],FC_CIERRE,FC_CIERRE
+Column,Caption,IyGporConcepto[IT_COMPENSADO],IT_COMPENSADO,IT_COMPENSADO
+Column,Caption,IyGporConcepto[FC_COMPENSACION],FC_COMPENSACION,FC_COMPENSACION
+Column,Caption,IyGporConcepto[IT_EXPORTADO],IT_EXPORTADO,IT_EXPORTADO
+Column,Caption,IyGporConcepto[FC_EXPORTACION],FC_EXPORTACION,FC_EXPORTACION
+Column,Caption,IyGporConcepto[IT_ANULADO],IT_ANULADO,IT_ANULADO
+Column,Caption,IyGporConcepto[FC_ANULACION],FC_ANULACION,FC_ANULACION
+Column,Caption,IyGporConcepto[CD_IMPORTACION],CD_IMPORTACION,CD_IMPORTACION
+Column,Caption,IyGporConcepto[NM_MOVIMIENTO],NM_MOVIMIENTO,NM_MOVIMIENTO
+Column,Caption,IyGporConcepto[CD_CONCEPTO],CD_CONCEPTO,CD_CONCEPTO
+Column,Caption,IyGporConcepto[IT_VALIDADO],IT_VALIDADO,IT_VALIDADO
+Column,Caption,IyGporConcepto[FC_VALIDACION],FC_VALIDACION,FC_VALIDACION
+Column,Caption,IyGporConcepto[IT_COMPENSADO_ERP],IT_COMPENSADO_ERP,IT_COMPENSADO_ERP
+Column,Caption,IyGporConcepto[NM_TIPO_CAMBIO],NM_TIPO_CAMBIO,NM_TIPO_CAMBIO
+Column,Caption,IyGporConcepto[FC_VENCIMIENTO],FC_VENCIMIENTO,FC_VENCIMIENTO
+Column,Caption,IyGporConcepto[CD_CODIFICACION],CD_CODIFICACION,CD_CODIFICACION
+Column,Caption,IyGporConcepto[CD_CUENTA2],CD_CUENTA2,CD_CUENTA2
+Column,Caption,IyGporConcepto[DS_NOMBRE_CUENTA],DS_NOMBRE_CUENTA,DS_NOMBRE_CUENTA
+Column,Caption,IyGporConcepto[CD_CUENTA_TIPO],CD_CUENTA_TIPO,CD_CUENTA_TIPO
+Column,Caption,IyGporConcepto[DS_BANCO],DS_BANCO,DS_BANCO
+Column,Caption,IyGporConcepto[DS_OFICINA],DS_OFICINA,DS_OFICINA
+Column,Caption,IyGporConcepto[DS_DIGITO_CONTROL],DS_DIGITO_CONTROL,DS_DIGITO_CONTROL
+Column,Caption,IyGporConcepto[DS_CODIGO_CUENTA],DS_CODIGO_CUENTA,DS_CODIGO_CUENTA
+Column,Caption,IyGporConcepto[DS_CODIGO_INTERNACIONAL],DS_CODIGO_INTERNACIONAL,DS_CODIGO_INTERNACIONAL
+Column,Caption,IyGporConcepto[DS_IBAN],DS_IBAN,DS_IBAN
+Column,Caption,IyGporConcepto[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,IyGporConcepto[CD_DIVISA],CD_DIVISA,CD_DIVISA
+Column,Caption,IyGporConcepto[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,IyGporConcepto[NM_SALDO2],NM_SALDO2,NM_SALDO2
+Column,Caption,IyGporConcepto[IT_ACTIVA],IT_ACTIVA,IT_ACTIVA
+Column,Caption,IyGporConcepto[FC_INACTIVA],FC_INACTIVA,FC_INACTIVA
+Column,Caption,IyGporConcepto[DS_CUENTA_CONTABLE_ERP],DS_CUENTA_CONTABLE_ERP,DS_CUENTA_CONTABLE_ERP
+Column,Caption,IyGporConcepto[DS_OBSERVACIONES],DS_OBSERVACIONES,DS_OBSERVACIONES
+Column,Caption,IyGporConcepto[DS_APODERADOS],DS_APODERADOS,DS_APODERADOS
+Column,Caption,IyGporConcepto[NM_SALDO_ERP],NM_SALDO_ERP,NM_SALDO_ERP
+Column,Caption,IyGporConcepto[CD_MVTO_INICIAL],CD_MVTO_INICIAL,CD_MVTO_INICIAL
+Column,Caption,IyGporConcepto[CD_MVTO_ULTIMO],CD_MVTO_ULTIMO,CD_MVTO_ULTIMO
+Column,Caption,IyGporConcepto[CD_MVTO_ERP_INICIAL],CD_MVTO_ERP_INICIAL,CD_MVTO_ERP_INICIAL
+Column,Caption,IyGporConcepto[CD_MVTO_ERP_ULTIMO],CD_MVTO_ERP_ULTIMO,CD_MVTO_ERP_ULTIMO
+Column,Caption,IyGporConcepto[CD_GRUPO_CUENTA],CD_GRUPO_CUENTA,CD_GRUPO_CUENTA
+Column,Caption,IyGporConcepto[CD_CONCEPTO2],CD_CONCEPTO2,CD_CONCEPTO2
+Column,Caption,IyGporConcepto[DS_CONCEPTO],DS_CONCEPTO,DS_CONCEPTO
+Column,Caption,IyGporConcepto[IT_ES_PAGO],IT_ES_PAGO,IT_ES_PAGO
+Column,Caption,IyGporConcepto[DS_TIPO_CONCEPTO],DS_TIPO_CONCEPTO,DS_TIPO_CONCEPTO
+Column,Caption,IyGporConcepto[NM_ORDEN],NM_ORDEN,NM_ORDEN
+Column,Caption,IyGporConcepto[CD_FLUJO_CAJA],CD_FLUJO_CAJA,CD_FLUJO_CAJA
+Column,Caption,IyGporConcepto[CD_CONCEPTO_MINORACION],CD_CONCEPTO_MINORACION,CD_CONCEPTO_MINORACION
+Column,Caption,IyGporConcepto[DIAS_REALES],DIAS_REALES,DIAS_REALES
+Column,Caption,IyGporConcepto[CD_TIPO_MINORACION],CD_TIPO_MINORACION,CD_TIPO_MINORACION
+Column,Caption,IyGporConcepto[IMPORTE],IMPORTE,IMPORTE
+Measure,Caption,IyGporConcepto[Gastos €],Gastos €,Gastos €
+Measure,Caption,IyGporConcepto[Ingresos €],Ingresos €,Ingresos €
+Measure,Caption,IyGporConcepto[Saldo Movimientos €],Saldo Movimientos €,Saldo Movimientos €
+Measure,Caption,IyGporConcepto[Saldo Final €],Saldo Final €,Saldo Final €
+Table,Caption,KAT_BANCOS,KAT_BANCOS,KAT_BANCOS
+Column,Caption,KAT_BANCOS[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,KAT_BANCOS[DS_ALIAS_BANCO],DS_ALIAS_BANCO,DS_ALIAS_BANCO
+Column,Caption,KAT_BANCOS[DS_NOMBRE_BANCO],DS_NOMBRE_BANCO,DS_NOMBRE_BANCO
+Column,Caption,KAT_BANCOS[DS_CODIGO_BANCO],DS_CODIGO_BANCO,DS_CODIGO_BANCO
+Column,Caption,KAT_BANCOS[DS_RUTA_FICHERO_IMPORT],DS_RUTA_FICHERO_IMPORT,DS_RUTA_FICHERO_IMPORT
+Column,Caption,KAT_BANCOS[DS_SWIFT],DS_SWIFT,DS_SWIFT
+Column,Caption,KAT_BANCOS[DS_OBSERVACIONES],DS_OBSERVACIONES,DS_OBSERVACIONES
+Column,Caption,KAT_BANCOS[IT_COMPROBAR_SALDOS],IT_COMPROBAR_SALDOS,IT_COMPROBAR_SALDOS
+Table,Caption,Endeudamientos - Datos origen,Endeudamientos - Datos origen,Endeudamientos - Datos origen
+Column,Caption,Endeudamientos - Datos origen[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Endeudamientos - Datos origen[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Endeudamientos - Datos origen[Descripcion],Descripcion,Descripcion
+Column,Caption,Endeudamientos - Datos origen[Alias],Alias,Alias
+Column,Caption,Endeudamientos - Datos origen[CdEmpresa],CdEmpresa,CdEmpresa
+Column,Caption,Endeudamientos - Datos origen[CdBanco],CdBanco,CdBanco
+Column,Caption,Endeudamientos - Datos origen[CdCuenta],CdCuenta,CdCuenta
+Column,Caption,Endeudamientos - Datos origen[ImportePendiente],ImportePendiente,ImportePendiente
+Column,Caption,Endeudamientos - Datos origen[FechaInicio],FechaInicio,FechaInicio
+Column,Caption,Endeudamientos - Datos origen[FechaImportePendiente],FechaImportePendiente,FechaImportePendiente
+Column,Caption,Endeudamientos - Datos origen[FechaFin],FechaFin,FechaFin
+Column,Caption,Endeudamientos - Datos origen[TipoInteresInicial],TipoInteresInicial,TipoInteresInicial
+Column,Caption,Endeudamientos - Datos origen[TipoInteresActual],TipoInteresActual,TipoInteresActual
+Column,Caption,Endeudamientos - Datos origen[TipoRetencion],TipoRetencion,TipoRetencion
+Column,Caption,Endeudamientos - Datos origen[BaseCalculo],BaseCalculo,BaseCalculo
+Column,Caption,Endeudamientos - Datos origen[NumDecimalesInt],NumDecimalesInt,NumDecimalesInt
+Column,Caption,Endeudamientos - Datos origen[CdFrecuenciaIntereses],CdFrecuenciaIntereses,CdFrecuenciaIntereses
+Column,Caption,Endeudamientos - Datos origen[FechaPrimerInteres],FechaPrimerInteres,FechaPrimerInteres
+Column,Caption,Endeudamientos - Datos origen[CdTipoOperacion],CdTipoOperacion,CdTipoOperacion
+Column,Caption,Endeudamientos - Datos origen[ImporteInicial],ImporteInicial,ImporteInicial
+Column,Caption,Endeudamientos - Datos origen[ImporteIntereses],ImporteIntereses,ImporteIntereses
+Column,Caption,Endeudamientos - Datos origen[ImporteRetencion],ImporteRetencion,ImporteRetencion
+Column,Caption,Endeudamientos - Datos origen[ImporteTotal],ImporteTotal,ImporteTotal
+Column,Caption,Endeudamientos - Datos origen[Pedidos],Pedidos,Pedidos
+Column,Caption,Endeudamientos - Datos origen[Duracion],Duracion,Duracion
+Column,Caption,Endeudamientos - Datos origen[Cuota],Cuota,Cuota
+Column,Caption,Endeudamientos - Datos origen[ClienteDesc],ClienteDesc,ClienteDesc
+Column,Caption,Endeudamientos - Datos origen[ClienteId],ClienteId,ClienteId
+Column,Caption,Endeudamientos - Datos origen[FactorFinanciacion],FactorFinanciacion,FactorFinanciacion
+Column,Caption,Endeudamientos - Datos origen[ItConfirmado],ItConfirmado,ItConfirmado
+Column,Caption,Endeudamientos - Datos origen[FechaExportacion],FechaExportacion,FechaExportacion
+Column,Caption,Endeudamientos - Datos origen[ItComision],ItComision,ItComision
+Column,Caption,Endeudamientos - Datos origen[NmValorImpuesto],NmValorImpuesto,NmValorImpuesto
+Column,Caption,Endeudamientos - Datos origen[ItContabilizable],ItContabilizable,ItContabilizable
+Column,Caption,Endeudamientos - Datos origen[CdSyncPrevisionTipo],CdSyncPrevisionTipo,CdSyncPrevisionTipo
+Column,Caption,Endeudamientos - Datos origen[CdTipoPrevision],CdTipoPrevision,CdTipoPrevision
+Column,Caption,Endeudamientos - Datos origen[CdTipoDocumento],CdTipoDocumento,CdTipoDocumento
+Column,Caption,Endeudamientos - Datos origen[CdCerteza],CdCerteza,CdCerteza
+Column,Caption,Endeudamientos - Datos origen[CdConcepto_Cuota],CdConcepto_Cuota,CdConcepto_Cuota
+Column,Caption,Endeudamientos - Datos origen[CdViaCobroPago_Cuota],CdViaCobroPago_Cuota,CdViaCobroPago_Cuota
+Column,Caption,Endeudamientos - Datos origen[CdConcepto_Impuestos],CdConcepto_Impuestos,CdConcepto_Impuestos
+Column,Caption,Endeudamientos - Datos origen[CdViaCobroPago_Impuestos],CdViaCobroPago_Impuestos,CdViaCobroPago_Impuestos
+Column,Caption,Endeudamientos - Datos origen[CdConcepto_Intereses],CdConcepto_Intereses,CdConcepto_Intereses
+Column,Caption,Endeudamientos - Datos origen[CdViaCobroPago_Intereses],CdViaCobroPago_Intereses,CdViaCobroPago_Intereses
+Column,Caption,Endeudamientos - Datos origen[CdConcepto_Principal],CdConcepto_Principal,CdConcepto_Principal
+Column,Caption,Endeudamientos - Datos origen[CdViaCobroPago_Principal],CdViaCobroPago_Principal,CdViaCobroPago_Principal
+Column,Caption,Endeudamientos - Datos origen[ItAplicarValorResidualCuota],ItAplicarValorResidualCuota,ItAplicarValorResidualCuota
+Column,Caption,Endeudamientos - Datos origen[ItAplicarInteresPrimerPeriodo],ItAplicarInteresPrimerPeriodo,ItAplicarInteresPrimerPeriodo
+Column,Caption,Endeudamientos - Datos origen[NmValorResidual],NmValorResidual,NmValorResidual
+Column,Caption,Endeudamientos - Datos origen[ItAplicarRetencionCapital],ItAplicarRetencionCapital,ItAplicarRetencionCapital
+Column,Caption,Endeudamientos - Datos origen[NmBaseCalculoRetencion],NmBaseCalculoRetencion,NmBaseCalculoRetencion
+Column,Caption,Endeudamientos - Datos origen[ItCargaManual],ItCargaManual,ItCargaManual
+Column,Caption,Endeudamientos - Datos origen[LimitePtoPromotor],LimitePtoPromotor,LimitePtoPromotor
+Column,Caption,Endeudamientos - Datos origen[TipoInteresIniPtoPromotor],TipoInteresIniPtoPromotor,TipoInteresIniPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[FechaIniPtoPromotor],FechaIniPtoPromotor,FechaIniPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[FechaFinPtoPromotor],FechaFinPtoPromotor,FechaFinPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[CdFrecuenciaInteresesPtoPromotor],CdFrecuenciaInteresesPtoPromotor,CdFrecuenciaInteresesPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[FechaLiqInteresesPtoPromotor],FechaLiqInteresesPtoPromotor,FechaLiqInteresesPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[FechaPrimerInteresPtoPromotor],FechaPrimerInteresPtoPromotor,FechaPrimerInteresPtoPromotor
+Column,Caption,Endeudamientos - Datos origen[DiposicionIniPtoPromotor],DiposicionIniPtoPromotor,DiposicionIniPtoPromotor
+Table,Caption,Grupos Empresas 1,Grupos Empresas 1,Grupos Empresas 1
+Column,Caption,Grupos Empresas 1[Agrupación],Agrupación,Agrupación
+Column,Caption,Grupos Empresas 1[Nombre Agrupación],Nombre Agrupación,Nombre Agrupación
+Column,Caption,Grupos Empresas 1[Nombre Subgrupo],Nombre Subgrupo,Nombre Subgrupo
+Column,Caption,Grupos Empresas 1[Empresa KAT],Empresa KAT,Empresa KAT
+Column,Caption,Grupos Empresas 1[ID EMPRESA],ID EMPRESA,ID EMPRESA
+Table,Caption,ConnectionDB_KAT,ConnectionDB_KAT,ConnectionDB_KAT
+Column,Caption,ConnectionDB_KAT[Name],Name,Name
+Column,Caption,ConnectionDB_KAT[Data],Data,Data
+Column,Caption,ConnectionDB_KAT[Schema],Schema,Schema
+Column,Caption,ConnectionDB_KAT[Item],Item,Item
+Column,Caption,ConnectionDB_KAT[Kind],Kind,Kind
+Table,Caption,Endeudamiento Calculos,Endeudamiento Calculos,Endeudamiento Calculos
+Column,Caption,Endeudamiento Calculos[Formula],Formula,Formula
+Table,Caption,Endeudamiento Amortización,Endeudamiento Amortización,Endeudamiento Amortización
+Column,Caption,Endeudamiento Amortización[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Endeudamiento Amortización[CdOperacionAmortizacion],CdOperacionAmortizacion,CdOperacionAmortizacion
+Column,Caption,Endeudamiento Amortización[Descripcion],Descripcion,Descripcion
+Column,Caption,Endeudamiento Amortización[Orden],Orden,Orden
+Column,Caption,Endeudamiento Amortización[Fecha],Fecha,Fecha
+Column,Caption,Endeudamiento Amortización[Principal],Principal,Principal
+Column,Caption,Endeudamiento Amortización[Intereses],Intereses,Intereses
+Column,Caption,Endeudamiento Amortización[Retencion],Retencion,Retencion
+Column,Caption,Endeudamiento Amortización[Impuestos],Impuestos,Impuestos
+Column,Caption,Endeudamiento Amortización[Cuota],Cuota,Cuota
+Column,Caption,Endeudamiento Amortización[CapitalVivo],CapitalVivo,CapitalVivo
+Column,Caption,Endeudamiento Amortización[CdTipoAsientoAmortizacion],CdTipoAsientoAmortizacion,CdTipoAsientoAmortizacion
+Column,Caption,Endeudamiento Amortización[FechaExportacion],FechaExportacion,FechaExportacion
+Column,Caption,Endeudamiento Amortización[FechaExportacionPrevision],FechaExportacionPrevision,FechaExportacionPrevision
+Table,Caption,Endeudamiento Nueva,Endeudamiento Nueva,Endeudamiento Nueva
+Column,Caption,Endeudamiento Nueva[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Endeudamiento Nueva[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Endeudamiento Nueva[Descripcion],Descripcion,Descripcion
+Column,Caption,Endeudamiento Nueva[Alias],Alias,Alias
+Column,Caption,Endeudamiento Nueva[CdEmpresa],CdEmpresa,CdEmpresa
+Column,Caption,Endeudamiento Nueva[CdBanco],CdBanco,CdBanco
+Column,Caption,Endeudamiento Nueva[CdCuenta],CdCuenta,CdCuenta
+Column,Caption,Endeudamiento Nueva[ImportePendiente],ImportePendiente,ImportePendiente
+Column,Caption,Endeudamiento Nueva[FechaInicio],FechaInicio,FechaInicio
+Column,Caption,Endeudamiento Nueva[FechaImportePendiente],FechaImportePendiente,FechaImportePendiente
+Column,Caption,Endeudamiento Nueva[FechaFin],FechaFin,FechaFin
+Column,Caption,Endeudamiento Nueva[TipoInteresInicial],TipoInteresInicial,TipoInteresInicial
+Column,Caption,Endeudamiento Nueva[TipoInteresActual],TipoInteresActual,TipoInteresActual
+Column,Caption,Endeudamiento Nueva[TipoRetencion],TipoRetencion,TipoRetencion
+Column,Caption,Endeudamiento Nueva[BaseCalculo],BaseCalculo,BaseCalculo
+Column,Caption,Endeudamiento Nueva[NumDecimalesInt],NumDecimalesInt,NumDecimalesInt
+Column,Caption,Endeudamiento Nueva[CdFrecuenciaIntereses],CdFrecuenciaIntereses,CdFrecuenciaIntereses
+Column,Caption,Endeudamiento Nueva[FechaPrimerInteres],FechaPrimerInteres,FechaPrimerInteres
+Column,Caption,Endeudamiento Nueva[CdTipoOperacion],CdTipoOperacion,CdTipoOperacion
+Column,Caption,Endeudamiento Nueva[ImporteInicial],ImporteInicial,ImporteInicial
+Column,Caption,Endeudamiento Nueva[ImporteIntereses],ImporteIntereses,ImporteIntereses
+Column,Caption,Endeudamiento Nueva[ImporteRetencion],ImporteRetencion,ImporteRetencion
+Column,Caption,Endeudamiento Nueva[ImporteTotal],ImporteTotal,ImporteTotal
+Column,Caption,Endeudamiento Nueva[Pedidos],Pedidos,Pedidos
+Column,Caption,Endeudamiento Nueva[Duracion],Duracion,Duracion
+Column,Caption,Endeudamiento Nueva[Cuota],Cuota,Cuota
+Column,Caption,Endeudamiento Nueva[ClienteDesc],ClienteDesc,ClienteDesc
+Column,Caption,Endeudamiento Nueva[ClienteId],ClienteId,ClienteId
+Column,Caption,Endeudamiento Nueva[FactorFinanciacion],FactorFinanciacion,FactorFinanciacion
+Column,Caption,Endeudamiento Nueva[ItConfirmado],ItConfirmado,ItConfirmado
+Column,Caption,Endeudamiento Nueva[FechaExportacion],FechaExportacion,FechaExportacion
+Column,Caption,Endeudamiento Nueva[ItComision],ItComision,ItComision
+Column,Caption,Endeudamiento Nueva[NmValorImpuesto],NmValorImpuesto,NmValorImpuesto
+Column,Caption,Endeudamiento Nueva[ItContabilizable],ItContabilizable,ItContabilizable
+Column,Caption,Endeudamiento Nueva[CdSyncPrevisionTipo],CdSyncPrevisionTipo,CdSyncPrevisionTipo
+Column,Caption,Endeudamiento Nueva[CdTipoPrevision],CdTipoPrevision,CdTipoPrevision
+Column,Caption,Endeudamiento Nueva[CdTipoDocumento],CdTipoDocumento,CdTipoDocumento
+Column,Caption,Endeudamiento Nueva[CdCerteza],CdCerteza,CdCerteza
+Column,Caption,Endeudamiento Nueva[CdConcepto_Cuota],CdConcepto_Cuota,CdConcepto_Cuota
+Column,Caption,Endeudamiento Nueva[CdViaCobroPago_Cuota],CdViaCobroPago_Cuota,CdViaCobroPago_Cuota
+Column,Caption,Endeudamiento Nueva[CdConcepto_Impuestos],CdConcepto_Impuestos,CdConcepto_Impuestos
+Column,Caption,Endeudamiento Nueva[CdViaCobroPago_Impuestos],CdViaCobroPago_Impuestos,CdViaCobroPago_Impuestos
+Column,Caption,Endeudamiento Nueva[CdConcepto_Intereses],CdConcepto_Intereses,CdConcepto_Intereses
+Column,Caption,Endeudamiento Nueva[CdViaCobroPago_Intereses],CdViaCobroPago_Intereses,CdViaCobroPago_Intereses
+Column,Caption,Endeudamiento Nueva[CdConcepto_Principal],CdConcepto_Principal,CdConcepto_Principal
+Column,Caption,Endeudamiento Nueva[CdViaCobroPago_Principal],CdViaCobroPago_Principal,CdViaCobroPago_Principal
+Column,Caption,Endeudamiento Nueva[ItAplicarValorResidualCuota],ItAplicarValorResidualCuota,ItAplicarValorResidualCuota
+Column,Caption,Endeudamiento Nueva[ItAplicarInteresPrimerPeriodo],ItAplicarInteresPrimerPeriodo,ItAplicarInteresPrimerPeriodo
+Column,Caption,Endeudamiento Nueva[NmValorResidual],NmValorResidual,NmValorResidual
+Column,Caption,Endeudamiento Nueva[ItAplicarRetencionCapital],ItAplicarRetencionCapital,ItAplicarRetencionCapital
+Column,Caption,Endeudamiento Nueva[NmBaseCalculoRetencion],NmBaseCalculoRetencion,NmBaseCalculoRetencion
+Column,Caption,Endeudamiento Nueva[ItCargaManual],ItCargaManual,ItCargaManual
+Column,Caption,Endeudamiento Nueva[LimitePtoPromotor],LimitePtoPromotor,LimitePtoPromotor
+Column,Caption,Endeudamiento Nueva[TipoInteresIniPtoPromotor],TipoInteresIniPtoPromotor,TipoInteresIniPtoPromotor
+Column,Caption,Endeudamiento Nueva[FechaIniPtoPromotor],FechaIniPtoPromotor,FechaIniPtoPromotor
+Column,Caption,Endeudamiento Nueva[FechaFinPtoPromotor],FechaFinPtoPromotor,FechaFinPtoPromotor
+Column,Caption,Endeudamiento Nueva[CdFrecuenciaInteresesPtoPromotor],CdFrecuenciaInteresesPtoPromotor,CdFrecuenciaInteresesPtoPromotor
+Column,Caption,Endeudamiento Nueva[FechaLiqInteresesPtoPromotor],FechaLiqInteresesPtoPromotor,FechaLiqInteresesPtoPromotor
+Column,Caption,Endeudamiento Nueva[FechaPrimerInteresPtoPromotor],FechaPrimerInteresPtoPromotor,FechaPrimerInteresPtoPromotor
+Column,Caption,Endeudamiento Nueva[DiposicionIniPtoPromotor],DiposicionIniPtoPromotor,DiposicionIniPtoPromotor
+Table,Caption,Medidas,Medidas,Medidas
+Measure,Caption,Medidas[Endeudamiento Amortizacion (SUM)],Endeudamiento Amortizacion (SUM),Endeudamiento Amortizacion (SUM)
+Table,DisplayFolder,Medidas[Endeudamiento],,
+Measure,Caption,Medidas[Endeudamiento Amortizacion Accumulado],Endeudamiento Amortizacion Accumulado,Endeudamiento Amortizacion Accumulado
+Measure,Caption,Medidas[Endeudamiento Pendiente Accumulado],Endeudamiento Pendiente Accumulado,Endeudamiento Pendiente Accumulado
+Measure,Caption,Medidas[Endeudamiento Pendiente Inicial (SUM)],Endeudamiento Pendiente Inicial (SUM),Endeudamiento Pendiente Inicial (SUM)
+Measure,Caption,Medidas[Endeudamiento Fecha Inicio],Endeudamiento Fecha Inicio,Endeudamiento Fecha Inicio
+Measure,Caption,Medidas[Endeudamiento Fecha Fin],Endeudamiento Fecha Fin,Endeudamiento Fecha Fin
+Measure,Caption,Medidas[Endeudamiento Total],Endeudamiento Total,Endeudamiento Total
+Measure,Caption,Medidas[Credito Limite/Importe Inicial (SUM)],Credito Limite/Importe Inicial (SUM),Credito Limite/Importe Inicial (SUM)
+Table,DisplayFolder,Medidas[Credito],,
+Measure,Caption,Medidas[Credito Dispuesto/Pendiente Acumulado],Credito Dispuesto/Pendiente Acumulado,Credito Dispuesto/Pendiente Acumulado
+Measure,Caption,Medidas[Credito Amortizacion Acumulado],Credito Amortizacion Acumulado,Credito Amortizacion Acumulado
+Measure,Caption,Medidas[Endeudamiento Amortizacion Inicial],Endeudamiento Amortizacion Inicial,Endeudamiento Amortizacion Inicial
+Measure,Caption,Medidas[Credito Disponible Acumulado],Credito Disponible Acumulado,Credito Disponible Acumulado
+Measure,Caption,Medidas[Credito Tipo Interes/Diferencial (Single Value/Lowest Level)],Credito Tipo Interes/Diferencial (Single Value/Lowest Level),Credito Tipo Interes/Diferencial (Single Value/Lowest Level)
+Measure,Caption,Medidas[Credito Fecha Vencimiento (Single Value/Lowest Level)],Credito Fecha Vencimiento (Single Value/Lowest Level),Credito Fecha Vencimiento (Single Value/Lowest Level)
+Measure,Caption,Medidas[Credito es Carga Manual? (Single Value/Lowest Level)],Credito es Carga Manual? (Single Value/Lowest Level),Credito es Carga Manual? (Single Value/Lowest Level)
+Measure,Caption,Medidas[Credito Fecha Inicio (Single Value/Lowest Level)],Credito Fecha Inicio (Single Value/Lowest Level),Credito Fecha Inicio (Single Value/Lowest Level)
+Table,Caption,Endeudamiento_Nueva_to_Credito,Endeudamiento_Nueva_to_Credito,Endeudamiento_Nueva_to_Credito
+Column,Caption,Endeudamiento_Nueva_to_Credito[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Endeudamiento_Nueva_to_Credito[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Endeudamiento_Nueva_to_Credito[Credito Descripcion],Credito Descripcion,Credito Descripcion
+Column,Caption,Endeudamiento_Nueva_to_Credito[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Endeudamiento_Nueva_to_Credito[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Endeudamiento_Nueva_to_Credito[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Endeudamiento_Nueva_to_Credito[Fecha Vencimiento],Fecha Vencimiento,Fecha Vencimiento
+Column,Caption,Endeudamiento_Nueva_to_Credito[Tipo Interes/Diferencial],Tipo Interes/Diferencial,Tipo Interes/Diferencial
+Column,Caption,Endeudamiento_Nueva_to_Credito[Limite/Importe],Limite/Importe,Limite/Importe
+Column,Caption,Endeudamiento_Nueva_to_Credito[Tipo_Producto_DS],Tipo_Producto_DS,Tipo_Producto_DS
+Column,Caption,Endeudamiento_Nueva_to_Credito[ItCargaManual],ItCargaManual,ItCargaManual
+Column,Caption,Endeudamiento_Nueva_to_Credito[Fecha Inicio],Fecha Inicio,Fecha Inicio
+Table,Caption,Credito_Grupo_Tipos,Credito_Grupo_Tipos,Credito_Grupo_Tipos
+Column,Caption,Credito_Grupo_Tipos[Credito_Grupo_ID],Credito_Grupo_ID,Credito_Grupo_ID
+Column,Caption,Credito_Grupo_Tipos[Credito_Grupo_DS],Credito_Grupo_DS,Credito_Grupo_DS
+Column,Caption,Credito_Grupo_Tipos[Descripcion],Descripcion,Descripcion
+Table,Caption,Condiciones_to_Credito,Condiciones_to_Credito,Condiciones_to_Credito
+Column,Caption,Condiciones_to_Credito[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,Condiciones_to_Credito[Credito Descripcion],Credito Descripcion,Credito Descripcion
+Column,Caption,Condiciones_to_Credito[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Condiciones_to_Credito[Fecha Vencimiento],Fecha Vencimiento,Fecha Vencimiento
+Column,Caption,Condiciones_to_Credito[Limite/Importe],Limite/Importe,Limite/Importe
+Column,Caption,Condiciones_to_Credito[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Condiciones_to_Credito[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Condiciones_to_Credito[Tipo_Producto_DS],Tipo_Producto_DS,Tipo_Producto_DS
+Column,Caption,Condiciones_to_Credito[Tipo Interes/Diferencial],Tipo Interes/Diferencial,Tipo Interes/Diferencial
+Column,Caption,Condiciones_to_Credito[Fecha Inicio],Fecha Inicio,Fecha Inicio
+Table,Caption,Endeudamiento_Tipos,Endeudamiento_Tipos,Endeudamiento_Tipos
+Column,Caption,Endeudamiento_Tipos[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Endeudamiento_Tipos[CdInstrumento_DS],CdInstrumento_DS,CdInstrumento_DS
+Column,Caption,Endeudamiento_Tipos[Descripcion],Descripcion,Descripcion
+Column,Caption,Endeudamiento_Tipos[CdTipoOperacion],CdTipoOperacion,CdTipoOperacion
+Column,Caption,Endeudamiento_Tipos[CdMetodoAmortizacion],CdMetodoAmortizacion,CdMetodoAmortizacion
+Column,Caption,Endeudamiento_Tipos[CdModoPagoInteres],CdModoPagoInteres,CdModoPagoInteres
+Column,Caption,Endeudamiento_Tipos[CdTipoCalculo],CdTipoCalculo,CdTipoCalculo
+Column,Caption,Endeudamiento_Tipos[BaseCalculo],BaseCalculo,BaseCalculo
+Column,Caption,Endeudamiento_Tipos[Retencion],Retencion,Retencion
+Column,Caption,Endeudamiento_Tipos[FrecuenciaPeriodificacion],FrecuenciaPeriodificacion,FrecuenciaPeriodificacion
+Column,Caption,Endeudamiento_Tipos[FrecuenciaReclasificacion],FrecuenciaReclasificacion,FrecuenciaReclasificacion
+Column,Caption,Endeudamiento_Tipos[CD_PLAN_CTA_CONTRAPARTIDA],CD_PLAN_CTA_CONTRAPARTIDA,CD_PLAN_CTA_CONTRAPARTIDA
+Column,Caption,Endeudamiento_Tipos[ItFacturacion],ItFacturacion,ItFacturacion
+Column,Caption,Endeudamiento_Tipos[ItAplicarRetencionCapital],ItAplicarRetencionCapital,ItAplicarRetencionCapital
+Column,Caption,Endeudamiento_Tipos[ItAplicarImpuesto],ItAplicarImpuesto,ItAplicarImpuesto
+Column,Caption,Endeudamiento_Tipos[CdSyncPrevisionTipo],CdSyncPrevisionTipo,CdSyncPrevisionTipo
+Column,Caption,Endeudamiento_Tipos[CdTipoPrevision],CdTipoPrevision,CdTipoPrevision
+Column,Caption,Endeudamiento_Tipos[CdTipoDocumento],CdTipoDocumento,CdTipoDocumento
+Column,Caption,Endeudamiento_Tipos[CdCerteza],CdCerteza,CdCerteza
+Column,Caption,Endeudamiento_Tipos[CdConcepto_Cuota],CdConcepto_Cuota,CdConcepto_Cuota
+Column,Caption,Endeudamiento_Tipos[CdViaCobroPago_Cuota],CdViaCobroPago_Cuota,CdViaCobroPago_Cuota
+Column,Caption,Endeudamiento_Tipos[CdConcepto_Impuestos],CdConcepto_Impuestos,CdConcepto_Impuestos
+Column,Caption,Endeudamiento_Tipos[CdViaCobroPago_Impuestos],CdViaCobroPago_Impuestos,CdViaCobroPago_Impuestos
+Column,Caption,Endeudamiento_Tipos[CdConcepto_Intereses],CdConcepto_Intereses,CdConcepto_Intereses
+Column,Caption,Endeudamiento_Tipos[CdViaCobroPago_Intereses],CdViaCobroPago_Intereses,CdViaCobroPago_Intereses
+Column,Caption,Endeudamiento_Tipos[CdConcepto_Principal],CdConcepto_Principal,CdConcepto_Principal
+Column,Caption,Endeudamiento_Tipos[CdViaCobroPago_Principal],CdViaCobroPago_Principal,CdViaCobroPago_Principal
+Column,Caption,Endeudamiento_Tipos[NmValorImpuesto],NmValorImpuesto,NmValorImpuesto
+Column,Caption,Endeudamiento_Tipos[ItAplicarValorResidualCuota],ItAplicarValorResidualCuota,ItAplicarValorResidualCuota
+Column,Caption,Endeudamiento_Tipos[ItAplicarInteresPrimerPeriodo],ItAplicarInteresPrimerPeriodo,ItAplicarInteresPrimerPeriodo
+Column,Caption,Endeudamiento_Tipos[NmBaseCalculoRetencion],NmBaseCalculoRetencion,NmBaseCalculoRetencion
+Column,Caption,Endeudamiento_Tipos[ItPtoPromotor],ItPtoPromotor,ItPtoPromotor
+Table,Caption,Creditos,Creditos,Creditos
+Column,Caption,Creditos[CD_EMPRESA],CD_EMPRESA,CD_EMPRESA
+Column,Caption,Creditos[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Creditos[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Creditos[CD_BANCO],CD_BANCO,CD_BANCO
+Column,Caption,Creditos[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Creditos[Credito Descripcion],Credito Descripcion,Credito Descripcion
+Column,Caption,Creditos[Fecha Vencimiento],Fecha Vencimiento,Fecha Vencimiento
+Column,Caption,Creditos[Limite/Importe],Limite/Importe,Limite/Importe
+Column,Caption,Creditos[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,Creditos[Tipo_Producto_DS],Tipo_Producto_DS,Tipo_Producto_DS
+Column,Caption,Creditos[Credito_Grupo_ID],Credito_Grupo_ID,Credito_Grupo_ID
+Column,Caption,Creditos[Tipo de Producto],Tipo de Producto,Tipo de Producto
+Column,Caption,Creditos[Credito Grupo Descripcion],Credito Grupo Descripcion,Credito Grupo Descripcion
+Column,Caption,Creditos[Credito_Grupo_DS],Credito_Grupo_DS,Credito_Grupo_DS
+Column,Caption,Creditos[ItCargaManual],ItCargaManual,ItCargaManual
+Column,Caption,Creditos[Fecha Inicio],Fecha Inicio,Fecha Inicio
+Column,Caption,Creditos[Tipo Interes/Diferencial],Tipo Interes/Diferencial,Tipo Interes/Diferencial
+Table,Caption,Credito_Tipos,Credito_Tipos,Credito_Tipos
+Column,Caption,Credito_Tipos[Credito_Grupo_ID],Credito_Grupo_ID,Credito_Grupo_ID
+Column,Caption,Credito_Tipos[Tipo de Producto],Tipo de Producto,Tipo de Producto
+Column,Caption,Credito_Tipos[Tipo_Producto_DS],Tipo_Producto_DS,Tipo_Producto_DS
+Column,Caption,Credito_Tipos[Credito_Grupo_DS],Credito_Grupo_DS,Credito_Grupo_DS
+Column,Caption,Credito_Tipos[Credito Grupo Descripcion],Credito Grupo Descripcion,Credito Grupo Descripcion
+Table,Caption,Creditos_Mixed,Creditos_Mixed,Creditos_Mixed
+Column,Caption,Creditos_Mixed[CdOperacion],CdOperacion,CdOperacion
+Column,Caption,Creditos_Mixed[CdInstrumento],CdInstrumento,CdInstrumento
+Column,Caption,Creditos_Mixed[Descripcion],Descripcion,Descripcion
+Column,Caption,Creditos_Mixed[Alias],Alias,Alias
+Column,Caption,Creditos_Mixed[CdEmpresa],CdEmpresa,CdEmpresa
+Column,Caption,Creditos_Mixed[CdBanco],CdBanco,CdBanco
+Column,Caption,Creditos_Mixed[CdCuenta],CdCuenta,CdCuenta
+Column,Caption,Creditos_Mixed[ImportePendiente],ImportePendiente,ImportePendiente
+Column,Caption,Creditos_Mixed[FechaInicio],FechaInicio,FechaInicio
+Column,Caption,Creditos_Mixed[FechaImportePendiente],FechaImportePendiente,FechaImportePendiente
+Column,Caption,Creditos_Mixed[FechaFin],FechaFin,FechaFin
+Column,Caption,Creditos_Mixed[TipoInteresInicial],TipoInteresInicial,TipoInteresInicial
+Column,Caption,Creditos_Mixed[TipoInteresActual],TipoInteresActual,TipoInteresActual
+Column,Caption,Creditos_Mixed[TipoRetencion],TipoRetencion,TipoRetencion
+Column,Caption,Creditos_Mixed[BaseCalculo],BaseCalculo,BaseCalculo
+Column,Caption,Creditos_Mixed[NumDecimalesInt],NumDecimalesInt,NumDecimalesInt
+Column,Caption,Creditos_Mixed[CdFrecuenciaIntereses],CdFrecuenciaIntereses,CdFrecuenciaIntereses
+Column,Caption,Creditos_Mixed[FechaPrimerInteres],FechaPrimerInteres,FechaPrimerInteres
+Column,Caption,Creditos_Mixed[CdTipoOperacion],CdTipoOperacion,CdTipoOperacion
+Column,Caption,Creditos_Mixed[ImporteInicial],ImporteInicial,ImporteInicial
+Column,Caption,Creditos_Mixed[ImporteIntereses],ImporteIntereses,ImporteIntereses
+Column,Caption,Creditos_Mixed[ImporteRetencion],ImporteRetencion,ImporteRetencion
+Column,Caption,Creditos_Mixed[ImporteTotal],ImporteTotal,ImporteTotal
+Column,Caption,Creditos_Mixed[Pedidos],Pedidos,Pedidos
+Column,Caption,Creditos_Mixed[Duracion],Duracion,Duracion
+Column,Caption,Creditos_Mixed[Cuota],Cuota,Cuota
+Column,Caption,Creditos_Mixed[ClienteDesc],ClienteDesc,ClienteDesc
+Column,Caption,Creditos_Mixed[ClienteId],ClienteId,ClienteId
+Column,Caption,Creditos_Mixed[FactorFinanciacion],FactorFinanciacion,FactorFinanciacion
+Column,Caption,Creditos_Mixed[ItConfirmado],ItConfirmado,ItConfirmado
+Column,Caption,Creditos_Mixed[FechaExportacion],FechaExportacion,FechaExportacion
+Column,Caption,Creditos_Mixed[ItComision],ItComision,ItComision
+Column,Caption,Creditos_Mixed[NmValorImpuesto],NmValorImpuesto,NmValorImpuesto
+Column,Caption,Creditos_Mixed[ItContabilizable],ItContabilizable,ItContabilizable
+Column,Caption,Creditos_Mixed[CdSyncPrevisionTipo],CdSyncPrevisionTipo,CdSyncPrevisionTipo
+Column,Caption,Creditos_Mixed[CdTipoPrevision],CdTipoPrevision,CdTipoPrevision
+Column,Caption,Creditos_Mixed[CdTipoDocumento],CdTipoDocumento,CdTipoDocumento
+Column,Caption,Creditos_Mixed[CdCerteza],CdCerteza,CdCerteza
+Column,Caption,Creditos_Mixed[CdConcepto_Cuota],CdConcepto_Cuota,CdConcepto_Cuota
+Column,Caption,Creditos_Mixed[CdViaCobroPago_Cuota],CdViaCobroPago_Cuota,CdViaCobroPago_Cuota
+Column,Caption,Creditos_Mixed[CdConcepto_Impuestos],CdConcepto_Impuestos,CdConcepto_Impuestos
+Column,Caption,Creditos_Mixed[CdViaCobroPago_Impuestos],CdViaCobroPago_Impuestos,CdViaCobroPago_Impuestos
+Column,Caption,Creditos_Mixed[CdConcepto_Intereses],CdConcepto_Intereses,CdConcepto_Intereses
+Column,Caption,Creditos_Mixed[CdViaCobroPago_Intereses],CdViaCobroPago_Intereses,CdViaCobroPago_Intereses
+Column,Caption,Creditos_Mixed[CdConcepto_Principal],CdConcepto_Principal,CdConcepto_Principal
+Column,Caption,Creditos_Mixed[CdViaCobroPago_Principal],CdViaCobroPago_Principal,CdViaCobroPago_Principal
+Column,Caption,Creditos_Mixed[ItAplicarValorResidualCuota],ItAplicarValorResidualCuota,ItAplicarValorResidualCuota
+Column,Caption,Creditos_Mixed[ItAplicarInteresPrimerPeriodo],ItAplicarInteresPrimerPeriodo,ItAplicarInteresPrimerPeriodo
+Column,Caption,Creditos_Mixed[NmValorResidual],NmValorResidual,NmValorResidual
+Column,Caption,Creditos_Mixed[ItAplicarRetencionCapital],ItAplicarRetencionCapital,ItAplicarRetencionCapital
+Column,Caption,Creditos_Mixed[NmBaseCalculoRetencion],NmBaseCalculoRetencion,NmBaseCalculoRetencion
+Column,Caption,Creditos_Mixed[ItCargaManual],ItCargaManual,ItCargaManual
+Column,Caption,Creditos_Mixed[LimitePtoPromotor],LimitePtoPromotor,LimitePtoPromotor
+Column,Caption,Creditos_Mixed[TipoInteresIniPtoPromotor],TipoInteresIniPtoPromotor,TipoInteresIniPtoPromotor
+Column,Caption,Creditos_Mixed[FechaIniPtoPromotor],FechaIniPtoPromotor,FechaIniPtoPromotor
+Column,Caption,Creditos_Mixed[FechaFinPtoPromotor],FechaFinPtoPromotor,FechaFinPtoPromotor
+Column,Caption,Creditos_Mixed[CdFrecuenciaInteresesPtoPromotor],CdFrecuenciaInteresesPtoPromotor,CdFrecuenciaInteresesPtoPromotor
+Column,Caption,Creditos_Mixed[FechaLiqInteresesPtoPromotor],FechaLiqInteresesPtoPromotor,FechaLiqInteresesPtoPromotor
+Column,Caption,Creditos_Mixed[FechaPrimerInteresPtoPromotor],FechaPrimerInteresPtoPromotor,FechaPrimerInteresPtoPromotor
+Column,Caption,Creditos_Mixed[DiposicionIniPtoPromotor],DiposicionIniPtoPromotor,DiposicionIniPtoPromotor
+Column,Caption,Creditos_Mixed[CD_CONDICION],CD_CONDICION,CD_CONDICION
+Column,Caption,Creditos_Mixed[DS_CONDICION],DS_CONDICION,DS_CONDICION
+Column,Caption,Creditos_Mixed[CD_CUENTA],CD_CUENTA,CD_CUENTA
+Column,Caption,Creditos_Mixed[FC_INICIO],FC_INICIO,FC_INICIO
+Column,Caption,Creditos_Mixed[FC_FIN],FC_FIN,FC_FIN
+Column,Caption,Creditos_Mixed[NM_LIMITE],NM_LIMITE,NM_LIMITE
+Column,Caption,Creditos_Mixed[CD_PERIODO_LIQUIDACION],CD_PERIODO_LIQUIDACION,CD_PERIODO_LIQUIDACION
+Column,Caption,Creditos_Mixed[CD_PERIODO_REVISION],CD_PERIODO_REVISION,CD_PERIODO_REVISION
+Column,Caption,Creditos_Mixed[FC_REVISION],FC_REVISION,FC_REVISION
+Column,Caption,Creditos_Mixed[NM_SALDO_MINIMO],NM_SALDO_MINIMO,NM_SALDO_MINIMO
+Column,Caption,Creditos_Mixed[CD_TIPO_REFERENCIA],CD_TIPO_REFERENCIA,CD_TIPO_REFERENCIA
+Column,Caption,Creditos_Mixed[IT_DESLIZAMIENTO],IT_DESLIZAMIENTO,IT_DESLIZAMIENTO
+Column,Caption,Creditos_Mixed[NM_COMISION_NO_DISPONIBLE],NM_COMISION_NO_DISPONIBLE,NM_COMISION_NO_DISPONIBLE
+Column,Caption,Creditos_Mixed[NM_COMISION_ESTUDIO],NM_COMISION_ESTUDIO,NM_COMISION_ESTUDIO
+Column,Caption,Creditos_Mixed[NM_COMISION_APERTURA],NM_COMISION_APERTURA,NM_COMISION_APERTURA
+Column,Caption,Creditos_Mixed[KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO],KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO,KAT_CONDICIONES_TRAMOS.1.NM_TIPO_FIJO
+Column,Caption,Creditos_Mixed[KAT_TIPO_FIJO2],KAT_TIPO_FIJO2,KAT_TIPO_FIJO2
+Table,Caption,Empty,Empty,Empty

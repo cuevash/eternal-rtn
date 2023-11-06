@@ -1,0 +1,5156 @@
+{
+  "compatibilityLevel": 1601,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.122.746.0 (23.10)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Grupos_Inversores_Mapping\",\"Fi_Operaciones\",\"KAT_BANCOS\",\"KAT_CUENTAS\",\"KAT_EMPRESAS\",\"KAT_SALDO_CUENTA\",\"All_Measures\",\"Cobranzas_Egresos_Recientes\",\"Calendar Begin\",\"Calendar End\",\"Calendar\",\"CL_Lib\",\"KAT_CONCEPTOS_COBRO_PAGO\",\"Saldos_Recientes\",\"Cuentas\",\"Fi_Instrumentos\",\"Bolsas\",\"Previsiones\"]"
+      },
+      {
+        "name": "__TEdtr",
+        "value": "1"
+      }
+    ],
+    "culture": "es-ES",
+    "cultures": [
+      {
+        "name": "es-ES",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "discourageImplicitMeasures": true,
+    "expressions": [
+      {
+        "name": "Calendar Begin",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Date"
+          }
+        ],
+        "expression": "#date(2020, 1, 1) meta [IsParameterQuery=true, Type=\"Date\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "0eff5ebe-1fa4-4777-946c-a5e59c0b7053",
+        "queryGroup": "Calendar"
+      },
+      {
+        "name": "Calendar End",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Date"
+          }
+        ],
+        "expression": "#date(2036, 12, 31) meta [IsParameterQuery=true, Type=\"Date\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "2a7d524d-af1a-435a-94af-60094c519564",
+        "queryGroup": "Calendar"
+      },
+      {
+        "name": "CL_Lib",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Record"
+          }
+        ],
+        "expression": [
+          "let",
+          "",
+          "  CL_TrimColumnUpperHeaders = ",
+          "  let",
+          "      Source = (table) =>  ",
+          "          let ",
+          "              TrimColumns = Table.TransformColumnNames(table, Text.Trim),",
+          "              UpperColumns = Table.TransformColumnNames(table, Text.Upper)",
+          "          in",
+          "              UpperColumns",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_YearWeekToFirstDateISO =",
+          "  let",
+          "      Source = (year as number, week as number) =>  ",
+          "      let  ",
+          "          firstDayYear = #date(year,1,1),",
+          "          startOfFirstWeek = Date.StartOfWeek(firstDayYear, Day.Monday),",
+          "          startOfWeek = Date.AddWeeks(startOfFirstWeek, week - 1)",
+          "      in",
+          "          startOfWeek",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_YearQuarterToFirstDateISO =",
+          "  let",
+          "      Source = (year as number, quarter as number) =>  ",
+          "      let  ",
+          "          firstDayYear = #date(year,1,1),",
+          "          startOfFirstQuarter = Date.StartOfQuarter(firstDayYear),",
+          "          startOfQuarter = Date.AddQuarters(startOfFirstQuarter, quarter - 1)",
+          "      in",
+          "          startOfQuarter",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_TrimColumnHeaders =",
+          "  let",
+          "      Source = (table) =>  ",
+          "          let ",
+          "              TrimColumns = Table.TransformColumnNames(table, Text.Trim)",
+          "          in",
+          "              TrimColumns",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_Table_TrimAndCapitalizeHeaders =",
+          "  let",
+          "      Source = (table) =>  ",
+          "          let ",
+          "              TrimColumns = Table.TransformColumnNames(table, Text.Trim),",
+          "              UpperColumns = Table.TransformColumnNames(table, Text.Proper)",
+          "          in",
+          "              UpperColumns",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_Calendar = ",
+          "  let fnDateTable = (StartDate as date, EndDate as date, FYStartMonth as number, CountryLanguage as text, FirstDayOfWeek as number) as table =>",
+          "    let",
+          "      // Default Country, Language",
+          "      countryLang = if CountryLanguage = null then \"us-EN\"  else CountryLanguage,",
+          "",
+          "      DayCount = Duration.Days(Duration.From(EndDate - StartDate)),",
+          "      Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),",
+          "      TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),   ",
+          "      ChangedType = Table.TransformColumnTypes(TableFromList,{{\"Column1\", type date}}, countryLang),",
+          "      RenamedColumns = Table.RenameColumns(ChangedType,{{\"Column1\", \"Date\"}}),",
+          "      InsertYear = Table.AddColumn(RenamedColumns, \"Year\", each Date.Year([Date])),",
+          "      InsertQuarter = Table.AddColumn(InsertYear, \"QuarterOfYear\", each Date.QuarterOfYear([Date])),",
+          "      InsertQuarterQ = Table.AddColumn(InsertQuarter, \"QuarterOfYearTxt\", each \"Q\" & Text.From(Date.QuarterOfYear([Date])) ),",
+          "      InsertMonth = Table.AddColumn(InsertQuarterQ, \"MonthOfYear\", each Date.Month([Date])),",
+          "      InsertDay = Table.AddColumn(InsertMonth, \"DayOfMonth\", each Date.Day([Date])),",
+          "      InsertDayInt = Table.AddColumn(InsertDay, \"DateInt\", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),",
+          "      InsertMonthName = Table.AddColumn(InsertDayInt, \"MonthName\", each Date.ToText([Date], \"MMMM\", countryLang)),",
+          "      InsertCalendarMonth = Table.AddColumn(InsertMonthName, \"MonthInCalendar\", each Date.ToText([Date], \"MMM yyyy\", countryLang), type text),",
+          "      InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, \"QuarterInCalendar\", each \"Q\" & Number.ToText([QuarterOfYear]) & \" \" & Number.ToText([Year]), type text),",
+          "      InsertDayWeek = Table.AddColumn(InsertCalendarQtr, \"DayInWeek\", each Date.DayOfWeek([Date], FirstDayOfWeek)),",
+          "      InsertDayName = Table.AddColumn(InsertDayWeek, \"DayOfWeekName\", each Date.DayOfWeekName([Date], CountryLanguage)),",
+          "      InsertWeekStart = Table.AddColumn(InsertDayName, \"WeekStart\", each Date.StartOfWeek([Date], FirstDayOfWeek), type date),",
+          "      InsertWeekEnding = Table.AddColumn(InsertWeekStart, \"WeekEnding\", each Date.EndOfWeek([Date], FirstDayOfWeek), type date),",
+          "      InsertWeekNumber= Table.AddColumn(InsertWeekEnding, \"Week Number\", each Date.WeekOfYear([Date], FirstDayOfWeek)),",
+          "      InsertMonthnYear = Table.AddColumn(InsertWeekNumber,\"MonthnYear\", each [Year] * 10000 + [MonthOfYear] * 100),",
+          "      InsertQuarternYear = Table.AddColumn(InsertMonthnYear,\"QuarternYear\", each [Year] * 10000 + [QuarterOfYear] * 100),",
+          "    // ChangedType1 = Table.TransformColumnTypes(InsertQuarternYear,{{\"QuarternYear\", Int64.Type},{\"Week Number\", Int64.Type},{\"Year\", type text},{\"MonthnYear\", Int64.Type}, {\"DateInt\", Int64.Type}, {\"DayOfMonth\", Int64.Type}, {\"MonthOfYear\", Int64.Type}, {\"QuarterOfYear\", Int64.Type}, {\"MonthInCalendar\", type text}, {\"QuarterInCalendar\", type text}, {\"DayInWeek\", Int64.Type}}),",
+          "      InsertShortYear = Table.AddColumn(InsertQuarternYear, \"ShortYear\", each Date.ToText([Date], \"yy\", countryLang)),",
+          "      AddFY = Table.AddColumn(InsertShortYear, \"FY\", each \"FY\"&(if [MonthOfYear]>=FYStartMonth then Text.From(Number.From([ShortYear])+1) else [ShortYear])),",
+          "      Result = Table.TransformColumnTypes(AddFY,{{\"Year\", Int64.Type}, {\"QuarterOfYear\", Int64.Type}, {\"MonthOfYear\", Int64.Type}, {\"DayOfMonth\", Int64.Type}, {\"DateInt\", Int64.Type}, {\"MonthName\", type text}, {\"MonthInCalendar\", type text}, {\"QuarterInCalendar\", type text}, {\"DayInWeek\", Int64.Type}, {\"DayOfWeekName\", type text}, {\"Week Number\", Int64.Type}, {\"MonthnYear\", Int64.Type}, {\"QuarternYear\", Int64.Type}, {\"ShortYear\", Int64.Type}, {\"FY\", type text}})",
+          "  in",
+          "\t\tResult",
+          "  in",
+          "      fnDateTable,",
+          "",
+          "  CL_Calendar_SP_ES = ",
+          "  let fnDateTable = (StartDate as date, EndDate as date) as table =>",
+          "    let",
+          "      // Based on the standard calendar in english columns",
+          "      SourceCalendar_SP_EN = CL_Calendar(StartDate, EndDate, 1, \"es-ES\", Day.Monday),",
+          "",
+          "      // Renamed Columns to ES",
+          "      RenamedColumns = Table.RenameColumns(SourceCalendar_SP_EN,{{\"Date\", \"Fecha\"}, {\"Year\", \"Año\"}, {\"QuarterOfYear\", \"Trimestre\"}, {\"MonthOfYear\", \"MesNum\"}, {\"DayOfMonth\", \"DiaDelMes\"}, {\"DateInt\", \"FechaInt\"}, {\"MonthName\", \"Mes\"}, {\"MonthInCalendar\", \"MesCortoAñoFmt\"}, {\"QuarterInCalendar\", \"TrimestreAñoFmt\"}, {\"DayInWeek\", \"DiaDeLaSemanaNum\"}, {\"DayOfWeekName\", \"DiaDeLaSemana\"},  {\"WeekStart\", \"SemanaInicio\"}, {\"WeekEnding\", \"SemanaFin\"}, {\"Week Number\", \"SemanaDelAño\"}, {\"MonthnYear\", \"AñoMesNth\"}, {\"QuarternYear\", \"AñoTrimestreNth\"}, {\"ShortYear\", \"AñoCorto\"}})",
+          "    in",
+          "      RenamedColumns",
+          "  in",
+          "    fnDateTable,",
+          "",
+          "  CL_Calendar_SP_EN =",
+          "  let fnDateTable = (StartDate as date, EndDate as date) as table =>",
+          "    let",
+          "      // Based on the standard calendar in english columns",
+          "      SourceCalendar_SP_EN = CL_Calendar(StartDate, EndDate, 1, \"es-EN\", Day.Monday)",
+          "    in",
+          "      SourceCalendar_SP_EN",
+          "  in",
+          "    fnDateTable,",
+          "",
+          "  CL_Calendar_SP_ES_Ex =",
+          "  let",
+          "      Source = CL_Calendar_SP_ES(#date(2020, 4, 4), #date(2021, 4, 4))",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_Calendar_SP_EN_Ex =",
+          "  let",
+          "      Source = CL_Calendar_SP_EN(#date(2020, 4, 4), #date(2021, 4, 4))",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_ZipFile_Document =",
+          "  (ZIPFile) => ",
+          "  let",
+          "      Header = BinaryFormat.Record([",
+          "          MiscHeader = BinaryFormat.Binary(14),",
+          "          BinarySize = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, ByteOrder.LittleEndian),",
+          "          FileSize   = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, ByteOrder.LittleEndian),",
+          "          FileNameLen= BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger16, ByteOrder.LittleEndian),",
+          "          ExtrasLen  = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger16, ByteOrder.LittleEndian)    ",
+          "      ]),",
+          "",
+          "      HeaderChoice = BinaryFormat.Choice(",
+          "          BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, ByteOrder.LittleEndian),",
+          "          each if _ <> 67324752             // not the IsValid number? then return a dummy formatter",
+          "              then BinaryFormat.Record([IsValid = false, Filename=null, Content=null])",
+          "              else BinaryFormat.Choice(",
+          "                      BinaryFormat.Binary(26),      // Header payload - 14+4+4+2+2",
+          "                      each BinaryFormat.Record([",
+          "                          IsValid  = true,",
+          "                          Filename = BinaryFormat.Text(Header(_)[FileNameLen]), ",
+          "                          Extras   = BinaryFormat.Text(Header(_)[ExtrasLen]), ",
+          "                          Content  = BinaryFormat.Transform(",
+          "                              BinaryFormat.Binary(Header(_)[BinarySize]),",
+          "                              (x) => try Binary.Buffer(Binary.Decompress(x, Compression.Deflate)) otherwise null",
+          "                          )",
+          "                          ]),",
+          "                          type binary                   // enable streaming",
+          "                  )",
+          "      ),",
+          "",
+          "      ZipFormat = BinaryFormat.List(HeaderChoice, each _[IsValid] = true),",
+          "",
+          "      Entries = List.Transform(",
+          "          List.RemoveLastN( ZipFormat(ZIPFile), 1),",
+          "          (e) => [FileName = e[Filename], Content = e[Content] ]",
+          "      )",
+          "  in",
+          "      Table.FromRecords(Entries),",
+          "",
+          "  CL_Table_RemoveColumnsWithBlankHeader =",
+          "  let",
+          "      Source = (tbl as table) =>",
+          "  let",
+          "      Headers = Table.ColumnNames(tbl),",
+          "",
+          "      Result = Table.SelectColumns(",
+          "                  tbl,",
+          "                  List.Select(Headers, each List.MatchesAny(Table.Column(tbl, _), each  (_ <> null) and (_ <> \"\"))  ))",
+          "  in",
+          "      Result",
+          "  in",
+          "      Source,",
+          "",
+          "  CL_WorldBankIndicatorsLang =",
+          "  \"en\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true],",
+          "",
+          "  CL_WorldBankIndicators =",
+          "  \"AG.AGR.TRAC.NO;SP.POP.TOTL\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true],",
+          "",
+          "  #\"CL WorldBank Sample\" =",
+          "  let",
+          "          Source = Web.Contents(\"http://api.worldbank.org/v2/\", [RelativePath= CL_WorldBankIndicatorsLang & \"/country/ind/indicator/\" & CL_WorldBankIndicators & \"?source=2&downloadformat=csv\"]),",
+          "          Custom1 = CL_ZipFile_Document(Source),",
+          "          #\"Filtered Rows\" = Table.SelectRows(Custom1, each Text.StartsWith([FileName], \"API\")),",
+          "          FileName2 = #\"Filtered Rows\"{0}[Content],",
+          "          #\"Imported CSV\" = Csv.Document(FileName2,[Delimiter=\",\", Columns=65, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+          "          #\"Promoted Headers\" = Table.PromoteHeaders(#\"Imported CSV\", [PromoteAllScalars=true]),",
+          "          Custom2 = Table.Skip(#\"Promoted Headers\", List.PositionOf(Table.Column(#\"Promoted Headers\", \"Data Source\"), \"Country Name\")),",
+          "          #\"Promoted Headers2\" = Table.PromoteHeaders(Custom2, [PromoteAllScalars=true]),",
+          "          Custom3 = CL_Table_TrimAndCapitalizeHeaders(#\"Promoted Headers2\"),",
+          "          Custom4 = CL_Table_RemoveColumnsWithBlankHeader(Custom3),",
+          "          #\"Unpivoted Other Columns\" = Table.UnpivotOtherColumns(Custom4, {\"Country Name\", \"Country Code\", \"Indicator Name\", \"Indicator Code\"}, \"Year\", \"Value\"),",
+          "          #\"Merged Columns\" = Table.CombineColumns(#\"Unpivoted Other Columns\",{\"Indicator Code\", \"Indicator Name\"},Combiner.CombineTextByDelimiter(\" - \", QuoteStyle.None),\"Indicator\"),",
+          "      #\"Changed Type1\" = Table.TransformColumnTypes(#\"Merged Columns\",{{\"Year\", Int64.Type}, {\"Value\", type number}}),",
+          "          #\"Pivoted Column\" = Table.Pivot(#\"Changed Type1\", List.Distinct(#\"Changed Type1\"[Indicator]), \"Indicator\", \"Value\"),",
+          "      #\"Changed Type\" = Table.TransformColumnTypes(#\"Pivoted Column\",{{\"Year\", Int64.Type}})",
+          "  in",
+          "      #\"Changed Type\",",
+          "",
+          "  CL_WorldBankAllCountriesIndicators =",
+          "  let",
+          "      Source = (CL_WorldBankIndicators as text, optional CL_WorldBankIndicatorsLang as text) => let",
+          "          Lang = if (CL_WorldBankIndicatorsLang = null) then \"\" else CL_WorldBankIndicatorsLang,",
+          "          Source = Web.Contents(\"http://api.worldbank.org/v2/\", [RelativePath= Lang & \"/country/ind/indicator/\" & CL_WorldBankIndicators & \"?source=2&downloadformat=csv\"]),",
+          "          Custom1 = CL_ZipFile_Document(Source),",
+          "          #\"Filtered Rows\" = Table.SelectRows(Custom1, each Text.StartsWith([FileName], \"API\")),",
+          "          FileName2 = #\"Filtered Rows\"{0}[Content],",
+          "          #\"Imported CSV\" = Csv.Document(FileName2,[Delimiter=\",\", Columns=65, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+          "          #\"Promoted Headers\" = Table.PromoteHeaders(#\"Imported CSV\", [PromoteAllScalars=true]),",
+          "          Custom2 = Table.Skip(#\"Promoted Headers\", List.PositionOf(Table.Column(#\"Promoted Headers\", \"Data Source\"), \"Country Name\")),",
+          "          #\"Promoted Headers2\" = Table.PromoteHeaders(Custom2, [PromoteAllScalars=true]),",
+          "          Custom3 = CL_Table_TrimAndCapitalizeHeaders(#\"Promoted Headers2\"),",
+          "          Custom4 = CL_Table_RemoveColumnsWithBlankHeader(Custom3),",
+          "          #\"Unpivoted Other Columns\" = Table.UnpivotOtherColumns(Custom4, {\"Country Name\", \"Country Code\", \"Indicator Name\", \"Indicator Code\"}, \"Year\", \"Value\"),",
+          "          #\"Merged Columns\" = Table.CombineColumns(#\"Unpivoted Other Columns\",{\"Indicator Code\", \"Indicator Name\"},Combiner.CombineTextByDelimiter(\" - \", QuoteStyle.None),\"Indicator\"),",
+          "      #\"Changed Type1\" = Table.TransformColumnTypes(#\"Merged Columns\",{{\"Year\", Int64.Type}, {\"Value\", type number}}),",
+          "          #\"Pivoted Column\" = Table.Pivot(#\"Changed Type1\", List.Distinct(#\"Changed Type1\"[Indicator]), \"Indicator\", \"Value\"),",
+          "      #\"Changed Type\" = Table.TransformColumnTypes(#\"Pivoted Column\",{{\"Year\", Int64.Type}})",
+          "  in",
+          "      #\"Changed Type\"",
+          "  in",
+          "      Source,",
+          "",
+          "  Table.ApplyFncToColumns = ",
+          "  let func = (Table as table, Function, TypeForColumns as type, optional ColumnNames as list) =>",
+          "    let",
+          "      columnNames = if ColumnNames = null then Table.ColumnNames(Table) else ColumnNames,",
+          "      Transformation = Table.TransformColumns( Table, List.Transform(columnNames, each {_, Function, TypeForColumns} ) )",
+          "    in",
+          "    \tTransformation ,",
+          "    \tdocumentation = [",
+          "    \tDocumentation.Name =  \" Table.TransformAllColumns.pq \",",
+          "    \tDocumentation.Description = \" Transforms all columns of a <code>table</code>  with one <code>function</code> and one <code>type</code>. \",",
+          "    \tDocumentation.LongDescription = \" Transforms all columns of a <code>table</code> with one <code>function</code> and one <code>type</code>. Optionial <code>ColumnNames</code> to limit to a specific list. \",",
+          "    \tDocumentation.Category = \" Table \",",
+          "    \tDocumentation.Source = \" www.TheBIccountant.com https://wp.me/p6lgsG-2dQ .   \",",
+          "    \tDocumentation.Version = \" 1.0 \",",
+          "    \tDocumentation.Author = \" Imke Feldmann \",",
+          "    \tDocumentation.Examples = {[Description =  \"  \",",
+          "    \tCode = \" TableTransformAllColumns( #table( {\"\"TextColumn1\"\", \"\"TextColumn2\"\"}, List.Zip( { {\"\"123<code>456</code>\"\" ,\"\"789<code>101</code>\"\"}, {\"\"ABC<code>DEF</code>\"\" ,\"\"GHI<code>JKL</code>\"\"} } ) ), fnRemoveHtmlTags, type text) \",",
+          "    \tResult = \" #table( {\"\"TextColumn1\"\", \"\"TextColumn2\"\"}, List.Zip( { {\"\"123456\"\" ,\"\"789101\"\"}, {\"\"ABCDEF\"\" ,\"\"GHIJKL\"\"} } ) ) \"]}]  ",
+          "  in  ",
+          "    Value.ReplaceType(func, Value.ReplaceMetadata(Value.Type(func), documentation)),  ",
+          "",
+          "  CL_HexToDec = ",
+          "    (hexString as text) ",
+          "      => Expression.Evaluate(\"0x\"&hexString),",
+          "",
+          "    // END OF FUNCTIONS",
+          "",
+          "",
+          "  Version_History =",
+          "  let",
+          "      //Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WMtQz0jNU0lEyMjAy0Dcw0TcEcTJSk0vyixyKM/PSS3MSi9ISk0v0kvNzgTLKCn75JanFMXkxeU45iQpJEAziKisruKUmlpQWQWR1FfzzUkFUSHk+mMooSk1Vio0FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type text) meta [Serialized.Text = true]) in type table [Version = _t, #\"Revision Date/Time\" = _t, #\"Developer Name\" = _t, #\"Revision Notes (md)\" = _t]),",
+          "      Table0 = Table.FromRecords(",
+          "        {[ ",
+          "          Version = \"1.2.1\", ",
+          "          Revision Date_Time = \"2020/04/11\",",
+          "          Developer Name = \"hector@singularfact.com\",",
+          "          Revision Notes md = \"",
+          "# Notes",
+          "",
+          "Bla bla bla",
+          "",
+          "## Features",
+          "",
+          "- One",
+          "- Two",
+          "- Three",
+          "          \"",
+          "        ]}, ",
+          "        type table[",
+          "          Version = Text.Type,",
+          "          Revision Date_Time = Text.Type,",
+          "          Developer Name = Text.Type,",
+          "          Revision Notes md = Text.Type",
+          "        ]),",
+          "",
+          "    // Here is where the version are added.",
+          "      TableNewRows =  Table.InsertRows(Table0 , 1, ",
+          "      {",
+          "        [ ",
+          "          Version = \"1.3\", ",
+          "          Revision Date_Time = \"2020/04/12\",",
+          "          Developer Name = \"hector@singularfact.com\",",
+          "          Revision Notes md = \"",
+          "# Notes",
+          "",
+          "## Features",
+          "",
+          "- Lib is now converted to a list that can be Versioned Controlled into GitHub",
+          "",
+          "          \"],",
+          "\t\t\t\t\t[ ",
+          "          Version = \"1.3.1\", ",
+          "          Revision Date_Time = \"2020/04/13\",",
+          "          Developer Name = \"hector@singularfact.com\",",
+          "          Revision Notes md = \"",
+          "# Notes",
+          "",
+          "## Features",
+          "",
+          "- Added Function Table.ApplyFncToColumns",
+          "",
+          "          \"],",
+          "\t\t\t\t\t[ ",
+          "          Version = \"1.3.2\", ",
+          "          Revision Date_Time = \"2020/05/16\",",
+          "          Developer Name = \"hector@singularfact.com\",",
+          "          Revision Notes md = \"",
+          "# Notes",
+          "",
+          "## Features",
+          "",
+          "- Added Function CL_HexToDec",
+          "",
+          "          \"],",
+          "\t\t\t\t\t[ ",
+          "          Version = \"1.3.3\", ",
+          "          Revision Date_Time = \"2021/02/06\",",
+          "          Developer Name = \"hector@singularfact.com\",",
+          "          Revision Notes md = \"",
+          "# Notes",
+          "",
+          "## Features",
+          "",
+          "- Added Function CL_YearQuarterToFirstDateISO",
+          "",
+          "          \"]",
+          "      }),",
+          "",
+          "      ",
+          "      TableRenameColumns = Table.RenameColumns(TableNewRows,{{\"Revision Date_Time\", \"Revision Date/Time\"}, {\"Revision Notes md\", \"Revision Notes (md)\"}}),",
+          "      #\"Changed Type1\" = Table.TransformColumnTypes(TableRenameColumns,{{\"Revision Date/Time\", type datetime}}),",
+          "      #\"Added Custom\" = Table.AddColumn(#\"Changed Type1\", \"Refresh Date/Time\", each DateTime.LocalNow()),",
+          "      #\"Changed Type\" = Table.TransformColumnTypes(#\"Added Custom\",{{\"Refresh Date/Time\", type datetimezone}})",
+          "  in",
+          "     #\"Changed Type\",",
+          "",
+          "  // Build LIB",
+          "  CL_Lib = [",
+          "    Version_History = Version_History,",
+          "    CL_TrimColumnUpperHeaders = CL_TrimColumnUpperHeaders,",
+          "    CL_YearWeekToFirstDateISO = CL_YearWeekToFirstDateISO,",
+          "    CL_YearQuarterToFirstDateISO = CL_YearQuarterToFirstDateISO,",
+          "    CL_TrimColumnHeaders = CL_TrimColumnHeaders,",
+          "    CL_Table_TrimAndCapitalizeHeaders = CL_Table_TrimAndCapitalizeHeaders,",
+          "    CL_Calendar = CL_Calendar,",
+          "    CL_Calendar_SP_ES = CL_Calendar_SP_ES,",
+          "    CL_Calendar_SP_EN = CL_Calendar_SP_EN,",
+          "    CL_Calendar_SP_ES_Ex = CL_Calendar_SP_ES_Ex,",
+          "    CL_Calendar_SP_EN_Ex = CL_Calendar_SP_EN_Ex,",
+          "    CL_ZipFile_Document = CL_ZipFile_Document,",
+          "    CL_Table_RemoveColumnsWithBlankHeader = CL_Table_RemoveColumnsWithBlankHeader,",
+          "    CL_WorldBankIndicatorsLang = CL_WorldBankIndicatorsLang,",
+          "    CL_WorldBankIndicators = CL_WorldBankIndicators,",
+          "    CL WorldBank Sample = #\"CL WorldBank Sample\",",
+          "    CL_WorldBankAllCountriesIndicators = CL_WorldBankAllCountriesIndicators,",
+          "\t\tTable.ApplyFncToColumns = Table.ApplyFncToColumns,",
+          "    CL_HexToDec = CL_HexToDec",
+          "  ]",
+          "in",
+          "    CL_Lib"
+        ],
+        "kind": "m",
+        "lineageTag": "b334693f-ec55-4ceb-aee0-817639717d7a",
+        "queryGroup": "Utils"
+      },
+      {
+        "name": "KAT_CUENTAS",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "expression": [
+          "let",
+          "    Source = PowerPlatform.Dataflows(null),",
+          "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+          "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+          "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+          "    KAT_CUENTAS_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"KAT_CUENTAS\",version=\"\"]}[Data]",
+          "in",
+          "    KAT_CUENTAS_"
+        ],
+        "kind": "m",
+        "lineageTag": "93fb4cef-f684-4d40-a9ab-7462fcafe027"
+      }
+    ],
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "1"
+          }
+        ],
+        "folder": "Calendar"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "Utils"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "0e1e8e17-65b4-42ed-989c-0ee2e3c4c98f",
+        "fromColumn": "FC_FECHA",
+        "fromTable": "KAT_SALDO_CUENTA",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "0aba6473-d57b-4fc1-af38-99920e639cea",
+        "fromColumn": "Fecha Operación",
+        "fromTable": "Cobranzas_Egresos_Recientes",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "788d5135-8bfc-4f43-81bd-57283a44105d",
+        "fromColumn": "CD_BANCO",
+        "fromTable": "Cuentas",
+        "toColumn": "CD_BANCO",
+        "toTable": "KAT_BANCOS"
+      },
+      {
+        "name": "9bb5e8f4-b4b3-465f-993c-12ecb8ecfad0",
+        "fromColumn": "CD_EMPRESA",
+        "fromTable": "Cuentas",
+        "toColumn": "CD_EMPRESA",
+        "toTable": "KAT_EMPRESAS"
+      },
+      {
+        "name": "09aba5fc-682d-4964-8782-2546b2a5a258",
+        "fromColumn": "CD_CUENTA",
+        "fromTable": "KAT_SALDO_CUENTA",
+        "toColumn": "CD_CUENTA",
+        "toTable": "Cuentas"
+      },
+      {
+        "name": "6b7bf3b9-8e40-421a-af0b-8c7735dcbbe8",
+        "fromColumn": "Cuenta / Alias",
+        "fromTable": "Cobranzas_Egresos_Recientes",
+        "toColumn": "DS_CODIGO_CUENTA",
+        "toTable": "Cuentas"
+      },
+      {
+        "name": "93df2d08-43f0-4bc4-a0e7-43b3096574bf",
+        "fromColumn": "CdCuenta",
+        "fromTable": "Fi_Operaciones",
+        "toColumn": "CD_CUENTA",
+        "toTable": "Cuentas"
+      },
+      {
+        "name": "525bcdc7-d433-442c-8194-d9424e98f50c",
+        "fromColumn": "Fecha",
+        "fromTable": "Saldos_Recientes",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "67a96cc6-ac42-4c9d-95e1-b8eee68c57bb",
+        "fromColumn": "Grupo Inversor",
+        "fromTable": "Cuentas",
+        "toColumn": "Grupo Inversor",
+        "toTable": "Grupos_Inversores_Mapping"
+      },
+      {
+        "name": "779d7d6a-7e61-466d-8b80-ab912d38ff6d",
+        "fromColumn": "Descripcion",
+        "fromTable": "Fi_Operaciones",
+        "toColumn": "Bolsa",
+        "toTable": "Bolsas"
+      },
+      {
+        "name": "54ec2602-e52e-4b76-a885-2fe5f8d8cd78",
+        "fromColumn": "Cuenta",
+        "fromTable": "Saldos_Recientes",
+        "toColumn": "DS_CODIGO_CUENTA",
+        "toTable": "Cuentas"
+      },
+      {
+        "name": "31af087e-45dd-45eb-bd6a-159f9f3377ae",
+        "fromColumn": "CD_CUENTA",
+        "fromTable": "Previsiones",
+        "toColumn": "CD_CUENTA",
+        "toTable": "Cuentas"
+      },
+      {
+        "name": "0cfe01fb-448d-4d90-9798-29328aed6b44",
+        "fromColumn": "CD_CONCEPTO",
+        "fromTable": "Previsiones",
+        "toColumn": "CD_CONCEPTO",
+        "toTable": "KAT_CONCEPTOS_COBRO_PAGO"
+      },
+      {
+        "name": "829833c6-ddb0-31c1-c220-b2728b4a0cfe",
+        "fromColumn": "FC_PREVISTA",
+        "fromTable": "Previsiones",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "6cce343b-2714-b441-d8a1-48366186c1db",
+        "fromColumn": "FechaInicio",
+        "fromTable": "Fi_Operaciones",
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      },
+      {
+        "name": "eb0db9ac-6ff6-4f02-b5cd-a3784d34e416",
+        "fromColumn": "FechaFin",
+        "fromTable": "Fi_Operaciones",
+        "isActive": false,
+        "toColumn": "Date",
+        "toTable": "Calendar"
+      }
+    ],
+    "sourceQueryCulture": "en-GB",
+    "tables": [
+      {
+        "name": "Grupos_Inversores_Mapping",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "DS_NOMBRE_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "78736329-1a17-4d0c-8245-01c691e2dd7c",
+            "sourceColumn": "DS_NOMBRE_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grupo Inversor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8f5af5f6-65e2-4cfa-beb5-2bf381559d1f",
+            "sortByColumn": "Orden_Visual",
+            "sourceColumn": "Grupo Inversor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Número de Proveedor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "06c8844a-86c9-4695-9773-5698dd0d924b",
+            "sourceColumn": "Número de Proveedor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Orden_Visual",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "03fd2667-5a23-4388-8c74-861379d4bc0d",
+            "sourceColumn": "Orden_Visual",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "dbf1ca18-fb8a-4c77-9c0a-9ccaba152533",
+        "partitions": [
+          {
+            "name": "Grupos_Inversores_Mapping",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Grupos_Inversores_Mapping = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Grupos_Inversores_Mapping\",version=\"\"]}[Data]",
+                "in",
+                "    Grupos_Inversores_Mapping"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fi_Operaciones",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CdOperacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2e0dbf09-b26b-4a47-a106-006d7ce86373",
+            "sourceColumn": "CdOperacion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdInstrumento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2a33a6bb-bb81-4d3c-a48b-ba7bcb8ac20b",
+            "sourceColumn": "CdInstrumento",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Descripcion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "63d7cf4c-1b26-402c-9146-f6812faa8c75",
+            "sourceColumn": "Descripcion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Alias",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "34fd2f2b-c6e2-4e4f-92c9-cde3d741672d",
+            "sourceColumn": "Alias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CdEmpresa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4560ffe8-b2aa-4732-890f-636bf94764c5",
+            "sourceColumn": "CdEmpresa",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdBanco",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "93353d5a-0f39-4ceb-a657-630e7026170b",
+            "sourceColumn": "CdBanco",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdCuenta",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "dc493971-b24f-4959-929e-b39e84cdc827",
+            "sourceColumn": "CdCuenta",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ImportePendiente",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "766f9a66-7ff2-4e36-a6f7-0bdfa0735c12",
+            "sourceColumn": "ImportePendiente",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FechaInicio",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "c52da25d-f4aa-47de-96f6-18d94bbc6171",
+            "sourceColumn": "FechaInicio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaImportePendiente",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "dbf3fa57-7e13-4b1f-a274-d319ea104507",
+            "sourceColumn": "FechaImportePendiente",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaFin",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "d216116c-ea3c-4ee3-a199-84cfb9c2dd3d",
+            "sourceColumn": "FechaFin",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "TipoInteresInicial",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2bd6060f-0dc6-49d4-a453-b1c43d539a5f",
+            "sourceColumn": "TipoInteresInicial",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TipoInteresActual",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f9dcaf7a-bc86-4e6d-8f39-422f6d89f705",
+            "sourceColumn": "TipoInteresActual",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TipoRetencion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "cb042d83-e9b7-4f3d-8a5b-fd11d9bcc0c6",
+            "sourceColumn": "TipoRetencion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "BaseCalculo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a9114dc7-99bb-4319-8f09-dbef7bb33262",
+            "sourceColumn": "BaseCalculo",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NumDecimalesInt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "13aa2171-683c-46d3-a84a-d5e979e06ef1",
+            "sourceColumn": "NumDecimalesInt",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdFrecuenciaIntereses",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9cc2c427-f91e-4fa3-9c60-19f0a5e17e92",
+            "sourceColumn": "CdFrecuenciaIntereses",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FechaPrimerInteres",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "59121fac-a6f5-454b-b959-9c1f9daaf999",
+            "sourceColumn": "FechaPrimerInteres",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CdTipoOperacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "04dd6f75-3286-4a35-b1df-c19e6634e9d1",
+            "sourceColumn": "CdTipoOperacion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ImporteInicial",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "45514b9d-5cd8-41ee-9c80-63ef786e31cc",
+            "sourceColumn": "ImporteInicial",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ImporteIntereses",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9d145cee-f952-45ef-967e-4901b20f6bd6",
+            "sourceColumn": "ImporteIntereses",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ImporteRetencion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2be35d13-e59d-4ee8-ad76-c14daa6f6ccf",
+            "sourceColumn": "ImporteRetencion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ImporteTotal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "23bfc822-cd3f-4abf-a96c-ed1d7d3a6b44",
+            "sourceColumn": "ImporteTotal",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Pedidos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b396f847-f580-42a7-b176-7dac618122d2",
+            "sourceColumn": "Pedidos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Duracion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5f7f21bf-61ad-496c-98a7-5d706dbbb7ee",
+            "sourceColumn": "Duracion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Cuota",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a06df20b-cba8-4574-91d3-51616c0d9aed",
+            "sourceColumn": "Cuota",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ClienteDesc",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b3b70ce1-1d07-4579-8422-52107b05d212",
+            "sourceColumn": "ClienteDesc",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ClienteId",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "19b4659b-f28c-44bc-aaa2-b88c57c4ff86",
+            "sourceColumn": "ClienteId",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FactorFinanciacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "00a64fdb-2c94-4929-9cdd-1acd407cf1c5",
+            "sourceColumn": "FactorFinanciacion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ItConfirmado",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "b8c93cfe-4e37-42ff-8411-aad35fb7cd97",
+            "sourceColumn": "ItConfirmado",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaExportacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "50ea5181-0a2b-49f9-8fa7-de81d8c7f6eb",
+            "sourceColumn": "FechaExportacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ItComision",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "ab2a5076-fadf-43e7-b364-6a91bc1dc93c",
+            "sourceColumn": "ItComision",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NmValorImpuesto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "88708c56-60f2-481c-9eda-e540549ed1c5",
+            "sourceColumn": "NmValorImpuesto",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ItContabilizable",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "648aae1c-118b-433a-bcd5-6a49862f5b9b",
+            "sourceColumn": "ItContabilizable",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CdSyncPrevisionTipo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "85eface5-aa31-48d5-bcb4-08ac12b4728d",
+            "sourceColumn": "CdSyncPrevisionTipo",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdTipoPrevision",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3c0c5d59-ef5d-4851-a13d-875d7180b90a",
+            "sourceColumn": "CdTipoPrevision",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdTipoDocumento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ef37df26-88d2-47c1-bb43-b721f96a1f01",
+            "sourceColumn": "CdTipoDocumento",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdCerteza",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "93f1c828-1927-4da5-bb0c-c048cea537f8",
+            "sourceColumn": "CdCerteza",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdConcepto_Cuota",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1d969cf8-060f-4284-8e9c-8b1bff33815c",
+            "sourceColumn": "CdConcepto_Cuota",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdViaCobroPago_Cuota",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b52fd81e-8ff1-4b2a-8071-d5a2f7c97682",
+            "sourceColumn": "CdViaCobroPago_Cuota",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdConcepto_Impuestos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a3a34867-a967-4325-8e6e-00f950514098",
+            "sourceColumn": "CdConcepto_Impuestos",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdViaCobroPago_Impuestos",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a30bbc5f-18ae-4cdb-86b5-21a2f143a655",
+            "sourceColumn": "CdViaCobroPago_Impuestos",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdConcepto_Intereses",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c609f835-bb44-467d-a571-0dbb1f52e2fa",
+            "sourceColumn": "CdConcepto_Intereses",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdViaCobroPago_Intereses",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5f74c789-3d09-45e6-babf-9e9d22f3f33c",
+            "sourceColumn": "CdViaCobroPago_Intereses",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdConcepto_Principal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "56acfa1e-b35c-4baf-bca7-d9d9ddacc5b4",
+            "sourceColumn": "CdConcepto_Principal",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CdViaCobroPago_Principal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7311447d-b7b3-4f25-ab66-4319271f4adb",
+            "sourceColumn": "CdViaCobroPago_Principal",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ItAplicarValorResidualCuota",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "bd5c78fd-9f9e-49f2-ac95-ff871a7b20aa",
+            "sourceColumn": "ItAplicarValorResidualCuota",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ItAplicarInteresPrimerPeriodo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "68da02bc-b40c-40dc-a85c-a1a7b7cae6d2",
+            "sourceColumn": "ItAplicarInteresPrimerPeriodo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NmValorResidual",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b3fec272-57fe-4b49-8be2-e6449d484f61",
+            "sourceColumn": "NmValorResidual",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ItAplicarRetencionCapital",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "59c214ba-3b46-4dcb-899d-1be88d56a48b",
+            "sourceColumn": "ItAplicarRetencionCapital",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NmBaseCalculoRetencion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4a4c5ce4-a6c2-48e0-afc4-4b3e9b8ee940",
+            "sourceColumn": "NmBaseCalculoRetencion",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ItCargaManual",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "48f5dcd5-06dd-4619-af89-bf6931a31597",
+            "sourceColumn": "ItCargaManual",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "LimitePtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f9093174-9f72-40a5-9381-7dab7e3ec58f",
+            "sourceColumn": "LimitePtoPromotor",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "TipoInteresIniPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3aaf661c-6e89-47fb-964d-155e5eb7b1c0",
+            "sourceColumn": "TipoInteresIniPtoPromotor",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FechaIniPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "1f94d8a1-1f75-4f7b-b465-663a43e2a324",
+            "sourceColumn": "FechaIniPtoPromotor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaFinPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4e9ab119-1c8b-4d13-8f2e-f064ecfc25e8",
+            "sourceColumn": "FechaFinPtoPromotor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CdFrecuenciaInteresesPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "00441f43-df87-49e3-b992-728516506f3a",
+            "sourceColumn": "CdFrecuenciaInteresesPtoPromotor",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "FechaLiqInteresesPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "9f29c049-71ae-40e2-8b91-057f8e2df163",
+            "sourceColumn": "FechaLiqInteresesPtoPromotor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FechaPrimerInteresPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "b10895d3-6727-4d7e-95eb-32655f5301d8",
+            "sourceColumn": "FechaPrimerInteresPtoPromotor",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DiposicionIniPtoPromotor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c300e623-a31c-4ac3-960e-64339d5edcfb",
+            "sourceColumn": "DiposicionIniPtoPromotor",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Duración",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "09093e4f-e5af-4852-88ec-2bb84219a2d6",
+            "sourceColumn": "Duración",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "066b9618-d68e-4b8c-b4be-1bcbf210e29e",
+        "partitions": [
+          {
+            "name": "Fi_Operaciones",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Fi_Operaciones_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Fi_Operaciones\",version=\"\"]}[Data]",
+                "in",
+                "    Fi_Operaciones_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "KAT_BANCOS",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1a0c4dc1-91d8-42c1-8adf-d38de2ae71d3",
+            "sourceColumn": "CD_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_ALIAS_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0de02369-b924-4200-9c09-6c30e5293280",
+            "sourceColumn": "DS_ALIAS_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_NOMBRE_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9588bfb2-bb5c-477a-91e1-863f4615750a",
+            "sourceColumn": "DS_NOMBRE_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CODIGO_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5b2c0da0-9103-43fd-8481-3f5a07b833c0",
+            "sourceColumn": "DS_CODIGO_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_RUTA_FICHERO_IMPORT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1e3523a8-e162-4913-b38b-91957f06e793",
+            "sourceColumn": "DS_RUTA_FICHERO_IMPORT",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_SWIFT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a5951ebf-2d7c-4cd5-87a8-a026d809d53c",
+            "sourceColumn": "DS_SWIFT",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_OBSERVACIONES",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c66c6139-56c0-46d4-9694-4c12dc006bba",
+            "sourceColumn": "DS_OBSERVACIONES",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IT_COMPROBAR_SALDOS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "7a59f103-896d-4aeb-8927-c17e622933bc",
+            "sourceColumn": "IT_COMPROBAR_SALDOS",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "c08bf8f9-df7f-4815-a78d-0b3df20a5ba7",
+        "partitions": [
+          {
+            "name": "KAT_BANCOS",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    KAT_BANCOS_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"KAT_BANCOS\",version=\"\"]}[Data]",
+                "in",
+                "    KAT_BANCOS_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "KAT_EMPRESAS",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_EMPRESA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "45871583-22fc-4a59-a2c9-46ff5f1bda55",
+            "sourceColumn": "CD_EMPRESA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_ALIAS_EMPRESA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bc3610c9-2609-4f1a-8370-e0204fd20e9c",
+            "sourceColumn": "DS_ALIAS_EMPRESA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_NOMBRE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cac3cf71-5a50-4848-b0bf-aad248583488",
+            "sourceColumn": "DS_NOMBRE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_EMPRESA_TIPO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "72aa08a3-c06f-4667-803f-77df4456f26b",
+            "sourceColumn": "CD_EMPRESA_TIPO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CIF",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "36ab4c44-0e61-414b-bb8c-ee165d704f28",
+            "sourceColumn": "DS_CIF",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_DIRECCION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c09c4d3a-d293-4c35-a0d7-b8f27af31038",
+            "sourceColumn": "DS_DIRECCION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CODIGO_POSTAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5c10eb28-4580-4ada-969b-d38f0a57fad7",
+            "sourceColumn": "DS_CODIGO_POSTAL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_LOCALIDAD",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f9c6e480-512b-44ef-ab71-23441abd4994",
+            "sourceColumn": "DS_LOCALIDAD",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_PROVINCIA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "67071a06-8f66-4531-ab61-d8fb89ac01b0",
+            "sourceColumn": "DS_PROVINCIA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_PAIS",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3d9aabba-1004-4067-9112-50febc412868",
+            "sourceColumn": "DS_PAIS",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_TELEFONO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d56f8033-bc99-471e-8733-30a94b10ae02",
+            "sourceColumn": "DS_TELEFONO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_FAX",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c54ed534-e87c-45e6-9572-7a8daf5f2510",
+            "sourceColumn": "DS_FAX",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_OBSERVACIONES",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2a74e870-d56c-45d5-bef4-7fc7e8eaa43d",
+            "sourceColumn": "DS_OBSERVACIONES",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_PLAN_CTA_CONTRAPARTIDA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "eb3096e5-c64e-4e1b-be78-c3d29595ee02",
+            "sourceColumn": "CD_PLAN_CTA_CONTRAPARTIDA",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "62933e00-24d2-48e2-8622-f0ef8312a607",
+        "partitions": [
+          {
+            "name": "KAT_EMPRESAS",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    KAT_EMPRESAS_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"KAT_EMPRESAS\",version=\"\"]}[Data]",
+                "in",
+                "    KAT_EMPRESAS_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "KAT_SALDO_CUENTA",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a07b49ff-794d-4d40-b40c-5e1daf82a9e5",
+            "sourceColumn": "CD_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FC_FECHA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "148ef8d0-1b93-47a4-ad31-73d4382ac198",
+            "sourceColumn": "FC_FECHA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NM_SALDO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "fcd06adb-de06-4b11-9da0-e689714c60ed",
+            "sourceColumn": "NM_SALDO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NM_SALDO_ERP",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "427d740d-f0b0-4920-b83b-74a12669fb10",
+            "sourceColumn": "NM_SALDO_ERP",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_MVTO_ULTIMO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2dd45393-f297-40c7-83f1-10146405a9ae",
+            "sourceColumn": "CD_MVTO_ULTIMO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_MVTO_ERP_ULTIMO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "4494a21d-62e5-4a8a-986a-8ea6d1b7c778",
+            "sourceColumn": "CD_MVTO_ERP_ULTIMO",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2dd6f6e7-a523-4424-a647-5961394058b4",
+        "partitions": [
+          {
+            "name": "KAT_SALDO_CUENTA",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    KAT_SALDO_CUENTA_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"KAT_SALDO_CUENTA\",version=\"\"]}[Data]",
+                "in",
+                "    KAT_SALDO_CUENTA_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "All_Measures",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "lineageTag": "2a8c13c3-73ae-46f5-8c06-a10ee9541e60",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "027cebea-8a3a-47a4-aa8c-4e7f556ffdec",
+        "measures": [
+          {
+            "name": "Initial_Balance_Day_Reference_-1",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR _Day_Refereence_Minus_1 = [Day Reference -1]",
+              "VAR _Last_Date_With_Value = [Last_Date_With_Balance_-1]",
+              "        ",
+              "RETURN",
+              "    CALCULATE(",
+              "        SELECTEDVALUE( KAT_SALDO_CUENTA[NM_SALDO] ) ,",
+              "        FILTER( ALL( 'Calendar' ), Calendar[Date] = _Last_Date_With_Value )",
+              "    )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "9ab963d0-71db-4692-bdbb-4f0befa978ba"
+          },
+          {
+            "name": "Collections",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE( ",
+              "    SUM(Cobranzas_Egresos_Recientes[Importe]),",
+              "    Cobranzas_Egresos_Recientes[Importe] >= 0",
+              ")"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "b09b4ba9-b345-4c52-9fad-d8ffb061b160"
+          },
+          {
+            "name": "Day Reference",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DATEVALUE( SELECTEDVALUE( 'Calendar'[Date], TODAY() ) )",
+              ""
+            ],
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "ce0a95e9-3b89-49af-ba59-ebee453f02d4"
+          },
+          {
+            "name": "Day Reference -1",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "expression": "DATEVALUE( [Day Reference] - 1 )",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "7a6502e8-d1d9-442e-8f86-7be3c7837bc6"
+          },
+          {
+            "name": "Collections_Intercompanies",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "// Origin filters by relationships (Grupo Inversores)",
+              "",
+              "VAR _Grupos_Inversores =",
+              "    VALUES( Grupos_Inversores_Mapping[Grupo Inversor] )",
+              "VAR _Values_By_Origin =",
+              "    CALCULATE(",
+              "        SUM( Previsiones[NM_IMPORTE_INICIAL] ),",
+              "        Previsiones[Is_Operation_Intercompanies] = TRUE,",
+              "        Previsiones[NM_IMPORTE_INICIAL] > 0",
+              "    )",
+              "VAR _Values_By_Target =",
+              "    -CALCULATE(",
+              "        SUM( Previsiones[NM_IMPORTE_INICIAL] ),",
+              "        ALL( Cuentas ),",
+              "        Previsiones[Is_Operation_Intercompanies],",
+              "        Previsiones[NM_IMPORTE_INICIAL] < 0,",
+              "        Previsiones[Grupo Inversor Destino] IN _Grupos_Inversores",
+              "    )",
+              "RETURN",
+              "    _Values_By_Origin + _Values_By_Target"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "f4e3fef2-84e9-40a9-8f18-e2384ad987ba"
+          },
+          {
+            "name": "Payments_Intercompanies",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "// Origin filters by relationships (Grupo Inversores)",
+              "",
+              "VAR _Grupos_Inversores =",
+              "    VALUES( Grupos_Inversores_Mapping[Grupo Inversor] )",
+              "VAR _Values_By_Origin =",
+              "    CALCULATE(",
+              "        SUM( Previsiones[NM_IMPORTE_INICIAL] ),",
+              "        Previsiones[Is_Operation_Intercompanies] = TRUE,",
+              "        Previsiones[NM_IMPORTE_INICIAL] < 0",
+              "    )",
+              "VAR _Values_By_Target =",
+              "    -CALCULATE(",
+              "        SUM( Previsiones[NM_IMPORTE_INICIAL] ),",
+              "        ALL( Cuentas ),",
+              "        Previsiones[Is_Operation_Intercompanies] = TRUE,",
+              "        Previsiones[NM_IMPORTE_INICIAL] > 0,",
+              "        Previsiones[Grupo Inversor Destino] IN _Grupos_Inversores",
+              "    )",
+              "RETURN",
+              "    _Values_By_Origin + _Values_By_Target"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "d2ddf9a7-b4e3-488c-b763-dab595bfa872"
+          },
+          {
+            "name": "Investment maturity",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR _Operations_Plus_Interests = ",
+              "CALCULATE(",
+              "\tSUMX(",
+              "        Fi_Operaciones, ",
+              "        Fi_Operaciones[ImporteInicial] + Fi_Operaciones[ImporteIntereses] + Fi_Operaciones[ImporteRetencion]",
+              "    ),",
+              "    Fi_Operaciones[CdInstrumento] <> 36,",
+              "    USERELATIONSHIP(Fi_Operaciones[FechaFin], 'Calendar'[Date])",
+              ")",
+              "",
+              "VAR _Operations_Only_Interests = ",
+              "CALCULATE(",
+              "\tSUMX(",
+              "        Fi_Operaciones, ",
+              "        Fi_Operaciones[ImporteIntereses] + Fi_Operaciones[ImporteRetencion]",
+              "    ),",
+              "    Fi_Operaciones[CdInstrumento] = 36,",
+              "    USERELATIONSHIP(Fi_Operaciones[FechaFin], 'Calendar'[Date])",
+              ")",
+              "",
+              "",
+              "RETURN",
+              "    _Operations_Plus_Interests + _Operations_Only_Interests",
+              ""
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "5dbe2e32-2ae4-43bf-869d-e7fe74213ee6"
+          },
+          {
+            "name": "Total Income",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "[Collections] + [Collections_Intercompanies] + [Investment maturity]"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "47144131-2cb1-4481-996e-f4b7dd347d09"
+          },
+          {
+            "name": "Payments",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "CALCULATE(",
+              "    SUM( Previsiones[NM_IMPORTE_INICIAL] ),",
+              "    Previsiones[Is_Operation_Payment] = TRUE",
+              ")"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "fa955cbf-8250-4034-9744-e211ab2f8f09"
+          },
+          {
+            "name": "Total Expenses",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": "[Payments] + [Payments_Intercompanies]",
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "6c68a55a-723f-4113-bdcb-5b6d37624cde"
+          },
+          {
+            "name": "Surplus (Needs)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": "[Initial_Balance_Day_Reference_-1] + [Total Income] - [Total Expenses]",
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "4b64f2c8-e305-40f2-ba4d-80414de4c292"
+          },
+          {
+            "name": "Balance Main Account 08:00",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    SUM(Saldos_Recientes[Saldo]),",
+              "    Saldos_Recientes[Hora] = TIME(8, 0, 0)",
+              ")"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "6cfe3d6b-8065-4514-978e-58cd7a61e739"
+          },
+          {
+            "name": "Balance Main Account 14:00",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    SUM(Saldos_Recientes[Saldo]),",
+              "    Saldos_Recientes[Hora] = TIME(14, 0, 0)",
+              ")"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "acc6f7c4-7ed7-4657-b747-eba95823f6d3"
+          },
+          {
+            "name": "Surplus(Needs) - Balance Main Account 14:00",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": "[Surplus (Needs)] - [Balance Main Account 14:00]",
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "237e69c3-4f7d-4c3d-8e47-59707aad6e5f"
+          },
+          {
+            "name": "Outstanding Amount Op.",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": "SUM(Fi_Operaciones[ImportePendiente])",
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "40091844-6146-4209-9c2d-ac011890757c"
+          },
+          {
+            "name": "Current Interest Rate Op. (Single Value)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "SELECTEDVALUE(Fi_Operaciones[TipoInteresActual])",
+              "",
+              ""
+            ],
+            "lineageTag": "c25a54ad-0c5d-4e74-9263-7056f2e518bf"
+          },
+          {
+            "name": "Duration Op. (Single Value)",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "VAR _Value = SELECTEDVALUE(Fi_Operaciones[Duracion])",
+              "",
+              "RETURN",
+              "IF( ISBLANK( _Value), BLANK(), _Value & \" Días\")",
+              ""
+            ],
+            "lineageTag": "43f9b239-ebaa-4633-8aff-49535d028537"
+          },
+          {
+            "name": "Date End Op (Single Value).",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "expression": "SELECTEDVALUE(Fi_Operaciones[FechaFin])",
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "1467f1ff-e3b0-453d-8f3c-c84ef9d61681"
+          },
+          {
+            "name": "Total Invested Op.",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE(",
+              "     [Outstanding Amount Op.],",
+              "     Fi_Operaciones[Descripcion] IN VALUES(Bolsas[Bolsa])",
+              ")"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "0c242dcc-4534-4f91-977e-d4576a16b0a0"
+          },
+          {
+            "name": "Total_Remaining",
+            "expression": "[Surplus (Needs)] - [Total Invested Op.]",
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "8aee88bb-4b35-4748-9ddb-11e66e25986d"
+          },
+          {
+            "name": "Verification Calc",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "",
+              "VAR _Balance_BMVL_14_00 = ",
+              "CALCULATE(",
+              "    [Balance Main Account 14:00],",
+              "    Saldos_Recientes[Alias] = \"BMVL\"",
+              ")   ",
+              "",
+              "VAR _Total_Invested_BMVL = ",
+              "CALCULATE(",
+              "    [Total Invested Op.],",
+              "    Fi_Operaciones[Descripcion] = \"BMVL\"",
+              ")  ",
+              "",
+              "RETURN",
+              "_Balance_BMVL_14_00 - _Total_Invested_BMVL"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "47696e5f-39b5-43a8-8f0e-cd95c9433151"
+          },
+          {
+            "name": "Last_Date_With_Balance_-1",
+            "expression": [
+              "",
+              "VAR _Day_Refereence_Minus_1 = [Day Reference -1]",
+              "",
+              "RETURN ",
+              "CALCULATE (",
+              "    MAX(KAT_SALDO_CUENTA[FC_FECHA]),",
+              "    FILTER( ALL( 'Calendar' ), Calendar[Date] <= _Day_Refereence_Minus_1 )",
+              ")",
+              ""
+            ],
+            "formatString": "General Date",
+            "lineageTag": "78b4cbc6-c779-4c7e-a9ff-3e97da2801f5"
+          },
+          {
+            "name": "Total_Remaining_color",
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Total_Remaining]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatString": "General Date",
+            "lineageTag": "765b3c9a-20ec-4e89-99cf-3b172a884320"
+          },
+          {
+            "name": "Balance Main Account 08:00_Color",
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Initial_Balance_Day_Reference_-1]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "96a3ba88-a988-4949-ae95-c03bf909a836"
+          },
+          {
+            "name": "Balance Main Account 14:00_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Balance Main Account 14:00]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "713c1aab-2678-4dbb-8f05-282f969a9151"
+          },
+          {
+            "name": "Collections_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Collections]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "d16a0c00-8381-4745-aa72-a9adbb5575ec"
+          },
+          {
+            "name": "Collections_Intercompanies_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Collections_Intercompanies]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "cd5aca3e-b7fc-4b2f-ab5e-18b81aa0311a"
+          },
+          {
+            "name": "Initial_Balance_Day_Reference_-1_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Initial_Balance_Day_Reference_-1]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "acb848b3-1933-4e05-a9c8-e6ae09dd5a11"
+          },
+          {
+            "name": "Investment maturity_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Investment maturity]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "7365998e-0a9c-49ab-97da-8327234f8ee1"
+          },
+          {
+            "name": "Min Current Interest Rate Op._Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Current Interest Rate Op. (Single Value)]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "1db89663-8390-4acc-b4a3-462350de1ae3"
+          },
+          {
+            "name": "Outstanding Amount Op._Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Outstanding Amount Op.]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "0adde535-6810-4e37-a84d-c6b41387a2c9"
+          },
+          {
+            "name": "Payments_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Payments]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "8f882e2d-77f3-49b3-b812-9c0db28ecae6"
+          },
+          {
+            "name": "Payments_Intercompanies_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Payments_Intercompanies]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "33799367-ea4e-4e23-b0cf-852bca9b216a"
+          },
+          {
+            "name": "Surplus (Needs)_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Surplus (Needs)]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "d5f76f1a-a7ed-42be-aac8-c7a71e783def"
+          },
+          {
+            "name": "Surplus(Needs) - Balance Main Account 14:00_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Surplus(Needs) - Balance Main Account 14:00]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "04663ec3-b246-4ac0-9778-04c30f382374"
+          },
+          {
+            "name": "Total Expenses_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Total Expenses]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "1b40c86d-b79d-408d-b71b-f8fe867780d7"
+          },
+          {
+            "name": "Total Income_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Total Income]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "4cb69460-dd23-4216-a30b-5a66fb2019f0"
+          },
+          {
+            "name": "Total Invested Op._Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Total Invested Op.]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "5f9d94d1-d539-4cd0-9f46-46c78e392279"
+          },
+          {
+            "name": "Verification Calc_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-US\"}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Verification Calc]",
+              "RETURN",
+              "    IF( _Value, IF( _Value < 0, \"red\" ) )"
+            ],
+            "formatStringDefinition": {
+              "expression": "\"\\$#,0.00\""
+            },
+            "lineageTag": "78dc2f87-624e-4d5c-9fe5-cc31d2401d6b"
+          },
+          {
+            "name": "Empty",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "BLANK()",
+            "lineageTag": "d7cb6272-e73d-4624-b224-0ef1894c2f08"
+          },
+          {
+            "name": "One",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "1",
+            "lineageTag": "1c20b21d-3b8c-4d26-92b5-419a9f1be517"
+          },
+          {
+            "name": "Date End Op (Single Value)._Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Date End Op (Single Value).]",
+              "RETURN",
+              "    IF( NOT ISBLANK( _Value ) , \"#0D6ABF\" )"
+            ],
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "04ba0329-8503-48cf-92a1-d8fda5b3fcfb"
+          },
+          {
+            "name": "Duration Op. (Single Value)_Color",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "displayFolder": "Colors_Calcs",
+            "expression": [
+              "VAR _Value = [Date End Op (Single Value).]",
+              "RETURN",
+              "    IF( NOT ISBLANK( _Value ) , \"#0D6ABF\" )"
+            ],
+            "formatString": "yyyy-mm-dd",
+            "lineageTag": "5a1307f4-b857-4757-81fc-9da8cf3bf43f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "All_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45W8svPS1WKjQUA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cobranzas_Egresos_Recientes",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Bolsa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d22e6994-8592-4486-8d07-4924719665b7",
+            "sourceColumn": "Bolsa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "No. de movimiento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "589c8cb8-d18d-42df-bd73-b1ac2dd32215",
+            "sourceColumn": "No. de movimiento",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cuenta / Alias",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cdd4142f-936f-4602-97db-fc94fe3270f2",
+            "sourceColumn": "Cuenta / Alias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Divisa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "af65bb67-0a16-4f5c-9a75-bf09cd470c3a",
+            "sourceColumn": "Divisa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Concepto",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ba5592eb-0aae-4c90-a0ea-58ac6b05568e",
+            "sourceColumn": "Concepto",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Referencia",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9b7cfb39-5519-4ee4-ac7b-05f0d0a80f6d",
+            "sourceColumn": "Referencia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Referencia Ampliada",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "6f4df415-1233-4dc1-8441-7abd6c2b3c5b",
+            "sourceColumn": "Referencia Ampliada",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Importe",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "450eae91-d29b-456c-887c-0b9027f8b42a",
+            "sourceColumn": "Importe",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Saldo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "ee00bca7-c665-4ba8-8ba2-b48e6c966842",
+            "sourceColumn": "Saldo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Código Leyenda",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fc84e749-fff3-4b3d-b28e-8d3d5ebe29ef",
+            "sourceColumn": "Código Leyenda",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha Operación",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "37e06695-81b9-483b-aa74-b4e325fb3ce7",
+            "sourceColumn": "Fecha Operación",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hora Operación",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "lineageTag": "90179239-c639-4bf5-a134-1ea54b9615eb",
+            "sourceColumn": "Hora Operación",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Fecha Valor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "4bc33db5-d701-4546-978f-dfc7287d6163",
+            "sourceColumn": "Fecha Valor",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "01deb3a3-3005-4365-b3e6-788839f9a534",
+        "partitions": [
+          {
+            "name": "Cobranzas_Egresos_Recientes",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Cobranzas_Egresos_Recientes_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Cobranzas_Egresos_Recientes\",version=\"\"]}[Data]",
+                "in",
+                "    Cobranzas_Egresos_Recientes_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Calendar",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dddd\\, dd mmmm yyyy",
+            "isKey": true,
+            "lineageTag": "a5c8fdec-eebb-48f8-8b36-927dea436979",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "45cde441-6c9e-40b9-8c21-dcac91f7f0c1",
+            "sourceColumn": "Year",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "QuarterOfYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "40da8d33-1d16-481c-a2d1-5e6e1c430636",
+            "sourceColumn": "QuarterOfYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "QuarterOfYearTxt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f63c8f51-abf1-47ee-b54e-d416512d94c6",
+            "sourceColumn": "QuarterOfYearTxt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthOfYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3861ab45-7268-422a-899f-ce0ce19b1801",
+            "sourceColumn": "MonthOfYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayOfMonth",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5847394d-b159-4c6d-84b3-3f1596960c3a",
+            "sourceColumn": "DayOfMonth",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DateInt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "d312fff9-8475-42fd-b355-14a53be75549",
+            "sourceColumn": "DateInt",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2149dd1f-83ab-4d78-889c-489a512eb7fe",
+            "sourceColumn": "MonthName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthInCalendar",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8b47f0aa-2d12-4456-ac2a-4f1876f5be0a",
+            "sourceColumn": "MonthInCalendar",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "QuarterInCalendar",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "85b76df7-8d35-4cb9-986e-af3751a330c6",
+            "sourceColumn": "QuarterInCalendar",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayInWeek",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "476f3430-4d32-4bca-aa58-3df6e7806837",
+            "sourceColumn": "DayInWeek",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DayOfWeekName",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1399aada-36ab-43b0-a0bb-62fe4648f3db",
+            "sourceColumn": "DayOfWeekName",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WeekStart",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "fa6104e6-2af6-492d-a60c-e571e04804b6",
+            "sourceColumn": "WeekStart",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "WeekEnding",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "00ac1030-a6d9-400b-8982-009c415a31a1",
+            "sourceColumn": "WeekEnding",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Week Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "18bad0eb-395e-4277-a322-205dea0e2170",
+            "sourceColumn": "Week Number",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "MonthnYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9a8d62c8-0ea1-41d5-b1eb-bb519f3f3a6b",
+            "sourceColumn": "MonthnYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "QuarternYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "779328a0-8c65-4849-9783-99ce99849a2e",
+            "sourceColumn": "QuarternYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ShortYear",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f1b75b6c-d79e-44e4-83c1-17338b495859",
+            "sourceColumn": "ShortYear",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FY",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "88ed9f45-70a4-40f6-a0c5-09cc47cabe2d",
+            "sourceColumn": "FY",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "625d192a-b539-4954-9aeb-3c9557946d8b",
+            "sourceColumn": "Quarter",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SlicerDate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "string",
+            "expression": "IF([Date] = TODAY(), \"Hoy\", UPPER(FORMAT([Date], \"dddd\")) & FORMAT([Date], \", d mmm yyyy\") ) ",
+            "isDataTypeInferred": true,
+            "lineageTag": "8641a7b3-0322-4086-acbc-55697aaae269",
+            "sortByColumn": "Date",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "359f8d7b-1c4f-439f-9d5f-8585f380bb27",
+        "partitions": [
+          {
+            "name": "Calendar",
+            "mode": "import",
+            "queryGroup": "Calendar",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = CL_Lib[CL_Calendar](#\"Calendar Begin\", #\"Calendar End\", 1, \"EN-US\", Day.Monday),",
+                "    #\"Inserted Quarter\" = Table.AddColumn(Source, \"Quarter\", each Date.QuarterOfYear([Date]), Int64.Type)",
+                "in",
+                "    #\"Inserted Quarter\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Grupos_Inversores_Measures",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "8ac666b9b57b4e6d91a1926ad2fbe7df"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Grupos_Inversores_Measures",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "2c69a9b5-be2b-4f94-afed-be27f122aa69",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Grupos_Inversores_Measures Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Grupos_Inversores_Measures Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupos_Inversores_Measures Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "bcd1255e-083f-4aee-98a3-09160040680b",
+            "sortByColumn": "Grupos_Inversores_Measures Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupos_Inversores_Measures Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "b4d9f939-52ba-4669-a988-ccd4abd3309c",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupos_Inversores_Measures Names",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Grupos_Inversores_Measures]",
+            "isDataTypeInferred": true,
+            "lineageTag": "54b7a8f1-dc9a-44d1-b495-aab73f1675b3",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "e6281709-f363-4bd0-b682-5cd0a8f088c4",
+        "partitions": [
+          {
+            "name": "Grupos_Inversores_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Saldo Inicial\", NAMEOF('All_Measures'[Initial_Balance_Day_Reference_-1]), 0),",
+                "    (\"Cobranza\", NAMEOF('All_Measures'[Collections]), 1),",
+                "    (\"Cobranza Intercompañias\", NAMEOF('All_Measures'[Collections_Intercompanies]), 2),",
+                "    (\"Vto. Inversiones\", NAMEOF('All_Measures'[Investment maturity]), 3),",
+                "    (\"Total Ingresos\", NAMEOF('All_Measures'[Total Income]), 4),",
+                "    (\"Egresos\", NAMEOF('All_Measures'[Payments]), 5),",
+                "    (\"Egresos Intercompañias\", NAMEOF('All_Measures'[Payments_Intercompanies]), 6),",
+                "    (\"Total Egresos\", NAMEOF('All_Measures'[Total Expenses]), 7),",
+                "    (\"Excedentes(Necesidades)\", NAMEOF('All_Measures'[Surplus (Needs)]), 8),",
+                "    (\"Saldo Banco entre 08:00 y 09:00\", NAMEOF('All_Measures'[Balance Main Account 08:00]), 9),",
+                "    (\"Saldo Banco 14:00\", NAMEOF('All_Measures'[Balance Main Account 14:00]), 10),",
+                "    (\"Excedentes(Necesidades) - Saldo Banco 14:00\", NAMEOF('All_Measures'[Surplus(Needs) - Balance Main Account 14:00]), 11)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "KAT_CONCEPTOS_COBRO_PAGO",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_CONCEPTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fe948cf9-6a85-481a-b8a0-8525c7eea0b2",
+            "sourceColumn": "CD_CONCEPTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CONCEPTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "efeabfa1-5a4c-488a-bf26-3acf87bab51d",
+            "sourceColumn": "DS_CONCEPTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IT_ES_PAGO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "7a39bd5c-a0bb-4fea-9912-a7627fa196d8",
+            "sourceColumn": "IT_ES_PAGO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_TIPO_CONCEPTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "378e0987-7db4-4e7c-9fb9-ba01b9163a09",
+            "sourceColumn": "CD_TIPO_CONCEPTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NM_ORDEN",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "59424b5c-48f7-43d3-a85b-ed48cc5b2720",
+            "sourceColumn": "NM_ORDEN",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "ca99230c-8a2d-4771-9e18-b977bdc1d994",
+        "partitions": [
+          {
+            "name": "KAT_CONCEPTOS_COBRO_PAGO",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    KAT_CONCEPTOS_COBRO_PAGO_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"KAT_CONCEPTOS_COBRO_PAGO\",version=\"\"]}[Data]",
+                "in",
+                "    KAT_CONCEPTOS_COBRO_PAGO_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Saldos_Recientes",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Fecha",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "86f42e11-c39c-45a2-b2d7-75da4f6b9541",
+            "sourceColumn": "Fecha",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hora",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "lineageTag": "530a52ee-88d9-47bd-9a27-be06642b5acf",
+            "sourceColumn": "Hora",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cuenta",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5ec81220-2530-4221-bda2-d398ec95432a",
+            "sourceColumn": "Cuenta",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Alias",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "60c0d3dc-ee35-44e8-829f-a7a9288ee0d2",
+            "sourceColumn": "Alias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Divisa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "958b0dbd-e5c3-46e3-8af2-59806f82c4a5",
+            "sourceColumn": "Divisa",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Saldo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "040d4251-786d-43c0-a5c3-0545349f09cf",
+            "sourceColumn": "Saldo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Disponible",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9ba38109-957e-44c7-af01-9637d2811c30",
+            "sourceColumn": "Disponible",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "561c8cdb-a1e9-418c-87bb-a5a452b18fcb",
+        "partitions": [
+          {
+            "name": "Saldos_Recientes",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Saldos_Recientes_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Saldos_Recientes\",version=\"\"]}[Data]",
+                "in",
+                "    Saldos_Recientes_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Cuentas",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fab27ff9-e532-4e50-9a88-d4c8f9f2c94f",
+            "sourceColumn": "CD_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_NOMBRE_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8615490e-16d4-45d8-b9dc-53445af9b72f",
+            "sourceColumn": "DS_NOMBRE_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_CUENTA_TIPO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b404dd00-98ce-4b89-8917-0c9585c0732a",
+            "sourceColumn": "CD_CUENTA_TIPO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "23f8ac16-42cf-4443-ac40-1178767a023b",
+            "sourceColumn": "DS_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_OFICINA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "36fc3052-e5ca-4750-87d5-1cf8f03f4ea3",
+            "sourceColumn": "DS_OFICINA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_DIGITO_CONTROL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3dc0cafc-692c-46ce-b651-42c566c4fc5e",
+            "sourceColumn": "DS_DIGITO_CONTROL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CODIGO_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "08783f7b-dbd5-40ca-878e-5c86d909d4d9",
+            "sourceColumn": "DS_CODIGO_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CODIGO_INTERNACIONAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3e0c1b6a-d84a-4f0f-9d9f-348ef6d12a60",
+            "sourceColumn": "DS_CODIGO_INTERNACIONAL",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_IBAN",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "71c5db67-83e1-4700-a431-079b3b2e4b27",
+            "sourceColumn": "DS_IBAN",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "cdf6de32-ac76-4c75-8cd3-3375fdf8d2a1",
+            "sourceColumn": "CD_BANCO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_DIVISA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ca7da2d7-f361-4b3c-b585-2c7c98b005eb",
+            "sourceColumn": "CD_DIVISA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_EMPRESA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "116c4489-78d9-4c5f-9298-9bf2e9a048fb",
+            "sourceColumn": "CD_EMPRESA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NM_SALDO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d77a8fc9-8404-4d95-94de-1f398b57b583",
+            "sourceColumn": "NM_SALDO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IT_ACTIVA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "24e9fe66-9a6d-42e1-8fea-77baff079660",
+            "sourceColumn": "IT_ACTIVA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FC_INACTIVA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "441f4de0-097c-4dd2-a3f2-428a089ab762",
+            "sourceColumn": "FC_INACTIVA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grupo Inversor",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "58806530-35a9-42a3-8efd-5d64fe6761b8",
+            "sourceColumn": "Grupo Inversor",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "7669d2d7-5a3c-4bac-98a0-6c124e260242",
+        "partitions": [
+          {
+            "name": "Cuentas",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Cuentas_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Cuentas\",version=\"\"]}[Data],",
+                "    #\"Removed Duplicates\" = Table.Distinct(Cuentas_, {\"DS_NOMBRE_CUENTA\"})",
+                "in",
+                "    #\"Removed Duplicates\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Securities_Firm_Measures",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "953c1342b4b944ef91c65cfdf832e5a8"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Securities_Firm_Measures",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "02192bb5-6232-48f9-866c-80504ebb48e3",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Securities_Firm_Measures Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Securities_Firm_Measures Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Securities_Firm_Measures Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "88f98cf9-1ebd-4cad-95b1-a0d718a8a0f5",
+            "sortByColumn": "Securities_Firm_Measures Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Securities_Firm_Measures Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "f0c4d1e3-d7e2-4bb2-b48e-78aa5533fd83",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Securities_Firm_Measures Names",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Securities_Firm_Measures]",
+            "isDataTypeInferred": true,
+            "lineageTag": "89cc3230-5e7b-4b78-a87a-f1d4d7db85bf",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "a2496d56-340d-4e99-9189-dc36dbc711dc",
+        "partitions": [
+          {
+            "name": "Securities_Firm_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Inversión\", NAMEOF([Outstanding Amount Op.]), 0),",
+                "    (\"Tasa\", NAMEOF([Current Interest Rate Op. (Single Value)]), 1),",
+                "    (\"Plazo\", NAMEOF([Duration Op. (Single Value)]), 2),",
+                "    (\"FechaFin\", NAMEOF([Date End Op (Single Value).]), 3)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Fi_Instrumentos",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CdInstrumento",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "743275b2-2e65-43ac-aa76-233c38ad48c0",
+            "sourceColumn": "CdInstrumento",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Alias",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b0e2bc10-c77e-43b9-bfe8-b81032df3521",
+            "sourceColumn": "Alias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Descripcion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ddf3653e-ead3-469a-833f-0d2c97f4fe58",
+            "sourceColumn": "Descripcion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CdTipoOperacion",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a0e24542-2ae7-47e7-8367-591374ecaddb",
+            "sourceColumn": "CdTipoOperacion",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "41a975f6-84e8-4f5b-bc51-efb2c5ba822f",
+        "partitions": [
+          {
+            "name": "Fi_Instrumentos",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Fi_Instrumentos_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Fi_Instrumentos\",version=\"\"]}[Data]",
+                "in",
+                "    Fi_Instrumentos_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Bolsas",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Bolsa",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b6c0def6-ded2-452c-9219-695cf0caf397",
+            "sourceColumn": "Bolsa",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "1af6374a-43ca-4c7b-9335-7eb32b23b1c7",
+        "partitions": [
+          {
+            "name": "Bolsas",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Bolsas_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Bolsas\",version=\"\"]}[Data]",
+                "in",
+                "    Bolsas_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Grupo_Inversores_Totales_Measures",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "6b44786b9b2b4d68a03a90af0bad4fa4"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Grupo_Inversores_Totales_Measures",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "4d797813-0e59-44fb-ab37-11cc065383f4",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Grupo_Inversores_Totales_Measures Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Grupo_Inversores_Totales_Measures Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupo_Inversores_Totales_Measures Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "631927c1-5322-4d4f-97e4-6262a78d5806",
+            "sortByColumn": "Grupo_Inversores_Totales_Measures Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupo_Inversores_Totales_Measures Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "33b5b8dd-29db-49d8-a90c-d327170edb0f",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Grupo_Inversores_Totales_Measures Names",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Grupo_Inversores_Totales_Measures]",
+            "isDataTypeInferred": true,
+            "lineageTag": "400d4b71-c8b6-411d-bebb-981458797d7f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "81c1e942-eb6d-4d23-a571-95fe30cec145",
+        "partitions": [
+          {
+            "name": "Grupo_Inversores_Totales_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Total Invertido\", NAMEOF('All_Measures'[Total Invested Op.]), 0),",
+                "    (\"Restante\", NAMEOF('All_Measures'[Total_Remaining]), 1)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Verification_Measures",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "1d043266494d4e5292cf84f4bce5f603"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Verification_Measures",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "d0e2aba8-27bd-4190-b522-ff79094845de",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "Verification_Measures Fields"
+                }
+              ]
+            },
+            "sortByColumn": "Verification_Measures Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Verification_Measures Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "d2131548-c2f7-4c6d-891c-7d9a5291904e",
+            "sortByColumn": "Verification_Measures Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Verification_Measures Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "379d276c-5b51-4bed-ae58-96a3e37484cb",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Verification_Measures Names",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "expression": "[Verification_Measures]",
+            "isDataTypeInferred": true,
+            "lineageTag": "f1d442de-3ef5-4984-b09f-91217bcdb4ae",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "be20c51c-75fd-4b53-b7b8-3f47f214b032",
+        "partitions": [
+          {
+            "name": "Verification_Measures",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Verificación\", NAMEOF('All_Measures'[Verification Calc]), 0),",
+                "    (\" \", NAMEOF('All_Measures'[Empty]), 1)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Colors",
+        "calculationGroup": {
+          "calculationItems": [
+            {
+              "name": "Color_For_Negatives",
+              "expression": [
+                "CALCULATE(",
+                "    VAR _Value = SELECTEDMEASURE( )",
+                "    RETURN",
+                "        IF( _Value, IF( _Value < 0, \"red\", \"green\" ), \"yellow\" )",
+                ")"
+              ]
+            },
+            {
+              "name": "Color_For_Negatives 1",
+              "expression": [
+                "CALCULATE(",
+                "    // VAR _Value = SELECTEDMEASURE( )",
+                "    //RETURN",
+                "        IF( SELECTEDMEASURE( ), IF( SELECTEDMEASURE( ) < 0, \"red\", \"green\" ), \"yellow\" )",
+                ")"
+              ]
+            }
+          ]
+        },
+        "columns": [
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8d2f407f-d1f3-45fb-9442-68090b059234",
+            "sortByColumn": "Ordinal",
+            "sourceColumn": "Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Ordinal",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "87377643-bf2f-4d57-8522-f29b190f3f26",
+            "sourceColumn": "Ordinal",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "249cfaf9-6231-4ec2-9c1c-b6f072ed7156",
+        "partitions": [
+          {
+            "name": "Partition",
+            "mode": "import",
+            "source": {
+              "type": "calculationGroup"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measure_Names",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "3854a82051af43cd98e09c8d5742d5ef"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "81555442-7ed7-4d8b-851b-2e6b927f19d8",
+            "sourceColumn": "[Name]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "1943f0e4-a074-4f4e-9bc9-efccce4ad326",
+        "partitions": [
+          {
+            "name": "Measure_Names",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "DATATABLE(",
+                "    \"Name\", STRING,",
+                "    {",
+                "        { \"Initial_Balance_Day_Reference_-1\" },",
+                "        { \"Collections\" },",
+                "        { \"Day Reference\" },",
+                "        { \"Day Reference -1\" },",
+                "        { \"Collections_Intercompanies\" },",
+                "        { \"Payments_Intercompanies\" },",
+                "        { \"Investment maturity\" },",
+                "        { \"Total Income\" },",
+                "        { \"Payments\" },",
+                "        { \"Total Expenses\" },",
+                "        { \"Surplus (Needs)\" },",
+                "        { \"Balance Main Account 08:00\" },",
+                "        { \"Balance Main Account 14:00\" },",
+                "        { \"Surplus(Needs) - Balance Main Account 14:00\" },",
+                "        { \"Outstanding Amount Op.\" },",
+                "        { \"Current Interest Rate Op. (Single Value)\" },",
+                "        { \"Duration Op. (Single Value)\" },",
+                "        { \"Date End Op. (Single Value)\" },",
+                "        { \"Total Invested Op.\" },",
+                "        { \"Total_Remaining\" },",
+                "        { \"Verification Calc\" },",
+                "        { \"_Last_Date_With_Value\" },",
+                "        { \"Color_For_Measure_Value\" },",
+                "        { \"Color_For_Measure_Value 2\" },",
+                "        { \"Total_Remaining_color\" },",
+                "        { \"Color_For_Negatives-2\" }",
+                "    }",
+                ")"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Previsiones",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "CD_PREVISION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "60ff33e4-d428-4c87-9cca-bc35b646543a",
+            "sourceColumn": "CD_PREVISION",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CD_EMPRESA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8a3bc83b-61d1-47fe-b49e-6b762f81d4a8",
+            "sourceColumn": "CD_EMPRESA",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CD_BANCO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "e869324f-dd73-41b7-ac9a-d3edac129ad6",
+            "sourceColumn": "CD_BANCO",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CD_CUENTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7709fc9a-5de4-4ac0-a59e-f172ef919cc9",
+            "sourceColumn": "CD_CUENTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "IT_ES_PAGO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "71445179-dc37-431c-990e-f89925a6d135",
+            "sourceColumn": "IT_ES_PAGO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_CONCEPTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "608083eb-2389-4a6a-9d69-2217cc1d1358",
+            "sourceColumn": "CD_CONCEPTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "CD_VIA_COBRO_PAGO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0e4d53ca-b488-4602-89bb-9b6e76f6f105",
+            "sourceColumn": "CD_VIA_COBRO_PAGO",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "DS_DOCUMENTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "778c9d2a-0b46-4f09-a83a-0b0ddadd8d76",
+            "sourceColumn": "DS_DOCUMENTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_DESCRIPCION",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "cad469be-ed8a-42fa-9c53-6e3980f914bf",
+            "sourceColumn": "DS_DESCRIPCION",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FC_VENCIMIENTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "76f2b9e6-59be-4de0-84d6-7931ed1868fa",
+            "sourceColumn": "FC_VENCIMIENTO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FC_PREVISTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "14f52e9c-201b-4725-bfe0-783696cac1af",
+            "sourceColumn": "FC_PREVISTA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "FC_EMISION_FACTURA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "cdafe8eb-e3e9-42f7-b4f9-6216c4a0f966",
+            "sourceColumn": "FC_EMISION_FACTURA",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "NM_IMPORTE_INICIAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "43b1d6c9-871d-44a6-bf0e-d157d99ef5c4",
+            "sourceColumn": "NM_IMPORTE_INICIAL",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CD_DIVISA_INICIAL",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c32508af-f296-4a99-ae38-5c99be80b422",
+            "sourceColumn": "CD_DIVISA_INICIAL",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "NM_IMPORTE_PREVISTO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "f7990157-fc0f-43ab-934f-376485acffa6",
+            "sourceColumn": "NM_IMPORTE_PREVISTO",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "CD_DIVISA_PREVISTA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2f3a0a21-5ddf-4ab5-85b9-6946b24d7464",
+            "sourceColumn": "CD_DIVISA_PREVISTA",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "IT_FINANCIABLE",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "d4c18102-bffd-4154-a9b5-4d381e86b03b",
+            "sourceColumn": "IT_FINANCIABLE",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_ALIAS_VIA_COBRO_PAGO",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f1deae43-e89a-4a4e-9781-6a5cd5d82262",
+            "sourceColumn": "DS_ALIAS_VIA_COBRO_PAGO",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Is_Operation_Intercompanies",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "ac188d29-328e-49cb-91f8-630b241df805",
+            "sourceColumn": "Is_Operation_Intercompanies",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grupo Inversor Origen",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "01bf3dc2-16f1-456f-aed4-93343f462dae",
+            "sourceColumn": "Grupo Inversor Origen",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Grupo Inversor Destino",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f57963f6-ffde-4cfd-90d4-bc82ded1a44a",
+            "sourceColumn": "Grupo Inversor Destino",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "DS_CAMPO_3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f54a09d0-6654-4080-9444-432d40486a7d",
+            "sourceColumn": "DS_CAMPO_3",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Is_Operation_Payment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "lineageTag": "59c05caa-197d-48e7-b77f-a95d1d7f71c3",
+            "sourceColumn": "Is_Operation_Payment",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "5762b6fa-487b-4ab0-8cf7-976e6e3d570b",
+        "partitions": [
+          {
+            "name": "Previsiones",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = PowerPlatform.Dataflows(null),",
+                "    Workspaces = Source{[Id=\"Workspaces\"]}[Data],",
+                "    #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\" = Workspaces{[workspaceId=\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"]}[Data],",
+                "    #\"595804bf-c5dc-4457-a414-d394ddd476d7\" = #\"279a6b2c-4269-4c3c-b3f7-a6ea61f89670\"{[dataflowId=\"595804bf-c5dc-4457-a414-d394ddd476d7\"]}[Data],",
+                "    Previsiones_ = #\"595804bf-c5dc-4457-a414-d394ddd476d7\"{[entity=\"Previsiones\",version=\"\"]}[Data]",
+                "in",
+                "    Previsiones_"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
