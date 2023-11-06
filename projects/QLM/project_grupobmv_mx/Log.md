@@ -271,3 +271,4 @@ If not the same process that has been done for the Cobranzas will have to be use
 * Respuesta a Mauricio del 2023-10-19
   * 1 -> no hace falta refrescar nada. Puede que el día de hoy se refiera al dia siguiente por la diferencia horaría. Voy a clarificar esto con Alfonso.
 
+.nothing
